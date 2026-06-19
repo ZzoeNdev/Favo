@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <title>Favo | Seu Site Favorito</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <img src="imgs/FavoLogoOrange.png" alt="">
+            <ul>
+                <li class="selectedTopic"><a href="#">Home</a></li>
+                <li><a href="#">Funcionalidades</a></li>
+                <li><a href="#">Produtividade</a></li>
+                <li><a href="#">Como Acessar</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+            </ul>
+            <a href="#"><button class="acPanel">Acessar Painel</button></a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <div>
+                <div class="text-hero">
+                    <h1>Se reorganize bem com <span>Favo</span></h1>
+                    <p>Não deixe a oportunidade de economizar na conta de energia</p>
+                    <div>
+                        <a href="#"><button class="btDashboard">Usar Favo</button></a>
+                        <a href="#"><button class="btHowtoWork">Como Funciona?</button></a>
+                    </div>
+                </div>
+
+                <img src="imgs/laptopHero.png" alt="">
+                <div class="floatQuality q1"><div class="circle"></div>Qualidade</div>
+                <div class="floatQuality q2"><div class="circle"></div>Organizado</div>
+                <div class="floatQuality q3"><div class="circle"></div>Confiança</div>
+                <div class="floatQuality q4"><div class="circle"></div>Agilidade</div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

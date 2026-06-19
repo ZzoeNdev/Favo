@@ -1,0 +1,183 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Manrope, sans-serif;
+}
+
+body{
+    margin-bottom: 100px;
+}
+
+:root{
+    --funcional-black: rgba(30, 30, 30, 1);
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99vw;
+    height: 10.66666vw;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+nav img{
+    max-width: 84px;
+    max-height: 41px;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    width: auto;
+    gap: 7%;
+}
+
+li{
+
+}
+
+li a{
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 1.04vw;
+    color: var(--funcional-black);
+}
+
+.selectedTopic{
+    font-weight: bolder;
+}
+
+nav a button{
+    transition: 0.5s;
+    background-color: #F68412;
+    border: none;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+nav a button:hover{
+    transition: 0.5s;
+    background-color: transparent;
+    border: 1px solid #F68412;
+    color: #F68412;
+    cursor:pointer;
+}
+
+main{
+    width: 99vw;
+    height: auto;
+}
+
+.hero-section{
+    width: 99vw;
+    height: 100vh;
+}
+
+.hero-section > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 98vw;
+    height: 76%;
+    background-image: url(imgs/backgroundHero.png);
+    background-position: center;
+    border-radius: 2%;
+}
+
+.text-hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-section > div > div > h1{
+    font-size: 3.33vw;
+    text-align: center;
+    max-width: 25vw;
+}
+
+.hero-section > div > div > p{
+    font-size: 0.833vw;
+    text-align: center;
+    max-width: 25vw;
+}
+
+.hero-section > div > div > div> a > button{
+    transition: 1s;
+    border: none;
+    background-color: #F68412;
+    color: #ffffff;
+    width: 12.76vw;
+    max-width: 245px;
+    height: 2.5vw;
+    min-width: 145px;
+    max-height: 48px;
+    min-height: 28px;
+    border-radius: 9px;
+    margin-top: 3%;
+    cursor: pointer;
+}
+
+.hero-section > div > div > div> a > .btHowtoWork{
+    border: 1px solid #F68412;
+    white-space: nowrap;
+    background-color: transparent;
+    color: #F68412;
+}
+
+.hero-section > div > div > div> a > button:hover{
+    transition: 1s;
+    font-size: 0.8vw;
+    background-color: #cf6a05;
+    color: #ffffff;
+}
+
+.hero-section > div > div > div> a > .btHowtoWork:hover{
+    font-size: 0.8vw;
+    background-color: transparent;
+    color: #F68412;
+}
+
+.hero-section > div > img{
+    max-width: 60%;
+}
+
+.floatQuality{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 5.5vw;
+    height: 1.66vw;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-size: 0.725vw;
+}
+
+.circle{
+    background-color: #F68412;
+    height: 0.625vw;
+    width: 0.625vw;
+    border-radius: 100%;
+}
+
+.q1{
+    top: 58%;
+    left: 17%;
+}
+
+.q2{
+    top: 80%;
+    left: 15.5%;
+}
