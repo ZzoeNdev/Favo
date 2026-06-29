@@ -31,13 +31,14 @@ nav{
 nav img{
     max-width: 84px;
     max-height: 41px;
+    cursor: pointer;
 }
 
 ul{
     display: flex;
     align-items: center;
     list-style: none;
-    width: auto;
+    width: 36%;
     gap: 7%;
 }
 
