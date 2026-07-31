@@ -83,6 +83,7 @@ main{
     justify-content: center;
     width: 99vw;
     height: 90vh;
+    margin-bottom: 150px;
 }
 
 .hero-section > div{
@@ -215,21 +216,12 @@ main{
     left: 27vw;
 }
 
-.container-funcionalidades{
-    display: grid;
-      grid-template:
-    "block1 celular block3" 30px
-    "block2 celular block4" 1fr
-    "block2 celular block5" 30px
-    "block2 celular block6" 30px
-    / 120px 1fr;
-}
-
 .age-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin: 150px;
 }
 
 .text-about{
@@ -326,6 +318,132 @@ main{
     bottom: 12.2vw;
     max-width: 100%;
     max-height: 100%;
+}
+
+
+
+
+.funcionalidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 150px;
+}
+
+.container-funcionalidades{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(12, minmax(60px, auto));
+    grid-gap: 25px 100px;
+    justify-items: center;
+    grid-template-areas:
+        "acessoGrafico favoSmartphone bloco1"
+        "acessoGrafico favoSmartphone bloco1"
+        "acessoGrafico favoSmartphone bloco1"
+
+        "acessoGrafico favoSmartphone bloco2"
+        "acessoSimultaneo favoSmartphone bloco2"
+        "acessoSimultaneo favoSmartphone bloco2"
+
+        "acessoSimultaneo favoSmartphone bloco3"
+        "acessoSimultaneo favoSmartphone bloco3"
+        "acessoSimultaneo favoSmartphone bloco3"
+
+        "acessoSimultaneo favoSmartphone bloco4"
+        "acessoSimultaneo favoSmartphone bloco4"
+        "acessoSimultaneo favoSmartphone bloco4";
+}
+
+.texto-funcionalidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.texto-funcionalidades h1{
+    font-family: "Manrope", sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    -webkit-text-fill-color: #000000;
+    background-clip: text;
+    max-width: 40%;
+}
+
+.texto-funcionalidades span{
+    font-family: "Manrope", sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    -webkit-text-fill-color: #000000;
+    background-clip: text;
+}
+
+.texto-funcionalidades p{
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    -webkit-text-fill-color: #929292;
+    background-clip: text;
+    margin-bottom: 64px;
+}
+
+#acessoGrafico{grid-area: acessoGrafico;;}
+#acessoSimultaneo{grid-area: acessoSimultaneo;}
+#favoSmartphone{grid-area: favoSmartphone; display: flex; align-items: center;}
+#funcionalidadesBloco1{grid-area: bloco1;}
+#funcionalidadesBloco2{grid-area: bloco2;}
+#funcionalidadesBloco3{grid-area: bloco3;}
+#funcionalidadesBloco4{grid-area: bloco4;}
+
+.funcionalidadesBlocos{
+    background-image: linear-gradient(270deg, #F9F9F9 0%, #EEEEEE 900%);
+    border: solid;
+    border-width: 1px;
+    border-color: #AFAFAF69;
+    border-radius: 25px;
+    min-height: 180px;
+    min-width: 100%;
+}
+
+#imgGrafico{
+    display: block;
+    width: 95%;
+    margin: 0 auto 0;
+}
+
+#imgSimultaneo{
+    display: block;
+    width: 95%;
+    margin: 45px auto 0;
+}
+
+.funcionalidadesBlocos .headerBloco{
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.funcionalidadesBlocos .headerBloco p{
+    color: #7E7E7E;
+    background: transparent;
+    padding: 0 0 0 0;
+    margin: 0 0;
+}
+
+.logo{
+    margin: 15px 0 15px 15px;
+}
+
+.funcionalidadesBlocos > p{
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: 0 15px;
+    padding: 5px 5px 5px 15px;
+    min-height: 85px;
+    text-align: left;
 }
 
 @media (max-width: 768px){
