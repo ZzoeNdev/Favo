@@ -1,0 +1,464 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Manrope, sans-serif;
+}
+
+body{
+    margin-bottom: 100px;
+}
+
+:root{
+    --funcional-black: rgba(30, 30, 30, 1);
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99vw;
+    height: 9vw;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+nav img{
+    max-width: 84px;
+    max-height: 41px;
+    cursor: pointer;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    width: 36%;
+    gap: 7%;
+}
+
+li a{
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 1.04vw;
+    color: var(--funcional-black);
+}
+
+.selecionadoHeader{
+    font-weight: bolder;
+}
+
+nav a button{
+    transition: 0.3s;
+    background-color: #F68412;
+    border: none;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+nav a button:hover{
+    transition: 0.3s;
+    background-color: transparent;
+    border: 0.5px solid #F68412;
+    color: #F68412;
+    cursor:pointer;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 99vw;
+    height: auto;
+}
+
+#sectionHero{
+    display: flex;
+    justify-content: center;
+    width: 99vw;
+    height: 90vh;
+    margin-bottom: 150px;
+}
+
+#sectionHero > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%;
+    height: 44vw;
+    background-image: url(imgs/backgroundHero.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 2%;
+}
+
+.text-hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-hero span{
+    font-family: Zolo, sans-serif;
+    font-size: 4.25vw;
+    font-weight: 500;
+    background: linear-gradient(90deg, #EBA864 1.58%, #F68412 27.31%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+#sectionHero > div > div > h1{
+    font-size: 3.33vw;
+    text-align: center;
+    max-width: 25vw;
+}
+
+#sectionHero > div > div > p{
+    font-size: 0.833vw;
+    text-align: center;
+    max-width: 25vw;
+}
+
+#sectionHero > div > div > div> a > button{
+    transition: 0.3s;
+    border: none;
+    background-color: #F68412;
+    color: #ffffff;
+    width: 12.76vw;
+    max-width: 245px;
+    height: 2.5vw;
+    min-width: 125px;
+    max-height: 48px;
+    min-height: 18px;
+    border-radius: 9px;
+    margin-top: 3%;
+    cursor: pointer;
+}
+
+#sectionHero > div > div > div> a > .btHowtoWork{
+    border: 1px solid #F68412;
+    white-space: nowrap;
+    background-color: transparent;
+    color: #F68412;
+}
+
+#sectionHero > div > div > div> a > button:hover{
+    transition: 0.3s;
+    font-size: 0.8vw;
+    background-color: #cf6a05;
+    color: #ffffff;
+}
+
+#sectionHero > div > div > div> a > .btHowtoWork:hover{
+    font-size: 0.8vw;
+    background-color: transparent;
+    color: #F68412;
+}
+
+#sectionHero > div > img{
+    max-width: 58vw;
+    margin-bottom: 3.1vw;
+}
+
+.qualitys-container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floatQuality{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 5.5vw;
+    height: 1.66vw;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-size: 0.725vw;
+}
+
+.circle{
+    background-color: #F68412;
+    height: 0.625vw;
+    width: 0.625vw;
+    border-radius: 100%;
+}
+
+.q1{
+    top: 20.5vw;
+    right: 25vw;
+}
+
+.q2{
+    top: 29vw;
+    right: 27vw;
+}
+
+.q3{
+    top: 18vw;
+    left: 25vw;
+}
+
+.q4{
+    top: 28vw;
+    left: 27vw;
+}
+
+
+
+
+
+
+
+
+
+#sectionFuncionalidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 150px;
+}
+
+.containerFuncionalidades{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(12, minmax(60px, auto));
+    grid-gap: 25px 100px;
+    justify-items: center;
+    grid-template-areas:
+        "acessoGrafico favoSmartphone bloco1"
+        "acessoGrafico favoSmartphone bloco1"
+        "acessoGrafico favoSmartphone bloco1"
+
+        "acessoGrafico favoSmartphone bloco2"
+        "acessoSimultaneo favoSmartphone bloco2"
+        "acessoSimultaneo favoSmartphone bloco2"
+
+        "acessoSimultaneo favoSmartphone bloco3"
+        "acessoSimultaneo favoSmartphone bloco3"
+        "acessoSimultaneo favoSmartphone bloco3"
+
+        "acessoSimultaneo favoSmartphone bloco4"
+        "acessoSimultaneo favoSmartphone bloco4"
+        "acessoSimultaneo favoSmartphone bloco4";
+}
+
+.textoFuncionalidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.textoFuncionalidades h1{
+    font-family: "Manrope", sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    -webkit-text-fill-color: #000000;
+    background-clip: text;
+    max-width: 70%;
+}
+
+.textoFuncionalidades span{
+    font-family: "Manrope", sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    -webkit-text-fill-color: #000000;
+    background-clip: text;
+}
+
+.textoFuncionalidades p{
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    -webkit-text-fill-color: #929292;
+    background-clip: text;
+    margin-bottom: 64px;
+}
+
+#bloco1Funcionalidades{grid-area: acessoGrafico;;}
+#bloco2Funcionalidades{grid-area: acessoSimultaneo;}
+#favoSmartphone{grid-area: favoSmartphone; display: flex; align-items: center;}
+#bloco3Funcionalidades{grid-area: bloco1;}
+#bloco4Funcionalidades{grid-area: bloco2;}
+#bloco5Funcionalidades{grid-area: bloco3;}
+#bloco6Funcionalidades{grid-area: bloco4;}
+
+.blocosFuncionalidades{
+    background-image: linear-gradient(270deg, #F9F9F9 0%, #EEEEEE 900%);
+    border: solid;
+    border-width: 1px;
+    border-color: #AFAFAF69;
+    border-radius: 25px;
+    min-height: 180px;
+    min-width: 100%;
+}
+
+#imgGrafico{
+    display: block;
+    width: 95%;
+    margin: 0 auto 0;
+}
+
+#imgSimultaneo{
+    display: block;
+    width: 95%;
+    margin: 45px auto 0;
+}
+
+.blocosFuncionalidades .headerBlocoFuncionalidades{
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.blocosFuncionalidades .headerBlocoFuncionalidades p{
+    color: #7E7E7E;
+    background: transparent;
+    padding: 0 0 0 0;
+    margin: 0 0;
+}
+
+.logoBlocoFuncionalidades{
+    margin: 15px 0 15px 15px;
+}
+
+.blocosFuncionalidades > p{
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: 0 15px;
+    padding: 5px 5px 5px 15px;
+    min-height: 85px;
+    text-align: left;
+}
+
+
+
+#Acesso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 150px;
+}
+
+.textoAcesso{
+    margin-bottom: 2vw;
+}
+
+.textoAcesso h1{
+    font-weight: 800;
+    font-size: 3.33vw;
+}
+
+.textoAcesso h1 span{
+    font-weight: 500;
+}
+
+.textoAcesso p{
+    font-size: 1.04vw;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0.42;
+}
+
+.containerAcesso{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2vw;
+}
+
+.blocoAcesso{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    background: linear-gradient(180deg, rgba(31, 35, 45, 1) 0%, rgba(56, 62, 78, 1) 100%);
+    width: 99vw;
+    height: 99vw;
+    max-width: 388px;
+    max-height: 226px;
+    border-radius: 25px;
+    color: #ffffff;
+    padding: 2vw;
+}
+
+.blocoAcesso > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F68412;
+    width: auto;
+    height: 99vw;
+    max-height: 22px;
+    border-radius: 4px;
+    margin-bottom: 1.5vw;
+    white-space: nowrap;
+    padding: 0.2vw 0.5vw;
+}
+
+.blocoAcesso > h1{
+    font-size: 3.33vw;
+    text-align: center;
+    margin: 0;
+}
+
+.blocoAcesso > p{
+    font-size: 0.833vw;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.Favo > h1{
+    font-family: ZOLO, sans-serif;
+    font-weight: 400;
+    font-size: 4.68vw;
+}
+
+.personaAcesso{
+    display: flex;
+    align-items: end;
+    width: auto;
+    height: 99vw;
+    max-height: 823px;
+}
+
+.personaAcesso > div{
+    background: linear-gradient(180deg, rgba(246, 132, 18, 1) 0%, rgba(249, 174, 99, 1) 100%);
+    max-height: 594px;
+    border-radius: 0 0 277px 0;
+}
+
+.personaAcesso > div > img{
+    position: relative;
+    bottom: 12.2vw;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+
+@media (max-width: 768px){
+    .containerAcesso{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
