@@ -49,7 +49,7 @@ li a{
     color: var(--funcional-black);
 }
 
-.selectedTopic{
+.selecionadoHeader{
     font-weight: bolder;
 }
 
@@ -78,7 +78,7 @@ main{
     height: auto;
 }
 
-.hero-section{
+#Hero{
     display: flex;
     justify-content: center;
     width: 99vw;
@@ -86,7 +86,7 @@ main{
     margin-bottom: 150px;
 }
 
-.hero-section > div{
+#Hero > div{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -100,13 +100,13 @@ main{
     border-radius: 2%;
 }
 
-.text-hero{
+.textHero{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.text-hero span{
+.textHero span{
     font-family: Zolo, sans-serif;
     font-size: 4.25vw;
     font-weight: 500;
@@ -117,19 +117,19 @@ main{
 }
 
 
-.hero-section > div > div > h1{
+#Hero > div > div > h1{
     font-size: 3.33vw;
     text-align: center;
     max-width: 25vw;
 }
 
-.hero-section > div > div > p{
+#Hero > div > div > p{
     font-size: 0.833vw;
     text-align: center;
     max-width: 25vw;
 }
 
-.hero-section > div > div > div> a > button{
+#Hero > div > div > div> a > button{
     transition: 0.3s;
     border: none;
     background-color: #F68412;
@@ -145,39 +145,39 @@ main{
     cursor: pointer;
 }
 
-.hero-section > div > div > div> a > .btHowtoWork{
+#Hero > div > div > div> a > .btHowtoWork{
     border: 1px solid #F68412;
     white-space: nowrap;
     background-color: transparent;
     color: #F68412;
 }
 
-.hero-section > div > div > div> a > button:hover{
+#Hero > div > div > div> a > button:hover{
     transition: 0.3s;
     font-size: 0.8vw;
     background-color: #cf6a05;
     color: #ffffff;
 }
 
-.hero-section > div > div > div> a > .btHowtoWork:hover{
+#Hero > div > div > div> a > .btHowtoWork:hover{
     font-size: 0.8vw;
     background-color: transparent;
     color: #F68412;
 }
 
-.hero-section > div > img{
+#Hero > div > img{
     max-width: 58vw;
     margin-bottom: 3.1vw;
 }
 
-.qualitys-container{
+.containerQualidades{
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.floatQuality{
+.floatQualidades{
     position: absolute;
     display: flex;
     align-items: center;
@@ -216,7 +216,15 @@ main{
     left: 27vw;
 }
 
-.age-container{
+
+
+
+
+
+
+
+
+#Funcionalidades{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -224,114 +232,7 @@ main{
     margin: 150px;
 }
 
-.text-about{
-    margin-bottom: 2vw;
-}
-
-.text-about h1{
-    font-weight: 800;
-    font-size: 3.33vw;
-}
-
-.text-about h1 span{
-    font-weight: 500;
-}
-
-.text-about p{
-    font-size: 1.04vw;
-    font-weight: 500;
-    white-space: nowrap;
-    opacity: 0.42;
-}
-
-.age-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 2vw;
-}
-
-.block{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    background: linear-gradient(180deg, rgba(31, 35, 45, 1) 0%, rgba(56, 62, 78, 1) 100%);
-    width: 99vw;
-    height: 99vw;
-    max-width: 388px;
-    max-height: 226px;
-    border-radius: 25px;
-    color: #ffffff;
-    padding: 2vw;
-}
-
-.block > div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #F68412;
-    width: auto;
-    height: 99vw;
-    max-height: 22px;
-    border-radius: 4px;
-    margin-bottom: 1.5vw;
-    white-space: nowrap;
-    padding: 0.2vw 0.5vw;
-}
-
-.block > h1{
-    font-size: 3.33vw;
-    text-align: center;
-    margin: 0;
-}
-
-.block > p{
-    font-size: 0.833vw;
-    text-align: center;
-    opacity: 0.5;
-}
-
-.Favo > h1{
-    font-family: ZOLO, sans-serif;
-    font-weight: 400;
-    font-size: 4.68vw;
-}
-
-.blockPersona{
-    display: flex;
-    align-items: end;
-    width: auto;
-    height: 99vw;
-    max-height: 823px;
-}
-
-.blockPersona > div{
-    background: linear-gradient(180deg, rgba(246, 132, 18, 1) 0%, rgba(249, 174, 99, 1) 100%);
-    max-height: 594px;
-    border-radius: 0 0 277px 0;
-}
-
-.blockPersona > div > img{
-    position: relative;
-    bottom: 12.2vw;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-
-
-
-.funcionalidades{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 150px;
-}
-
-.container-funcionalidades{
+.containerFuncionalidades{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(12, minmax(60px, auto));
@@ -355,23 +256,23 @@ main{
         "acessoSimultaneo favoSmartphone bloco4";
 }
 
-.texto-funcionalidades{
+.textoFuncionalidades{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.texto-funcionalidades h1{
+.textoFuncionalidades h1{
     font-family: "Manrope", sans-serif;
     font-size: 64px;
     font-weight: 700;
     -webkit-text-fill-color: #000000;
     background-clip: text;
-    max-width: 40%;
+    max-width: 70%;
 }
 
-.texto-funcionalidades span{
+.textoFuncionalidades span{
     font-family: "Manrope", sans-serif;
     font-size: 64px;
     font-weight: 400;
@@ -379,7 +280,7 @@ main{
     background-clip: text;
 }
 
-.texto-funcionalidades p{
+.textoFuncionalidades p{
     font-family: "Manrope", sans-serif;
     font-size: 20px;
     font-weight: 100;
@@ -388,15 +289,15 @@ main{
     margin-bottom: 64px;
 }
 
-#acessoGrafico{grid-area: acessoGrafico;;}
-#acessoSimultaneo{grid-area: acessoSimultaneo;}
+#bloco1Funcionalidades{grid-area: acessoGrafico;;}
+#bloco2Funcionalidades{grid-area: acessoSimultaneo;}
 #favoSmartphone{grid-area: favoSmartphone; display: flex; align-items: center;}
-#funcionalidadesBloco1{grid-area: bloco1;}
-#funcionalidadesBloco2{grid-area: bloco2;}
-#funcionalidadesBloco3{grid-area: bloco3;}
-#funcionalidadesBloco4{grid-area: bloco4;}
+#bloco3Funcionalidades{grid-area: bloco1;}
+#bloco4Funcionalidades{grid-area: bloco2;}
+#bloco5Funcionalidades{grid-area: bloco3;}
+#bloco6Funcionalidades{grid-area: bloco4;}
 
-.funcionalidadesBlocos{
+.blocosFuncionalidades{
     background-image: linear-gradient(270deg, #F9F9F9 0%, #EEEEEE 900%);
     border: solid;
     border-width: 1px;
@@ -418,25 +319,25 @@ main{
     margin: 45px auto 0;
 }
 
-.funcionalidadesBlocos .headerBloco{
+.blocosFuncionalidades .headerBlocoFuncionalidades{
     display: flex;
     justify-items: flex-start;
     align-items: center;
     gap: 15px;
 }
 
-.funcionalidadesBlocos .headerBloco p{
+.blocosFuncionalidades .headerBlocoFuncionalidades p{
     color: #7E7E7E;
     background: transparent;
     padding: 0 0 0 0;
     margin: 0 0;
 }
 
-.logo{
+.logoBlocoFuncionalidades{
     margin: 15px 0 15px 15px;
 }
 
-.funcionalidadesBlocos > p{
+.blocosFuncionalidades > p{
     color: #000000;
     background-color: #ffffff;
     border-radius: 20px;
@@ -446,8 +347,263 @@ main{
     text-align: left;
 }
 
-@media (max-width: 768px){
-    .age-grid{
+
+
+#Acesso{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 150px;
+}
+
+.textoAcesso{
+    margin-bottom: 2vw;
+}
+
+.textoAcesso h1{
+    font-weight: 800;
+    font-size: 3.33vw;
+}
+
+.textoAcesso h1 span{
+    font-weight: 500;
+}
+
+.textoAcesso p{
+    font-size: 1.04vw;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0.42;
+}
+
+.containerAcesso{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2vw;
+}
+
+.blocoAcesso{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    background: linear-gradient(180deg, rgba(31, 35, 45, 1) 0%, rgba(56, 62, 78, 1) 100%);
+    width: 99vw;
+    height: 99vw;
+    max-width: 388px;
+    max-height: 226px;
+    border-radius: 25px;
+    color: #ffffff;
+    padding: 2vw;
+}
+
+.blocoAcesso > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F68412;
+    width: auto;
+    height: 99vw;
+    max-height: 22px;
+    border-radius: 4px;
+    margin-bottom: 1.5vw;
+    white-space: nowrap;
+    padding: 0.2vw 0.5vw;
+}
+
+.blocoAcesso > h1{
+    font-size: 3.33vw;
+    text-align: center;
+    margin: 0;
+}
+
+.blocoAcesso > p{
+    font-size: 0.833vw;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.Favo > h1{
+    font-family: ZOLO, sans-serif;
+    font-weight: 400;
+    font-size: 4.68vw;
+}
+
+.personaAcesso{
+    display: flex;
+    align-items: end;
+    width: auto;
+    height: 99vw;
+    max-height: 823px;
+}
+
+.personaAcesso > div{
+    background: linear-gradient(180deg, rgba(246, 132, 18, 1) 0%, rgba(249, 174, 99, 1) 100%);
+    max-height: 594px;
+    border-radius: 0 0 277px 0;
+}
+
+.personaAcesso > div > img{
+    position: relative;
+    bottom: 12.2vw;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+
+#tutorial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 12vw;
+}
+
+.gridTutorial {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    place-items: center;
+}
+
+.coluna1Tutorial {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.blocosTutorial {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.226);
+    border-radius: 25px;
+    max-width: 752px;
+}
+
+.numeroTutorial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F68412;
+    padding: 0.3vw 0.7vw;
+    max-width: 46px;
+    max-height: 46px;
+    border-radius: 100%;
+    color: #ffffff;
+    font-weight: 700;
+    margin-left: 1vw;
+}
+
+.infoTutorial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.i1 {
+    flex-direction: column;
+    align-items: start;
+    margin-top: 1vw;
+}
+
+.i1 > img{
+    width: 34.48vw;
+    height: 9.37vw;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.i2 > img{
+    width: 23.07vw;
+    height: 7.13vw;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.i3 > img{
+    width: 14.47vw;
+    height: 7.55vw;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.infoTutorial>p {
+    font-size: 1.25vw;
+    font-weight: 800;
+    text-align: start;
+    max-width: 320px;
+    margin-left: 1vw;
+}
+
+.coluna2Tutorial {
+    background: radial-gradient(100% 100% at 50% 100%, rgba(246, 132, 18, 0.37) 41.36%, #F68412 100%);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 99vw;
+    width: 99vw;
+    max-width: 670px;
+    max-height: 624px;
+}
+
+.lastTopic {
+    display: flex;
+    gap: 1vw;
+    margin-top: 1vw;
+}
+
+.containerLastTutorial>.lastTopic>.numeroTutorial {
+    background-color: #ffffff;
+    color: #F68412;
+}
+
+.i4 {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.containerLastTutorial > img{
+    width: 34.89vw;
+    height: 26.40vw;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#tutorial > a > button{
+    transition: 0.5s;
+    border: 1px solid #F68412;
+    background: linear-gradient(to left, rgba(246, 132, 18, 0) 50%, #F68412 50%);
+    background-size: 200%;
+    background-position: right;
+    color: #F68412;
+    width: 50vw;
+    padding: 0.6vw;
+    border-radius: 12px;
+    margin-top: 2vw;
+    cursor: pointer;
+}
+
+#tutorial > a > button:hover{
+    transition: 0.5s;
+    background-position: left;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .age-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .tutorial-grid {
         grid-template-columns: repeat(1, 1fr);
     }
 }

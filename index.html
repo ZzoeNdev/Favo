@@ -1,154 +1,260 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
     <title>Favo | Seu Site Favorito</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <nav>
-            <a href=""><img src="imgs/FavoLogoOrange.png" alt=""></a>
-            <ul>
-                <li class="selectedTopic" id="topicHeader"><a href="#">Home</a></li>
-                <li class="" id="topicHeader"><a href="#">Funcionalidades</a></li>
-                <li class="" id="topicHeader"><a href="#">Produtividade</a></li>
-                <li class="" id="topicHeader"><a href="#">Como Acessar</a></li>
-                <li class="" id="topicHeader"><a href="#">Sobre Nós</a></li>
-            </ul>
-            <a href="#"><button class="acPanel">Acessar Painel</button></a>
-        </nav>
+      <nav>
+        <a href=""><img src="imgs/FavoLogoOrange.png" alt="" /></a>
+        <ul>
+          <li class="selecionadoHeader" id="topicoHeader">
+            <a href="#Hero">Home</a>
+          </li>
+          <li class="" id="topicoHeader">
+            <a href="#Funcionalidades">Funcionalidades</a>
+          </li>
+          <li class="" id="topicoHeader"><a href="#Acesso">Produtividade</a></li>
+          <li class="" id="topicoHeader"><a href="#tutorial">Como Acessar</a></li>
+          <li class="" id="topicoHeader"><a href="#">Sobre Nós</a></li>
+        </ul>
+        <a href="#"><button class="acPanel">Acessar Painel</button></a>
+      </nav>
     </header>
 
     <main>
-        <div class="hero-section">
+      <section id="Hero">
+        <div>
+          <div class="textHero">
+            <h1>Se reorganize bem com <span>Favo</span></h1>
+            <p>Não deixe a oportunidade de economizar na conta de energia</p>
             <div>
-                <div class="text-hero">
-                    <h1>Se reorganize bem com <span>Favo</span></h1>
-                    <p>Não deixe a oportunidade de economizar na conta de energia</p>
-                    <div>
-                        <a href="#"><button class="btDashboard">Usar Favo</button></a>
-                        <a href="#"><button class="btHowtoWork">Como Funciona?</button></a>
-                    </div>
-                </div>
-
-                <img src="imgs/laptopHero.png" alt="">
-                <div class="qualitys-container">
-                    <div class="floatQuality q1">
-                        <div class="circle"></div>Qualidade
-                    </div>
-                    <div class="floatQuality q2">
-                        <div class="circle"></div>Organizado
-                    </div>
-                    <div class="floatQuality q3">
-                        <div class="circle"></div>Confiança
-                    </div>
-                    <div class="floatQuality q4">
-                        <div class="circle"></div>Agilidade
-                    </div>
-                </div>
+              <a href="#"><button class="btDashboard">Usar Favo</button></a>
+              <!-- Registrar Conta -->
+              <a href="#"
+                ><button class="btHowtoWork">Como Funciona?</button></a
+              >
+              <!-- Leva mais para baixo na página-->
             </div>
+          </div>
+          <img src="imgs/laptopHero.png" alt="" />
+          <div class="containerQualidades">
+            <div class="floatQualidades q1">
+              <div class="circle"></div>
+              Qualidade
+            </div>
+            <div class="floatQualidades q2">
+              <div class="circle"></div>
+              Organizado
+            </div>
+            <div class="floatQualidades q3">
+              <div class="circle"></div>
+              Confiança
+            </div>
+            <div class="floatQualidades q4">
+              <div class="circle"></div>
+              Agilidade
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="funcionalidades">
-            <div class="texto-funcionalidades">
-                <h1>Nunca é <span>tarde</span> demais para <span>começar</span>.</h1>
-                <p>Tenha acesso ao melhor organizador de energia para facilidade da sua vida.</p>
-            </div>
-    <!-- Coluna 1 -->
-                <div class="container-funcionalidades">
-                        <div class="funcionalidadesBlocos" id="acessoGrafico"><!--Acesso ao Gráfico-->
-                            <div class="headerBloco">
-                                <img class="logo" src="imgs/graficosLogo.png" alt="">
-                                <p>Tenha acesso a Graficos para sua comodidade</p>
-                            </div>
-                            <img id="imgGrafico" src="imgs/favoGrafico.png" alt="">
-                        </div>
-
-                        <div class="funcionalidadesBlocos" id="acessoSimultaneo"><img id="imgSimultaneo" src="imgs/acessoSimultaneo.png" alt=""></div><!--Acesso Simultâneo-->
-    <!-- Coluna 2 -->
-                        <div id="favoSmartphone">
-                            <div><img src="imgs/favoSmartphone.png" alt=""></div>
-                        </div>
-    <!-- Coluna 3 -->
-                        <div class="funcionalidadesBlocos" id="funcionalidadesBloco1"><!--bloco 1-->
-                            <div class="headerBloco">
-                                <img class="logo" src="imgs/eletrodomesticosLogo.png" alt="">
-                                <p>Eletrodomésticos</p>
-                            </div>
-                            <p>Tenha total acesso para o cadastro de organização de seus eletrodomésticos</p>
-                        </div>
-
-                        <div class="funcionalidadesBlocos" id="funcionalidadesBloco2"><!--bloco 2-->
-                            <div class="headerBloco">
-                                <img class="logo" src="imgs/informacoesLogo.png" alt="">
-                                <p>Informações</p>
-                            </div>
-                            <p>Dashboard 100% organizado e facilitado para o seu uso sem confusões</p>
-                        </div>
-
-                        <div class="funcionalidadesBlocos" id="funcionalidadesBloco3"><!--bloco 3-->
-                            <div class="headerBloco">
-                                <img class="logo" src="imgs/valoresLogo.png" alt="">
-                                <p>Valores</p>
-                            </div>
-                            <p>Seus gastos juntos em um só lugar, atualizados para você dia em dia</p>
-                        </div>
-
-                        <div class="funcionalidadesBlocos" id="funcionalidadesBloco4"><!--bloco 4-->
-                            <div class="headerBloco">
-                                <img class="logo" src="imgs/gratisLogo.png" alt="">
-                                <p>Grátis ou Premium</p>
-                            </div>
-                            <p>Uso 100% gratuito para sua comodidade e organização de sua própria casa</p>
-                        </div>
-                </div>
+      <section id="Funcionalidades">
+        <div class="textoFuncionalidades">
+          <h1>Nunca é <span>tarde</span> demais para <span>começar</span>.</h1>
+          <p>
+            Tenha acesso ao melhor organizador de energia para facilidade da sua
+            vida.
+          </p>
         </div>
-
-        <div class="age-container">
-            <div class="text-about">
-                <h1>De <span>poucos</span> para <span>muitos</span></h1>
-                <p>Tenha o melhor organizador de energia para facilidade da sua vida</p>
+        <!-- Coluna 1 -->
+        <div class="containerFuncionalidades">
+          <div class="blocosFuncionalidades" id="bloco1Funcionalidades">
+            <!--Acesso ao Gráfico-->
+            <div class="headerBlocoFuncionalidades">
+              <img
+                class="logoBlocoFuncionalidades"
+                src="imgs/graficosLogo.png"
+                alt=""
+              />
+              <p>Tenha acesso a Graficos para sua comodidade</p>
             </div>
-            <div class="age-grid">
-                <div class="block Every">
-                    <div>
-                        <p>A todos</p>
-                    </div>
-                    <p>Acesso ao sistema Favo a</p>
-                    <h1>Todas</h1>
-                    <p>as pessoas, sem limitações</p>
-                </div>
+            <img id="imgGrafico" src="imgs/favoGrafico.png" alt="" />
+          </div>
 
-                <div class="blockPersona">
-                    <div>
-                        <img src="imgs/Woman.png" alt="">
-                    </div>
-
-                </div>
-
-                <div class="block Favo">
-                    <div>
-                        <p>Sem limites</p>
-                    </div>
-                    <p>Aproveite as funcionalidades presentes na</p>
-                    <h1>Favo</h1>
-                    <p>sem limites e 24h a seu favor</p>
-                </div>
+          <div class="blocosFuncionalidades" id="bloco2Funcionalidades">
+            <img id="imgSimultaneo" src="imgs/acessoSimultaneo.png" alt="" />
+          </div>
+          <!--Acesso Simultâneo-->
+          <!-- Coluna 2 -->
+          <div id="favoSmartphone">
+            <img src="imgs/favoSmartphone.png" alt="" />
+          </div>
+          <!-- Coluna 3 -->
+          <div class="blocosFuncionalidades" id="bloco3Funcionalidades">
+            <!--bloco 1-->
+            <div class="headerBlocoFuncionalidades">
+              <img
+                class="logoBlocoFuncionalidades"
+                src="imgs/eletrodomesticosLogo.png"
+                alt=""
+              />
+              <p>Eletrodomésticos</p>
             </div>
+            <p>
+              Tenha total acesso para o cadastro de organização de seus
+              eletrodomésticos
+            </p>
+          </div>
+
+          <div class="blocosFuncionalidades" id="bloco4Funcionalidades">
+            <!--bloco 2-->
+            <div class="headerBlocoFuncionalidades">
+              <img
+                class="logoBlocoFuncionalidades"
+                src="imgs/informacoesLogo.png"
+                alt=""
+              />
+              <p>Informações</p>
+            </div>
+            <p>Dashboard 100% organizado e facilitado para o seu uso sem confusões</p>
+          </div>
+
+          <div class="blocosFuncionalidades" id="bloco5Funcionalidades">
+            <!--bloco 3-->
+            <div class="headerBlocoFuncionalidades">
+              <img
+                class="logoBlocoFuncionalidades"
+                src="imgs/valoresLogo.png"
+                alt=""
+              />
+              <p>Valores</p>
+            </div>
+            <p>
+              Seus gastos juntos em um só lugar, atualizados para você dia em
+              dia
+            </p>
+          </div>
+
+          <div class="blocosFuncionalidades" id="bloco6Funcionalidades">
+            <!--bloco 4-->
+            <div class="headerBlocoFuncionalidades">
+              <img
+                class="logoBlocoFuncionalidades"
+                src="imgs/gratisLogo.png"
+                alt=""
+              />
+              <p>Grátis ou Premium?</p>
+            </div>
+            <p>
+              Uso 100% gratuito para sua comodidade e organização de sua própria
+              casa
+            </p>
+          </div>
         </div>
+      </section>
+
+      <section id="Acesso">
+        <div class="textoAcesso">
+          <h1>De <span>poucos</span> para <span>muitos</span></h1>
+          <p>
+            Tenha o melhor organizador de energia para facilidade da sua vida
+          </p>
+        </div>
+        <div class="containerAcesso">
+          <div class="blocoAcesso">
+            <div>
+              <p>A todos</p>
+            </div>
+            <p>Acesso ao sistema Favo a</p>
+            <h1>Todas</h1>
+            <p>as pessoas, sem limitações</p>
+          </div>
+          <div class="personaAcesso">
+            <div>
+              <img src="imgs/Woman.png" alt="" />
+            </div>
+          </div>
+          <div class="blocoAcesso Favo">
+            <div>
+              <p>Sem limites</p>
+            </div>
+            <p>Aproveite as funcionalidades presentes na</p>
+            <h1>Favo</h1>
+            <p>sem limites e 24h a seu favor</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tutorial">
+        <div class="textoTutorial">
+          <h1>Passos <span>simples</span> para não se <span>perder</span></h1>
+          <p>
+            Tenha acesso ao melhor organizador de energia para facilidade da sua
+            vida
+          </p>
+        </div>
+        <div class="gridTutorial">
+          <div class="coluna1Tutorial">
+            <div class="blocosTutorial c1">
+              <div class="numeroTutorial">
+                <p>1</p>
+              </div>
+              <div class="infoTutorial i1">
+                <p>Faça o seu Cadastro ou Login no Sistema</p>
+                <img src="imgs/laptopT1.png" alt="" />
+              </div>
+            </div>
+
+            <div class="blocosTutorial c2">
+              <div class="numeroTutorial">
+                <p>2</p>
+              </div>
+              <div class="infoTutorial i2">
+                <p>Adicione seu primeiro eletrodoméstico</p>
+                <img src="imgs/laptopT2.png" alt="" />
+              </div>
+            </div>
+
+            <div class="blocosTutorial c3">
+              <div class="numeroTutorial">
+                <p>3</p>
+            </div>
+              <div class="infoTutorial i3">
+                <p>Verifique os dados de seus gastos</p>
+                <img src="imgs/laptopT3.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="coluna2Tutorial">
+            <div class="lastTopic">
+              <div class="numeroTutorial">
+                <p>4</p>
+              </div>
+              <div class="infoTutorial i4">
+                <p>Aproveite</p>
+              </div>
+            </div>
+            <img src="imgs/laptopT4.png" alt="" />
+          </div>
+        </div>
+        <a href="#"><button>Começar Agora</button></a>
+      </section>
     </main>
 
     <script src="scripts.js"></script>
 
     <!-- TESTE -->
-</body>
-
+  </body>
 </html>
