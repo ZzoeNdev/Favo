@@ -13,8 +13,8 @@ function App() {
       <CardHeader />
 
       <div className='flex flex-col items-center md:items-start md:w-screen mt-10'>
-        <p className='text-orange-500 font-medium text-xs'>CÔMODOS</p>
-        <h1 className='font-bold text-3xl'>Verifique seus Cômodos</h1>
+        <p className='text-orange-500 font-bold text-xs'>CÔMODOS</p>
+        <h1 className='font-extrabold text-3xl'>Verifique seus Cômodos</h1>
       </div>
 
       <Painel />

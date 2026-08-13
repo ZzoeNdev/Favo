@@ -16,8 +16,8 @@ function CardHeader() {
 
                     <div className="mt-10">
                         <p className="text-xs text-black/40 font-medium">{card.titulo}</p>
-                        <p className="text-3xl font-bold">{card.valor} <span className="text-xl">{card.tipo}</span></p>
-                        <p className="bg-green-200/70 text-green-900 font-medium text-sm rounded-md text-center w-fit">{card.economia}</p>
+                        <p className="text-3xl font-extrabold">{card.valor} <span className="text-xl">{card.tipo}</span></p>
+                        <p className="bg-green-200/70 text-green-900 font-bold text-sm rounded-md text-center w-fit">{card.economia}</p>
 
                     </div>
                 </div>

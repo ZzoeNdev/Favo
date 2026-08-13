@@ -1,4 +1,3 @@
-import ButtonPainel from "./ButtonPainel";
 import Grafico from './Grafico'
 import { useState } from "react";
 
@@ -60,7 +59,7 @@ function Painel() {
                                 </div>
 
                                 <div>
-                                    <h2 className="font-bold text-lg">{obj.watts}W</h2>
+                                    <h2 className="font-extrabold text-lg">{obj.watts}W</h2>
                                 </div>
                             </div>
                         </div>

@@ -15,14 +15,14 @@ function Header() {
                 <div className="flex items-center gap-2">
                     <div className="text-white text-xs">CUSTO DE ENERGIA</div>
                     <div className="flex gap-2">
-                        <div className="flex items-center gap-3 pl-2 bg-white/12 border border-white/20 backdrop-blur-sm rounded-3xl shadow-md w-30 md:w-150 h-6">
+                        <div className="flex items-center gap-2 pl-2 pr-2 bg-white/12 border border-white/20 backdrop-blur-sm rounded-3xl shadow-md w-30 md:w-150 h-6">
                             <div className="bg-green-400 h-3 w-3 rounded-4xl"></div>
-                            <p className="text-white text-xs">Bandeira Verde</p>
+                            <p className="text-white text-xs whitespace-nowrap">Bandeira Verde</p>
                         </div>
                         <div className="flex items-center justify-center bg-white/12 border border-white/20 backdrop-blur-sm rounded-4xl text-white shadow-md w-6 md:w-150 h-6 text-xs">?</div>
                     </div>
                 </div>
-                <h1 className="text-5xl text-white font-bold">R$ 84,07</h1>
+                <h1 className="text-5xl text-white font-extrabold">R$ 84,07</h1>
                 <div className="text-white text-xs mt-1">Estimativa baseada no seu consumo atual</div>
             </div>
         </div>
