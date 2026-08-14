@@ -112,7 +112,7 @@ function Grafico({comodo}) {
   ]
 }
     return (
-        <ResponsiveContainer width="100%" height={140}>
+        <ResponsiveContainer width="100%" height="300">
             <AreaChart data={dados[comodo]} className="mt-8">
 
                 <defs>
@@ -129,7 +129,7 @@ function Grafico({comodo}) {
                 <Area type="natural" stroke="transparent" fill="url(#colorMesAnterior)" fillOpacity={1} dataKey="mesAnterior" />
                 <Area type="natural" stroke="transparent" fill="url(#colorMesAtual)" fillOpacity={1} dataKey="mesAtual" />
                 <XAxis dataKey="x" tick={{ fill: '#B2B2B2', fontSize: 12, fontWeight: 'light' }} tickLine={false} axisLine={false} />
-                <YAxis domain={[0,'dataMax']} tick={{ fill: '#B2B2B2', fontSize: 12, fontWeight: 'light' }} tickLine={false} axisLine={false} tickCount={8} width={20}/>
+                <YAxis domain={[0,120]} tick={{ fill: '#B2B2B2', fontSize: 12, fontWeight: 'light' }} tickLine={false} axisLine={false} tickCount={8} width={20}/>
                 <CartesianGrid stroke="#e4e4e4" horizontal={true} vertical={false} />
             </AreaChart>
         </ResponsiveContainer>

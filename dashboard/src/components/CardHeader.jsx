@@ -6,22 +6,25 @@ function CardHeader() {
     ];
 
     return (
-        <div className="flex flex-col md:flex-row items-center md:justify-center gap-4 -mt-20 md:-mt-40">
-            {Cards.map(card => (
-                <div className="bg-white shadow-md w-75 h-50 p-5 rounded-xl">
-                    <div className="flex justify-between items-center">
-                        <div className="flex items-center justify-center bg-gray-400/20 w-8 h-8 rounded-lg"><img className="h-fit w-4" src={card.icone} alt="" /></div>
-                        <p className="text-xs text-black/20 font-bold">{card.secao}</p>
-                    </div>
+        <div className="md:absolute md:top-[40%] md:left-1/2 md:-translate-x-1/2 md:translate-y-1/2 flex flex-col md:flex-row items-center -mt-20 md:mt-0 md:justify-around md:w-[90%] gap-4">
+            {Cards.map(card => {
+                const Eletro = card.valor === "Micro-ondas"
+                return (
+                    <div className="bg-white shadow-md w-75 md:w-109 h-50 md:h-65 p-5 rounded-xl md:scale-[120%]">
+                        <div className="flex justify-between items-center">
+                            <div className="flex items-center justify-center bg-gray-400/20 w-8 h-8 rounded-lg"><img className="h-fit w-4" src={card.icone} alt="" /></div>
+                            <p className="text-xs text-black/20 font-bold">{card.secao}</p>
+                        </div>
 
-                    <div className="mt-10">
-                        <p className="text-xs text-black/40 font-medium">{card.titulo}</p>
-                        <p className="text-3xl font-extrabold">{card.valor} <span className="text-xl">{card.tipo}</span></p>
-                        <p className="bg-green-200/70 text-green-900 font-bold text-sm rounded-md text-center w-fit">{card.economia}</p>
+                        <div className="mt-10 md:mt-13">
+                            <p className="text-xs text-black/40 font-medium">{card.titulo}</p>
+                            <p className={Eletro ? "text-3xl md:text-5xl font-extrabold" : "text-3xl md:text-6xl font-extrabold"}>{card.valor}<span className="text-xl">{card.tipo}</span></p>
+                            <p className="bg-green-200/70 text-green-900 font-bold text-sm rounded-md text-center w-fit md:mt-3">{card.economia}</p>
 
+                        </div>
                     </div>
-                </div>
-            ))}
+                )
+            })}
         </div>
     )
 }
