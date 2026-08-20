@@ -1,6 +1,6 @@
 function Nav() {
   
-  const sections=['Home', 'Funcionalidades', 'Produtividade', 'Como Acessar', 'Sobre Nós']
+  const sections=['Home', 'Funcionalidades', 'Produtividade', 'Como_Acessar', 'Sobre_Nós']
   
 
   return (
