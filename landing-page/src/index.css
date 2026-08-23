@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@font-face {
+  font-family: "Zolo";
+  src: url("./assets/ZoloRegular-BLrp8.ttf") format("truetype");
+}
+
+@theme {
+  --font-family-manrope: "Manrope", sans-serif;
+  --font-family-zolo: "Zolo", sans-serif;
+}
+
+* {
+  font-family: "Manrope", sans-serif;
+}

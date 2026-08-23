@@ -1,8 +1,8 @@
-function Textos({ h1, p }) {  // ← recebe as props aqui
+function Textos({ h1, p }) {
   return (
-    <div>
-      {h1}
-      {p}
+    <div className="flex flex-col items-center">
+      <h1 className="font-bold text-[2rem] md:text-[4rem] text-center max-w-[90vw] md:max-w-[30rem]">{h1}</h1>
+      <p className="text-[1rem]  text-center max-w-[90vw] md:max-w-[30rem]">{p}</p>
     </div>
   )
 }
