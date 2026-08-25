@@ -5,7 +5,7 @@ function Forms() {
     const [modo, setModo] = useState("login")
 
     return (
-        <div className={modo === "login" ? "flex flex-col md:flex-row bg-gradient-to-r from-[#B2B2B2]/12 to-[white]/12 border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] m-9 md:ml-120 md:mr-120 h-133 transition-all duration-800" : "flex flex-col md:flex-row md:justify-between bg-gradient-to-r from-[#B2B2B2]/12 to-[white]/12 border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] m-9 md:ml-120 md:mr-120 h-148 transition-all duration-800"}>
+        <div className={modo === "login" ? "flex flex-col md:flex-row bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] h-133 transition-all duration-800 md:w-[50%]" : "flex flex-col md:flex-row md:justify-between bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] h-148 transition-all duration-800"}>
             <form className={modo === "login" ? "order-1 relative bg-white p-6 md:p-10 rounded-[12px_12px_0px_0px] md:rounded-[12px_0px_0px_12px] md:w-[50%]" : "order-2 relative bg-white p-6 md:p-10 rounded-[0px_0px_12px_12px] md:rounded-[0px_12px_12px_0px] md:w-[50%]"} action="" method="post">
 
                 <h1 className="text-3xl md:text-4xl font-semibold md:mt-3">{modo === "login" ? "Acesse sua conta" : "Crie sua conta"}</h1>
@@ -13,23 +13,23 @@ function Forms() {
 
                 <div className={modo === "cadastro" ? "inline" : "hidden"}>
                     <p className="text-xs font-semibold"> Nome Completo <span className="text-[#F68412]">*</span></p>
-                    <input className="border border-[#C3C3C3] bg-[#E7E7E7] text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="email" placeholder="ex, Vinícius..." name="" id="" />
+                    <input className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="email" placeholder="ex, Vinícius..." name="" id="" />
                 </div>
 
                 <div className="mt-3">
                     <p className="text-xs font-semibold"> Email <span className="text-[#F68412]">*</span></p>
-                    <input className="border border-[#C3C3C3] bg-[#E7E7E7] text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="email" placeholder="ex, vinicius@..." name="" id="" />
+                    <input className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="email" placeholder="ex, vinicius@..." name="" id="" />
                 </div>
 
                 <div className={modo === "cadastro" ? "flex w-full gap-2 mt-3" : "mt-3"}>
                     <div>
                         <p className="text-xs font-semibold"> Senha <span className="text-[#F68412]">*</span></p>
-                        <input className="border border-[#C3C3C3] bg-[#E7E7E7] text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="password" placeholder="Insira sua senha" name="" id="" />
+                        <input className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="password" placeholder="Insira sua senha" name="" id="" />
                     </div>
 
                     <div className={modo === "cadastro" ? "inline" : "hidden"}>
                         <p className="text-xs font-semibold"> Senha <span className="text-[#F68412]">*</span></p>
-                        <input className="border border-[#C3C3C3] bg-[#E7E7E7] text-black/40 rounded-md p-1 md:p-2 md:w-[108%] text-sm" type="password" placeholder="Insira sua senha" name="" id="" />
+                        <input className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 md:w-[100%] text-sm" type="password" placeholder="Insira sua senha" name="" id="" />
                     </div>
                 </div>
 
@@ -45,7 +45,7 @@ function Forms() {
                 <img src="../assets/favoWLogo.png" alt="Favo Logo" className="h-2 md:h-4" />
                 <h1 className="text-white text-4xl md:text-5xl w-60 md:w-70 font-semibold mt-2 md:mt-6">{modo === "login" ? "Ainda não tem conta?" : "Já tem sua conta?"}</h1>
                 <p className="text-sm md:text-lg text-white">{modo === "login" ? "Clique e crie a sua agora!" : "Acesse sua conta agora!"}</p>
-                <button className="border border-[#F8F8F8]/35 text-sm text-white p-2 md:p-4 w-full md:w-[139%] rounded-lg mt-5" onClick={() => setModo(modo === "login" ? "cadastro" : "login")}>{modo === "login" ? "Fazer Cadastro" : "Fazer Log-in"}</button>
+                <button className="border border-[#F8F8F8]/35 text-sm text-white p-2 md:p-4 w-full md:w-[110%] rounded-lg mt-5" onClick={() => setModo(modo === "login" ? "cadastro" : "login")}>{modo === "login" ? "Fazer Cadastro" : "Fazer Log-in"}</button>
             </div>
         </div>
 

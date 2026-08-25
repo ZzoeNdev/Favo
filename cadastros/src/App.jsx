@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 function App() {
 
   return (
-    <div className='flex flex-col justify-between w-screen h-screen bg-gradient-to-br from-[#FFA74F] to-[#F68412]'>
+    <div className='flex flex-col items-center justify-between w-screen h-screen bg-gradient-to-br from-[#FFA74F] to-[#F68412]'>
       <Header />
       <Forms />
       <Footer />
