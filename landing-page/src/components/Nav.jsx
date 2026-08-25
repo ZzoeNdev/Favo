@@ -34,7 +34,7 @@ function Nav() {
   return (
     <>
       {/* ── Mobile: topo com logo e botão ── */}
-      <header className="md:hidden flex items-center justify-between w-full px-6 py-3 bg-white border-b border-gray-100">
+      <header className="md:hidden fixed left-0 right-0 top-0 flex items-center justify-between w-full px-6 py-3 bg-white border-b border-gray-100">
         <a href="#Home">
           <img src={Logo} alt="Logo Favo" className="max-w-[84px] max-h-[41px] cursor-pointer" />
         </a>
