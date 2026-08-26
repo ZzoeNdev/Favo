@@ -34,16 +34,19 @@ function App() {
           h1={<><h1>Nunca é <span>tarde</span> demais para <span>começar</span>.</h1></>}
           p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
         />
-        <div className="flex w-[100%]">
-          <div className="flex flex-col gap-5 justify-center">
+        <div className="flex justify-center w-[100%] gap-[15px] md:gap-[100px] mt-[3rem]">
+          <div className="flex flex-col w-[50%] md:w-[30%] gap-2 md:gap-5 align-center justify-center">
             <BlocoFuncionalidade
               titulo="Gráficos"
               logo={"./src/assets/graficosLogo.png"}
               texto="Tenha total acesso para o cadastro de organização de seus eletrodomésticos"
-              tipo="normal"
+              tipo="grafico"
             />
           </div>
-          <div className="flex flex-col gap-5 justify-center">
+          <div className="hidden md:flex md:justify-center">
+            <img className="h-[720px]" src="../src/assets/favoSmartphone.png"/>
+          </div>
+          <div className="flex flex-col w-[50%] md:w-[30%] gap-2 md:gap-5 align-center justify-center">
           <BlocoFuncionalidade
             titulo="Eletrodomésticos"
             logo={"./src/assets/eletrodomesticosLogo.png"}
