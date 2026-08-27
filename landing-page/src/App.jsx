@@ -6,6 +6,7 @@ import Botao from "./components/Botao.jsx"
 import Textos from "./components/Textos.jsx"
 import HeroImagem from "./components/HeroImagem.jsx"
 import BlocoFuncionalidade from "./components/BlocoFuncionalidade.jsx"
+import BlocoGrafico from "./components/BlocoGrafico.jsx"
 
 function App() {
 
@@ -36,12 +37,9 @@ function App() {
         />
         <div className="flex justify-center w-[100%] gap-[15px] md:gap-[100px] mt-[3rem]">
           <div className="flex flex-col w-[50%] md:w-[30%] gap-2 md:gap-5 align-center justify-center">
-            <BlocoFuncionalidade
-              titulo="Gráficos"
-              logo={"./src/assets/graficosLogo.png"}
-              texto="Tenha total acesso para o cadastro de organização de seus eletrodomésticos"
-              tipo="grafico"
-            />
+            <BlocoGrafico
+            titulo="Tenha acesso a Gráficos para sua comodidade"
+            logo={"./src/assets/graficosLogo.png"}/>
           </div>
           <div className="hidden md:flex md:justify-center">
             <img className="h-[720px]" src="../src/assets/favoSmartphone.png"/>

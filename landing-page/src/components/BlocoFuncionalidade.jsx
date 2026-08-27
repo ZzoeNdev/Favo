@@ -10,13 +10,7 @@ function BlocoFuncionalidade({titulo, logo, texto, tipo}) {
         <img src={logo} className="max-w-[25px] max-h-[25px] md:max-w-[45px] md:max-h-[45px]" />
         <h3 className="text-[#7E7E7E]">{titulo}</h3>
       </div>
-
-      {tipo === "normal" && (
         <p className="bg-white rounded-[10px] md:p-2 md:h-20">{texto}</p>
-      )}
-      {tipo === "grafico" && (
-        <img className="w-[100%]" src="../src/assets/favoGrafico.png" />
-      )}
     </div>
   )
 }
