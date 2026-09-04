@@ -3,6 +3,35 @@ import { useState } from "react"
 function Forms() {
 
     const [modo, setModo] = useState("login")
+    const [nome, setNome] = useState("")
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
+
+    function enviarCadastro(){
+        fetch("http://localhost/api/cadastros.php", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({nome: nome, email:email, senha:senha})
+        })
+        .then(resposta => resposta.json())
+        .then(json => {
+            console.log(json.message)
+        })
+    }
+
+    function enviarLogin(){
+        fetch("http://localhost/api/logins.php", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            credentials: "include",
+            body: JSON.stringify({email:email, senha:senha})
+        })
+        .then(resposta => resposta.json())
+        .then(json => {
+            console.log(json.message)
+        })
+    }
+    
 
     return (
         <div className={modo === "login" ? "flex flex-col md:flex-row bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] h-133 transition-all duration-800 md:w-[50%]" : "flex flex-col md:flex-row md:justify-between bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] h-148 transition-all duration-800"}>
@@ -13,18 +42,18 @@ function Forms() {
 
                 <div className={modo === "cadastro" ? "inline" : "hidden"}>
                     <p className="text-xs font-semibold"> Nome Completo <span className="text-[#F68412]">*</span></p>
-                    <input className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="email" placeholder="ex, Vinícius..." name="" id="" />
+                    <input value={nome} onChange={(e) => setNome(e.target.value)} className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="text" placeholder="ex, Vinícius..." id="" />
                 </div>
 
                 <div className="mt-3">
                     <p className="text-xs font-semibold"> Email <span className="text-[#F68412]">*</span></p>
-                    <input className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="email" placeholder="ex, vinicius@..." name="" id="" />
+                    <input value={email} onChange={(z) => setEmail(z.target.value)} className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="email" placeholder="ex, vinicius@..." id="" />
                 </div>
 
                 <div className={modo === "cadastro" ? "flex w-full gap-2 mt-3" : "mt-3"}>
                     <div>
                         <p className="text-xs font-semibold"> Senha <span className="text-[#F68412]">*</span></p>
-                        <input className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="password" placeholder="Insira sua senha" name="" id="" />
+                        <input value={senha} onChange={(g) => setSenha(g.target.value)} className="border border-[#C3C3C3] bg-[#E7E7E7] text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="password" placeholder="Insira sua senha" id="" />
                     </div>
 
                     <div className={modo === "cadastro" ? "inline" : "hidden"}>
@@ -33,7 +62,7 @@ function Forms() {
                     </div>
                 </div>
 
-                <button className="bg-[#F68412] text-white text-xs p-2 md:p-4 w-full rounded-lg mt-6">{modo === "login" ? "Acessar Conta" : "Criar Conta"}</button>
+                <button type="button" onClick={modo === "cadastro" ? enviarCadastro : enviarLogin} className="bg-[#F68412] text-white text-xs p-2 md:p-4 w-full rounded-lg mt-6">{modo === "login" ? "Acessar Conta" : "Criar Conta"}</button>
 
                 <div className="h-[1px] w-full bg-gray-300 mt-3"></div>
 
