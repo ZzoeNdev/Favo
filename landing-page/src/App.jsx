@@ -7,6 +7,7 @@ import Textos from "./components/Textos.jsx"
 import HeroImagem from "./components/HeroImagem.jsx"
 import BlocoFuncionalidade from "./components/BlocoFuncionalidade.jsx"
 import BlocoGrafico from "./components/BlocoGrafico.jsx"
+import BlocoImagem from "./components/BlocoImagem.jsx"
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
             <BlocoGrafico
             titulo="Tenha acesso a Gráficos para sua comodidade"
             logo={"./src/assets/graficosLogo.png"}/>
+            <BlocoImagem/>
           </div>
           <div className="hidden md:flex md:justify-center">
             <img className="h-[720px]" src="../src/assets/favoSmartphone.png"/>

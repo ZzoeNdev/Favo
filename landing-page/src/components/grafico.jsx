@@ -2,26 +2,26 @@ import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianG
 
 function Grafico() {
     const dados = [
-    { x: 1, mesAtual: 5, mesAnterior: 8 }, { x: 2, mesAtual: 8, mesAnterior: 12 },
-    { x: 3, mesAtual: 12, mesAnterior: 20 }, { x: 4, mesAtual: 18, mesAnterior: 45 },
-    { x: 5, mesAtual: 22, mesAnterior: 58 }, { x: 6, mesAtual: 20, mesAnterior: 55 },
-    { x: 7, mesAtual: 18, mesAnterior: 35 }, { x: 8, mesAtual: 20, mesAnterior: 22 },
-    { x: 9, mesAtual: 28, mesAnterior: 18 }, { x: 10, mesAtual: 42, mesAnterior: 15 },
-    { x: 11, mesAtual: 38, mesAnterior: 14 }, { x: 12, mesAtual: 32, mesAnterior: 18 },
-    { x: 13, mesAtual: 30, mesAnterior: 28 }, { x: 14, mesAtual: 55, mesAnterior: 25 },
-    { x: 15, mesAtual: 55, mesAnterior: 22 }, { x: 16, mesAtual: 60, mesAnterior: 20 },
-    { x: 17, mesAtual: 80, mesAnterior: 22 }, { x: 18, mesAtual: 55, mesAnterior: 30 },
-    { x: 19, mesAtual: 50, mesAnterior: 55 }, { x: 20, mesAtual: 25, mesAnterior: 78 },
-    { x: 21, mesAtual: 22, mesAnterior: 70 }, { x: 22, mesAtual: 35, mesAnterior: 40 },
-    { x: 23, mesAtual: 48, mesAnterior: 25 }, { x: 24, mesAtual: 42, mesAnterior: 20 },
-    { x: 25, mesAtual: 20, mesAnterior: 35 }, { x: 26, mesAtual: 18, mesAnterior: 48 },
-    { x: 27, mesAtual: 30, mesAnterior: 52 }, { x: 28, mesAtual: 28, mesAnterior: 48 },
-    { x: 29, mesAtual: 15, mesAnterior: 40 }, { x: 30, mesAtual: 8, mesAnterior: 20 },
-    { x: 31, mesAtual: 3, mesAnterior: 8 },
+    { x: 1, mesAtual: 2.5, mesAnterior: 4 }, { x: 2, mesAtual: 4, mesAnterior: 6 },
+    { x: 3, mesAtual: 6, mesAnterior: 10 }, { x: 4, mesAtual: 9, mesAnterior: 22.5 },
+    { x: 5, mesAtual: 11, mesAnterior: 29 }, { x: 6, mesAtual: 10, mesAnterior: 27.5 },
+    { x: 7, mesAtual: 9, mesAnterior: 17.5 }, { x: 8, mesAtual: 10, mesAnterior: 11 },
+    { x: 9, mesAtual: 14, mesAnterior: 9 }, { x: 10, mesAtual: 21, mesAnterior: 7.5 },
+    { x: 11, mesAtual: 19, mesAnterior: 7 }, { x: 12, mesAtual: 16, mesAnterior: 9 },
+    { x: 13, mesAtual: 15, mesAnterior: 14 }, { x: 14, mesAtual: 27.5, mesAnterior: 12.5 },
+    { x: 15, mesAtual: 27.5, mesAnterior: 11 }, { x: 16, mesAtual: 30, mesAnterior: 10 },
+    { x: 17, mesAtual: 40, mesAnterior: 11 }, { x: 18, mesAtual: 27.5, mesAnterior: 15 },
+    { x: 19, mesAtual: 25, mesAnterior: 27.5 }, { x: 20, mesAtual: 12.5, mesAnterior: 39 },
+    { x: 21, mesAtual: 11, mesAnterior: 35 }, { x: 22, mesAtual: 17.5, mesAnterior: 20 },
+    { x: 23, mesAtual: 24, mesAnterior: 12.5 }, { x: 24, mesAtual: 21, mesAnterior: 10 },
+    { x: 25, mesAtual: 10, mesAnterior: 17.5 }, { x: 26, mesAtual: 9, mesAnterior: 24 },
+    { x: 27, mesAtual: 15, mesAnterior: 26 }, { x: 28, mesAtual: 14, mesAnterior: 24 },
+    { x: 29, mesAtual: 7.5, mesAnterior: 20 }, { x: 30, mesAtual: 4, mesAnterior: 10 },
+    { x: 31, mesAtual: 1.5, mesAnterior: 4 },
     ]
     return (
-        <ResponsiveContainer width="100%" height="300">
-            <AreaChart data={dados} className="mt-8">
+        <ResponsiveContainer width="100%" height="100%">
+            <AreaChart data={dados} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
 
                 <defs>
                     <linearGradient id="colorMesAnterior" x1="0" y1="0" x2="0" y2="1">
@@ -37,7 +37,7 @@ function Grafico() {
                 <Area type="natural" stroke="transparent" fill="url(#colorMesAnterior)" fillOpacity={1} dataKey="mesAnterior" />
                 <Area type="natural" stroke="transparent" fill="url(#colorMesAtual)" fillOpacity={1} dataKey="mesAtual" />
                 <XAxis dataKey="x" tick={false} tickLine={false} axisLine={false} />
-                <YAxis domain={[0,120]} tick={false} tickLine={false} axisLine={false} width={0}/>
+                <YAxis domain={[0,60]} tick={false} tickLine={false} axisLine={false} width={0}/>
                 <CartesianGrid stroke="#e4e4e4" horizontal={false} vertical={false} />
             </AreaChart>
         </ResponsiveContainer>
