@@ -8,6 +8,7 @@ import HeroImagem from "./components/HeroImagem.jsx"
 import BlocoFuncionalidade from "./components/BlocoFuncionalidade.jsx"
 import BlocoGrafico from "./components/BlocoGrafico.jsx"
 import BlocoImagem from "./components/BlocoImagem.jsx"
+import BlocoProdutividade from "./components/BlocoProdutividade.jsx"
 
 function App() {
 
@@ -79,6 +80,7 @@ function App() {
         h1={<><h1>De <span>poucos</span> para <span>muitos</span></h1></>}
         p="Tenha o melhor organizador de energia para facilidade da sua vida."
         />
+        <BlocoProdutividade/>
       </section>
       <section id="Como_Acessar">
         <Textos
