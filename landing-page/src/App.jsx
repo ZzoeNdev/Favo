@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="font-manrope">
       <Nav/>
-      <section className="md:ml-30 md:mr-30 pt-[80px] shadow-inner" id="Home">
+      <section className="ml-10 mr-10 md:ml-30 md:mr-30 pt-[80px] shadow-inner" id="Home">
       <Textos
         h1={<>Se reorganize bem com <span className="inline-block font-['Zolo'] font-normal bg-gradient-to-r from-[#EBA864] to-[#F68412] bg-clip-text text-transparent">Favo</span></>}
         p="Não deixe a oportunidade de economizar na conta de energia"
@@ -36,7 +36,7 @@ function App() {
           h1={<><h1>Nunca é <span>tarde</span> demais para <span>começar</span>.</h1></>}
           p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
         />
-        <div className="flex justify-center w-[100%] gap-[15px] md:gap-[100px] mt-[3rem]">
+        <div className="flex flex-col ml-[4.2rem] w-[100%] gap-[15px] md:flex-row md:gap-[100px] mt-[3rem]">
           <div className="flex flex-col w-[50%] md:w-[30%] gap-2 md:gap-5 align-center justify-center">
             <BlocoGrafico
             titulo="Tenha acesso a Gráficos para sua comodidade"
