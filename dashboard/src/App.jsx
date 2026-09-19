@@ -6,12 +6,18 @@ import CardHeader from './components/CardHeader'
 import Painel from './components/Painel'
 import Resumo from './components/Resumo'
 import CardMeta from './components/CardMeta'
+import Produto from './components/Produto'
 
 function App() {
 
+  const [mudarEstado, setMudarEstado] = useState(false);
+
   return (
     <div className='flex flex-col items-center pb-20'>
-      <Header />
+
+      <Header abrirForm={() => setMudarEstado(true)} />
+
+      {mudarEstado && <Produto fecharForm={() => setMudarEstado(false)} />}
       <CardHeader />
 
       <div className='flex flex-col items-center md:items-start md:w-[90%] mt-10 md:mt-70'>
