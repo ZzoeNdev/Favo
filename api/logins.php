@@ -1,13 +1,6 @@
 <?php
 
-session_start();
-
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: http://localhost:5173');
-header('Access-Control-Allow-Credentials: true');
-header('Access-Control-Allow-Headers: Content-Type');
-header('Access-Control-Allow-Methods: POST');
-
+include 'cors.php';
 include 'conexao.php';
 
 $dados = json_decode(file_get_contents("php://input"), true);
@@ -22,8 +15,10 @@ $stmt->execute([
 $user = $stmt->fetch();
 
 if ($user && password_verify($dados['senha'], $user['senha'])) {
-    echo json_encode(['message' => 'Login bem-sucedido']);
+    $_SESSION['user_id'] = $user['id'];
+    echo json_encode(['logado' => true, 'message' => 'Login bem-sucedido']);
 } else {
-    echo json_encode(['message' => 'Email ou senha incorretos']);
+    http_response_code(401);
+    echo json_encode(['logado' => false, 'message' => 'Email ou senha incorretos']);
 }
 

@@ -6,6 +6,8 @@ function Forms() {
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
+    const [erroLog, setErroLog] = useState()
+    const [erroCad, setErroCad] = useState()
 
     function enviarCadastro(){
         fetch("http://localhost/api/cadastros.php", {
@@ -15,7 +17,13 @@ function Forms() {
         })
         .then(resposta => resposta.json())
         .then(json => {
-            console.log(json.message)
+            if(json.cadastrado){
+                window.location.href = "http://localhost:5174"
+            }else{
+                setErroCad(true)
+                console.log(json.message)
+            }
+            
         })
     }
 
@@ -28,7 +36,12 @@ function Forms() {
         })
         .then(resposta => resposta.json())
         .then(json => {
-            console.log(json.message)
+            if(json.logado){
+                window.location.href = "http://localhost:5174"
+            }else{
+                setErroLog(true)
+                console.log(json.message)
+            }
         })
     }
     
@@ -63,6 +76,14 @@ function Forms() {
                 </div>
 
                 <button type="button" onClick={modo === "cadastro" ? enviarCadastro : enviarLogin} className="bg-[#F68412] text-white text-xs p-2 md:p-4 w-full rounded-lg mt-6">{modo === "login" ? "Acessar Conta" : "Criar Conta"}</button>
+
+                {erroLog && modo === "login" && (
+                    <p className="bg-red-500/10 text-red-500 text-xs text-center p-1 rounded mt-2">Email ou Senha incorretos</p>
+                )}
+
+                {erroCad && modo === "cadastro" && (
+                    <p className="bg-red-500/10 text-red-500 text-xs text-center p-1 rounded mt-2">Email já cadastrado</p>
+                )}
 
                 <div className="h-[1px] w-full bg-gray-300 mt-3"></div>
 

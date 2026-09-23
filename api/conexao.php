@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";
-$banco = "favoteste";
+$banco = "favoAr";
 $usuario = "root";
 $senha = "";
 
