@@ -80,7 +80,21 @@ function App() {
         h1={<><h1>De <span>poucos</span> para <span>muitos</span></h1></>}
         p="Tenha o melhor organizador de energia para facilidade da sua vida."
         />
-        <BlocoProdutividade/>
+        <div className="flex flex-col justify-center items-center md:pt-[12rem] md:flex-row">
+        <BlocoProdutividade
+        tag="A todos"
+        txt1={<>Acesso ao sistema <span>Favo</span> a</>}
+        grande="Todas"
+        txt2="as pessoas, sem limitações"/>
+        <div className="hidden bg-gradient-to-b from-[#F9AE63] to-[#F68412] rounded-br-[200px] md:flex md:justify-center md:items-end h-[450px]">
+          <img className="h-[600px]" src="../src/assets/mulher.png"/>
+        </div>
+        <BlocoProdutividade
+        tag="Sem limites"
+        txt1="Aproveite as funcionalidades presentes no"
+        grande="Favo"
+        txt2={<>sem limites e <span className="font-bold">24h</span> a seu favor"</>}/>
+        </div>
       </section>
       <section id="Como_Acessar">
         <Textos
