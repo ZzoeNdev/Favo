@@ -1,17 +1,41 @@
 import {useState} from 'react'
-
+import { Html5Qrcode } from "html5-qrcode";
 
 function Produto({fecharForm}) {
   const [nome, setNome] = useState('');
   const [comodo, setComodo] = useState('quarto');
   const [forca, setForca] = useState('');
   const [estado, setEstado] = useState('ligado');
+  const [imagemOCR, setImagemOCR] = useState(null);
+  
 
-  function enviarCadastro(){
+  function selecionarImagem(e) {
+    const arquivo = e.target.files[0];
+    setImagemOCR(arquivo);
+    console.log('Imagem selecionada:', arquivo);
+    lerCodigoDeBarras(arquivo);
+  }
+
+  async function lerCodigoDeBarras(arquivo) {
+    if (!arquivo) {
+      console.error('Nenhuma imagem selecionada para OCR.');
+      return;
+    }
+    const leitor = new Html5Qrcode("reader");
+    try {
+      const result = await leitor.scanFile(arquivo);
+      console.log('Resultado do OCR:', result);
+    } catch (error) {
+      console.error('Erro ao processar a imagem:', error);
+    }
+  }
+
+  function enviarProduto(){
         fetch("http://localhost/api/addProdutos.php", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({nome:nome, tipo:comodo, watts:forca, estado:estado})
+            credentials: "include",
+            body: JSON.stringify({nome:nome, comodo:comodo, watts:forca, estado:estado})
         })
         .then(resposta => resposta.json())
         .then(json => {
@@ -31,7 +55,8 @@ function Produto({fecharForm}) {
               <div className="text-orange-500 bg-orange-100 rounded-md p-2 font-bold text-xs md:text-lg w-[45%] text-center">Método mais rápido</div>
               <h1 className="text-2xl font-bold mb-2">Escaneie com a Câmera (OCR)</h1>
               <p className="text-gray-600 text-sm mb-4">Sua imagem será escaneada automaticamente, auto-completando o registro com as informações do seu eletrdoméstico</p>
-              <input type="file" accept="image/*" capture="camera" />
+              <div id="reader" className="hidden"></div>
+              <input type="file" accept="image/*" capture="camera" onChange={selecionarImagem} />
             </div>
             <div className="h-[1px] bg-gray-300 w-full my-4"></div>
             <div>
@@ -44,6 +69,8 @@ function Produto({fecharForm}) {
                 <option value="">Selecione um cômodo</option>
                 <option value="sala">Sala</option>
                 <option value="quarto">Quarto</option>
+                <option value="quarto2">Quarto 2</option>
+                <option value="quarto3">Quarto 3</option>
                 <option value="cozinha">Cozinha</option>
                 <option value="banheiro">Banheiro</option>
               </select>
@@ -52,7 +79,7 @@ function Produto({fecharForm}) {
               <input className="border border-gray-300 rounded py-2 px-3 text-gray-700" type="text" id="forca" name="forca" value={forca} onChange={(e) => setForca(e.target.value)} required /> Watts
             </div>
           </div>
-          <button type="button" onClick={enviarCadastro} className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-4">
+          <button type="button" onClick={enviarProduto} className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-4">
             Adicionar Eletrodoméstico
           </button>
         </form>

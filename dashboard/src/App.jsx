@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import './App.css'
 import Header from './components/Header'
@@ -11,6 +11,29 @@ import Produto from './components/Produto'
 function App() {
 
   const [mudarEstado, setMudarEstado] = useState(false);
+
+  const [carregando, setCarregando] = useState(true);
+  useEffect(() => {
+    fetch('http://localhost/api/verificarSessao.php', {
+      credentials: 'include'})
+      .then(response => response.json())
+      .then(json => {
+        if (json.logado == false) {
+          window.location.href = ' http://localhost:5173';
+        } else {
+          setCarregando(false);
+        }
+    })
+  }, []);
+
+  if (carregando) {
+    return (
+      <div className='flex flex-col items-center justify-center h-screen'>
+        <p className='text-gray-300 font-md text-xs md:text-lg'>Carregando...</p>
+        <p className='text-orange-500 font-bold text-xs md:text-lg'>Favo está arrumando tudo pra você</p>
+      </div>
+    )
+  }
 
   return (
     <div className='flex flex-col items-center pb-20'>

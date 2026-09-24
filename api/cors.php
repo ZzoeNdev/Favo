@@ -7,8 +7,10 @@ $origensPermitidas = [
     'http://localhost:5174'
 ];
 
-if(in_array($_SERVER['HTTP_ORIGIN'], $origensPermitidas)){
-    header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+$origem = $_SERVER['HTTP_ORIGIN'] ?? '';
+
+if(in_array($origem, $origensPermitidas)){
+    header('Access-Control-Allow-Origin: ' . $origem);
 }
 
 header('Access-Control-Allow-Credentials: true');

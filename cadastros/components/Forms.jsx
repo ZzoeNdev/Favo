@@ -13,14 +13,14 @@ function Forms() {
         fetch("http://localhost/api/cadastros.php", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({nome: nome, email:email, senha:senha})
+            body: JSON.stringify({nome:nome, email:email, senha:senha})
         })
         .then(resposta => resposta.json())
         .then(json => {
             if(json.cadastrado){
                 window.location.href = "http://localhost:5174"
             }else{
-                setErroCad(true)
+                setErroCad(json.message)
                 console.log(json.message)
             }
             
@@ -39,7 +39,7 @@ function Forms() {
             if(json.logado){
                 window.location.href = "http://localhost:5174"
             }else{
-                setErroLog(true)
+                setErroLog(json.message)
                 console.log(json.message)
             }
         })
@@ -55,34 +55,34 @@ function Forms() {
 
                 <div className={modo === "cadastro" ? "inline" : "hidden"}>
                     <p className="text-xs font-semibold"> Nome Completo <span className="text-[#F68412]">*</span></p>
-                    <input value={nome} onChange={(e) => setNome(e.target.value)} className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="text" placeholder="ex, Vinícius..." id="" />
+                    <input value={nome} onChange={(e) => setNome(e.target.value)} className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="text" placeholder="ex, Vinícius..." id="" required />
                 </div>
 
                 <div className="mt-3">
                     <p className="text-xs font-semibold"> Email <span className="text-[#F68412]">*</span></p>
-                    <input value={email} onChange={(z) => setEmail(z.target.value)} className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="email" placeholder="ex, vinicius@..." id="" />
+                    <input value={email} onChange={(z) => setEmail(z.target.value)} className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="email" placeholder="ex, vinicius@..." id="" required />
                 </div>
 
                 <div className={modo === "cadastro" ? "flex w-full gap-2 mt-3" : "mt-3"}>
                     <div>
                         <p className="text-xs font-semibold"> Senha <span className="text-[#F68412]">*</span></p>
-                        <input value={senha} onChange={(g) => setSenha(g.target.value)} className="border border-[#C3C3C3] bg-[#E7E7E7] text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="password" placeholder="Insira sua senha" id="" />
+                        <input value={senha} onChange={(g) => setSenha(g.target.value)} className="border border-[#C3C3C3] bg-[#E7E7E7] text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="password" placeholder="Insira sua senha" id="" required />
                     </div>
 
                     <div className={modo === "cadastro" ? "inline" : "hidden"}>
                         <p className="text-xs font-semibold"> Senha <span className="text-[#F68412]">*</span></p>
-                        <input className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 md:w-[100%] text-sm" type="password" placeholder="Insira sua senha" name="" id="" />
+                        <input className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 md:w-[100%] text-sm" type="password" placeholder="Insira sua senha" name="" id="" required />
                     </div>
                 </div>
 
                 <button type="button" onClick={modo === "cadastro" ? enviarCadastro : enviarLogin} className="bg-[#F68412] text-white text-xs p-2 md:p-4 w-full rounded-lg mt-6">{modo === "login" ? "Acessar Conta" : "Criar Conta"}</button>
 
                 {erroLog && modo === "login" && (
-                    <p className="bg-red-500/10 text-red-500 text-xs text-center p-1 rounded mt-2">Email ou Senha incorretos</p>
+                    <p className="bg-red-500/10 text-red-500 text-xs text-center p-1 rounded mt-2">{erroLog}</p>
                 )}
 
                 {erroCad && modo === "cadastro" && (
-                    <p className="bg-red-500/10 text-red-500 text-xs text-center p-1 rounded mt-2">Email já cadastrado</p>
+                    <p className="bg-red-500/10 text-red-500 text-xs text-center p-1 rounded mt-2">{erroCad}</p>
                 )}
 
                 <div className="h-[1px] w-full bg-gray-300 mt-3"></div>

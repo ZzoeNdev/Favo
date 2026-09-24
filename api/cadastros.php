@@ -1,10 +1,6 @@
 <?php
 
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers: Content-Type');
-header('Access-Control-Allow-Methods: POST');
-
+include 'cors.php';
 include 'conexao.php';
 
 $dados = json_decode(file_get_contents("php://input"), true);
@@ -15,6 +11,16 @@ $stmt = $pdo->prepare($verificaEmail);
 $stmt->execute([
     ':email' => $dados['email']
 ]);
+
+$nome = trim($dados['nome'] ?? '');
+$email = trim($dados['email'] ?? '');
+$senha = trim($dados['senha'] ?? '');
+
+if (!$dados || $nome === '' || $email === '' || $senha === '') {
+    http_response_code(400);
+    echo json_encode(['message' => 'Por favor, preencha todos os campos obrigatórios.']);
+    exit;
+}
 
 if ($stmt->fetch()) {
     echo json_encode(['message' => 'Email já cadastrado']);
@@ -29,5 +35,11 @@ if ($stmt->fetch()) {
         ':senha' => password_hash($dados['senha'], PASSWORD_DEFAULT)
     ]);
 
-    echo json_encode(['message' => 'Cadastro realizado com sucesso']);
+    $idUsuario = $pdo->lastInsertId();
+
+    $sqlCasa = "INSERT INTO casa (nome_casa, id_usuario) VALUES (:nome_casa, :id_usuario)";
+    $stmtCasa = $pdo->prepare($sqlCasa);
+    $stmtCasa->execute([':nome_casa' => 'Minha Casa', ':id_usuario' => $idUsuario]);
+
+    echo json_encode(['message' => 'Cadastro realizado com sucesso', 'cadastrado' => true]);
 }
