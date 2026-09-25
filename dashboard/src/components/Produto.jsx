@@ -41,6 +41,7 @@ function Produto({fecharForm}) {
         .then(json => {
             console.log(json.message)
         })
+        window.location.reload();
     }
 
   return (
@@ -67,12 +68,12 @@ function Produto({fecharForm}) {
               <label className="block text-gray-700 text-sm font-bold mb-2">Cômodo *</label>
               <select className="border border-gray-300 rounded py-2 px-3 text-gray-700" id="comodo" name="comodo" value={comodo} onChange={(e) => setComodo(e.target.value)} required>
                 <option value="">Selecione um cômodo</option>
-                <option value="sala">Sala</option>
-                <option value="quarto">Quarto</option>
-                <option value="quarto2">Quarto 2</option>
-                <option value="quarto3">Quarto 3</option>
-                <option value="cozinha">Cozinha</option>
-                <option value="banheiro">Banheiro</option>
+                <option value="Sala">Sala</option>
+                <option value="Quarto">Quarto</option>
+                <option value="Quarto 2">Quarto 2</option>
+                <option value="Quarto 3">Quarto 3</option>
+                <option value="Cozinha">Cozinha</option>
+                <option value="Banheiro">Banheiro</option>
               </select>
               <br />
               <label className="block text-gray-700 text-sm font-bold mb-2">Força (Watts) *</label>
