@@ -32,7 +32,7 @@ function App() {
       </div>
       <HeroImagem/>
       </section>
-      <section id="Funcionalidades">
+      <section className="md:mt-[5rem]" id="Funcionalidades">
         <Textos
           h1={<><h1>Nunca é <span>tarde</span> demais para <span>começar</span>.</h1></>}
           p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
@@ -75,7 +75,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section id="Produtividade">
+      <section className="md:mt-[5rem]" id="Produtividade">
         <Textos
         h1={<><h1>De <span>poucos</span> para <span>muitos</span></h1></>}
         p="Tenha o melhor organizador de energia para facilidade da sua vida."
@@ -96,17 +96,51 @@ function App() {
         txt2={<>sem limites e <span className="font-bold">24h</span> a seu favor"</>}/>
         </div>
       </section>
-      <section id="Como_Acessar">
+      <section className="md:mt-[5rem]"id="Como_Acessar">
         <Textos
         h1={<><h1>Passos <span>simples</span> para não se <span>perder</span></h1></>}
         p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
         />
+        <div className="flex flex-col justify-center items-center mt-[1rem] md:mt-[3rem]">
+          <div className="flex flex-col md:flex-row gap-[2rem] justify-center mr-[2rem] ml-[2rem] md:gap-[10rem]">
+            <div className="flex flex-col gap-[1rem] md:gap-[2rem]">
+              <img className="md:w-[35rem] md:h-auto" src="../src/assets/passo1.png" alt="Faça o seu Cadastro ou Login no Sistema" />
+              <img className="md:w-[35rem] md:h-auto" src="../src/assets/passo2.png" alt="Adicione seu primeiro eletrodoméstico" />
+              <img className="md:w-[35rem] md:h-auto" src="../src/assets/passo3.png" alt="Verifique os dados de seus gastos"/>
+            </div>
+            <div className="flex flex-col gap-[1rem] md:gap-[2rem]">
+              <img className="md:w-[35rem] md:h-auto" src="../src/assets/passo4.png" alt="Aproveite"/>
+            </div>
+          </div>
+          <Botao texto="Começar agora" tipo="transparente" largura="w-full md:w-[40rem] min-w-[125px]"/>
+        </div>
       </section>
-      <section id="Sobre_Nos">
+      <section className="md:mt-[5rem]"id="Sobre_Nos">
         <Textos
         h1={<><h1>Uso <span>testado</span> e <span>aprovado</span>.</h1></>}
         p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
         />
+        <div className="flex flex-col md:flex-row justify-center align-center items-center gap-[2rem] md:gap-[5rem] mt-[3rem]">
+          <img className="md:h-[15rem] md:w-auto" src="../src/assets/100testado.png"/>
+          <img className="md:h-[15rem] md:w-auto" src="../src/assets/telatestado.png"/>
+        </div>
+      </section>
+      <section className="relative flex items-center justify-center md:mt-[5rem]" id="Comecar">
+        <p className="absolute text-[#C8C9CD]/50 text-[6.5rem] md:text-[25rem] top-[1rem] md:top-[0rem] font-bold z-0">ENERGIA</p>
+        <div className="relative z-10 w-full flex flex-col items-center justify-center">
+          <img className="absolute mx-auto top-[7rem] md:top-[10rem] justify-center items-center w-[60rem] h-auto z-10" src="../src/assets/energiaBackground.png" alt="Energia"/>
+          <div className="relative top-[8rem] md:top-[15rem] z-20 flex flex-col items-center justify-center p-10 text-center">
+            <p className="font-bold text-white text-[1rem] md:text-[2rem]">Pronto pra ver sua conta de luz cair?</p>
+            <p className="text-white text-[0.5rem] md:text-[0.8rem] md:text-[1.2rem] md:max-w-[32rem] max-w-[12rem]">Junte-se a milhares de famílias que economizam em média R$ 50,00 por mês usando a Favo.</p>
+            <div className="flex flex-row gap-[1rem] mt-[2rem]">
+              <Botao 
+                texto="Começar agora" 
+                tipo="preto" 
+              />
+              <p className="text-white">Uso 100% grátis e eficiente</p>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   )
