@@ -9,6 +9,7 @@ import BlocoFuncionalidade from "./components/BlocoFuncionalidade.jsx"
 import BlocoGrafico from "./components/BlocoGrafico.jsx"
 import BlocoImagem from "./components/BlocoImagem.jsx"
 import BlocoProdutividade from "./components/BlocoProdutividade.jsx"
+import Footer from "./components/Footer.jsx"
 
 function App() {
 
@@ -125,11 +126,11 @@ function App() {
           <img className="md:h-[15rem] md:w-auto" src="../src/assets/telatestado.png"/>
         </div>
       </section>
-      <section className="relative flex items-center justify-center md:mt-[5rem]" id="Comecar">
-        <p className="absolute text-[#C8C9CD]/50 text-[6.5rem] md:text-[25rem] top-[1rem] md:top-[0rem] font-bold z-0">ENERGIA</p>
+      <section className="relative flex items-center justify-center md:mt-[10rem]" id="Comecar">
+        <p className="absolute text-[#C8C9CD]/50 text-[6.5rem] md:text-[25rem] font-bold z-0">ENERGIA</p>
         <div className="relative z-10 w-full flex flex-col items-center justify-center">
-          <img className="absolute mx-auto top-[7rem] md:top-[10rem] justify-center items-center w-[60rem] h-auto z-10" src="../src/assets/energiaBackground.png" alt="Energia"/>
-          <div className="relative top-[8rem] md:top-[15rem] z-20 flex flex-col items-center justify-center p-10 text-center">
+          <img className="absolute mx-auto justify-center items-center w-[60rem] h-auto z-10" src="../src/assets/energiaBackground.png" alt="Energia"/>
+          <div className="relative z-20 flex flex-col items-center justify-center p-10 text-center">
             <p className="font-bold text-white text-[1rem] md:text-[2rem]">Pronto pra ver sua conta de luz cair?</p>
             <p className="text-white text-[0.5rem] md:text-[0.8rem] md:text-[1.2rem] md:max-w-[32rem] max-w-[12rem]">Junte-se a milhares de famílias que economizam em média R$ 50,00 por mês usando a Favo.</p>
             <div className="flex flex-row gap-[1rem] mt-[2rem]">
@@ -142,6 +143,7 @@ function App() {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   )
 }
