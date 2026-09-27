@@ -31,7 +31,7 @@ if ($comodo) {
     $idComodo = $pdo->lastInsertId();
 }
 
-$sql = "INSERT INTO eletro (nome, watts, estado, id_comodo, ligado_desde) VALUES (:nome, :watts, :estado, :id_comodo, :ligado_desde)";
+$sql = "INSERT INTO eletro (nome, watts, estado, id_comodo, ligado_desde, horas_uso_medio) VALUES (:nome, :watts, :estado, :id_comodo, :ligado_desde, :horas_uso_medio)";
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute([
@@ -39,7 +39,8 @@ $sql = "INSERT INTO eletro (nome, watts, estado, id_comodo, ligado_desde) VALUES
         ':watts' => $dados['watts'],
         ':estado' => $dados['estado'],
         ':id_comodo' => $idComodo,
-        ':ligado_desde' => date('Y-m-d H:i:s')
+        ':ligado_desde' => date('Y-m-d H:i:s'),
+        ':horas_uso_medio' => $dados['horasMedia']
     ]);
 
 echo json_encode(['message' => 'Cadastro realizado com sucesso']);
