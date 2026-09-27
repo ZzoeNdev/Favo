@@ -14,7 +14,7 @@ import Footer from "./components/Footer.jsx"
 function App() {
 
   return (
-    <div className="font-manrope">
+    <div className="font-manrope overflow-x-hidden">
       <Nav/>
       <section className="ml-10 mr-10 md:ml-30 md:mr-30 pt-[80px] shadow-inner" id="Home">
       <Textos
@@ -38,7 +38,7 @@ function App() {
           h1={<><h1>Nunca é <span>tarde</span> demais para <span>começar</span>.</h1></>}
           p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
         />
-        <div className="flex flex-col ml-[4.2rem] w-[100%] gap-[15px] md:flex-row md:gap-[100px] mt-[3rem]">
+        <div className="flex flex-col px-[4.2rem] gap-[15px] md:flex-row md:gap-[100px] mt-[3rem]">
           <div className="flex flex-col w-[50%] md:w-[30%] gap-2 md:gap-5 align-center justify-center">
             <BlocoGrafico
             titulo="Tenha acesso a Gráficos para sua comodidade"
@@ -126,8 +126,8 @@ function App() {
           <img className="md:h-[15rem] md:w-auto" src="../src/assets/telatestado.png"/>
         </div>
       </section>
-      <section className="relative flex items-center justify-center md:mt-[10rem]" id="Comecar">
-        <p className="absolute text-[#C8C9CD]/50 text-[6.5rem] md:text-[25rem] font-bold z-0">ENERGIA</p>
+      <section className="relative flex items-center justify-center md:mt-[5rem] w-full overflow-hidden min-h-[600px] md:min-h-[700px]" id="Comecar">
+        <p className="absolute text-[#C8C9CD]/50 text-[6.5rem] md:text-[25rem] font-bold z-0 whitespace-nowrap select-none">ENERGIA</p>
         <div className="relative z-10 w-full flex flex-col items-center justify-center">
           <img className="absolute mx-auto justify-center items-center w-[60rem] h-auto z-10" src="../src/assets/energiaBackground.png" alt="Energia"/>
           <div className="relative z-20 flex flex-col items-center justify-center p-10 text-center">
