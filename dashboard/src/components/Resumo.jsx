@@ -1,6 +1,7 @@
 import GraficoRadial from "./GraficoRadial"
 
 function Resumo() {
+
     return (
         <div className="flex flex-col md:flex-row items-center md:justify-between bg-[#1F232D] w-[90%] p-5 pb-15 md:pb-7 md:pr-18 rounded-2xl mt-10">
             <div className="flex flex-col md:flex-row items-center">

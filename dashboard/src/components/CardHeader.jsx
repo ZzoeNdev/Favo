@@ -1,14 +1,36 @@
+import {useState, useEffect} from 'react'
+
 function CardHeader() {
+
+    const [consumo, setConsumo] = useState(0)
+    const [maisUsado, setMaisUsado] = useState("")
+    
+    useEffect(() => {
+            function buscarValores() {
+                fetch('http://localhost/api/resumo.php', { credentials: 'include' })
+                    .then(resposta => resposta.json())
+                    .then(json => setConsumo(json.consumoTotal))
+
+                fetch('http://localhost/api/eletroMaisUso.php', { credentials: 'include' })
+                    .then(resposta => resposta.json())
+                    .then(json => setMaisUsado(json.nome))
+            }
+            buscarValores()
+            const intervalo = setInterval(buscarValores, 4000)
+            return () => clearInterval(intervalo)
+        }, []);
+    
+
     const Cards = [
-        { icone: "../src/assets/icons/relampagoIcon.png", secao: "Visão Geral", titulo: "CONSUMO ATUAL", valor: "99.4", tipo: "kWh", economia: "" },
+        { icone: "../src/assets/icons/relampagoIcon.png", secao: "Visão Geral", titulo: "CONSUMO ATUAL", valor: consumo.toFixed(1).replace('.',','), tipo: "kWh", economia: "" },
         { icone: "../src/assets/icons/retornoIcon.png", secao: "Visão Geral", titulo: "VALOR SALVO", valor: "R$ 5,31", tipo: "", economia: "R$ 1,32 Economizados" },
-        { icone: "../src/assets/icons/maisUsoEletrodomesticoIcon.png", secao: "Visão Geral", titulo: "ELETRODOMÉSTICO COM MAIS USO", valor: "Micro-ondas", tipo: "", economia: "" }
+        { icone: "../src/assets/icons/maisUsoEletrodomesticoIcon.png", secao: "Visão Geral", titulo: "ELETRODOMÉSTICO COM MAIS USO", valor: maisUsado, tipo: "", economia: "" }
     ];
 
     return (
         <div className="md:absolute md:top-[40%] md:left-1/2 md:-translate-x-1/2 md:translate-y-1/2 flex flex-col md:flex-row items-center -mt-20 md:mt-0 md:justify-around md:w-[90%] gap-4">
             {Cards.map(card => {
-                const Eletro = card.valor === "Micro-ondas"
+                const Eletro = card.valor == maisUsado
                 return (
                     <div className="bg-white shadow-md w-75 md:w-109 h-50 md:h-65 p-5 rounded-xl md:scale-[120%]">
                         <div className="flex justify-between items-center">

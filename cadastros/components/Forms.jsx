@@ -37,7 +37,7 @@ function Forms() {
         .then(resposta => resposta.json())
         .then(json => {
             if(json.logado){
-                window.location.href = "http://localhost:5174"
+                window.location.href = "http://localhost:5173"
             }else{
                 setErroLog(json.message)
                 console.log(json.message)

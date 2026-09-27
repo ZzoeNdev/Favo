@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid } from 'recharts';
 
-function Grafico({comodo}) {
+function Grafico({comodo, atualizar}) {
 
 const[dados, setDados] = useState([]);
 
@@ -9,7 +9,7 @@ useEffect(() => {
     fetch(`http://localhost/api/graficoComodo.php?comodo=${comodo}`, {credentials: 'include'})
         .then(resposta => resposta.json())
         .then(json => setDados(json));
-}, [comodo]);
+}, [comodo, atualizar] );
 
     return (
         <ResponsiveContainer width="100%" height={300}>

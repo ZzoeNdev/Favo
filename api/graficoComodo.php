@@ -41,4 +41,23 @@ for ($dia = 1; $dia <= 31; $dia++) {
     ];
 }
 
+$hoje = date('Y-m-d');
+$diaAtual = (int)date('d');
+
+$sqlLigadoSemFechar = "SELECT eletro.watts, eletro.horas_uso_medio
+                        FROM eletro
+                        WHERE eletro.id_comodo = :id_comodo AND eletro.estado = 'ligado'
+                        AND eletro.id NOT IN (
+                            SELECT id_eletro FROM consumo WHERE data = :hoje
+                        )";
+$stmtLigadoSemFechar = $pdo->prepare($sqlLigadoSemFechar);
+$stmtLigadoSemFechar->execute([':id_comodo' => $idComodo, ':hoje' => $hoje]);
+
+$estimativaHoje = 0;
+foreach ($stmtLigadoSemFechar->fetchAll() as $aparelho) {
+    $estimativaHoje += ($aparelho['watts'] * $aparelho['horas_uso_medio']) / 1000;
+}
+
+$mesAtualDados[$diaAtual] = ($mesAtualDados[$diaAtual] ?? 0) + $estimativaHoje;
+
 echo json_encode($grafico);

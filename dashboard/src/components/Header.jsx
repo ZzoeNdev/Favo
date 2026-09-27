@@ -1,16 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import SlotCounter from 'react-slot-counter';
 
-function Header({abrirForm}) {
+function Header({ abrirForm }) {
+
+    const [custo, setCusto] = useState(0)
+
+    useEffect(() => {
+        function buscarValores() {
+            fetch('http://localhost/api/resumo.php', { credentials: 'include' })
+                .then(resposta => resposta.json())
+                .then(json => setCusto(Number(json.custoReais)))
+        }
+        buscarValores()
+        const intervalo = setInterval(buscarValores, 4000)
+        return () => clearInterval(intervalo)
+    }, []);
+
 
     return (
         <div className="flex flex-col item-center w-screen bg-gradient-to-br from-orange-500 to-orange-300 bg- md:bg-[url('/src/assets/dashFundo.png')] md:bg-contain bg-no-repeat rounded-b-4xl h-80 md:h-[673px]">
 
             <header className="relative w-full flex flex-col justify-start items-center mt-7">
                 <a href="../../index.html"><img className="w-8 md:w-11" src="./src/assets/favoWLogo.png" alt="Logo Favo" /></a>
-                <div className="flex mt-4 justify-center items-center gap-5">
+                <div className="flex mt-4 justify-center items-center gap-2 md:gap-5">
                     <input className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-xl shadow-md w-70 md:w-150 h-9" type="text" name="" id="" />
-                    <button className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-xl shadow-md w-10 md:w-50 h-9" onClick={abrirForm}> a <img src="" alt=""/></button>
-                    {/* <button className="absolute bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-3xl ml-4 shadow-md w-9 h-9 ml-100"><img src="" alt="" />Perfil</button> */}
+                    <button className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-xl shadow-md w-10 md:w-50 h-9" onClick={abrirForm}> a <img src="" alt="" /></button>
+                    <button className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-3xl shadow-md w-9 h-9"><img src="" alt="" />Perfil</button>
                 </div>
             </header>
 
@@ -25,7 +40,7 @@ function Header({abrirForm}) {
                         <div className="flex items-center justify-center bg-white/12 border border-white/20 backdrop-blur-sm rounded-4xl text-white shadow-md w-6 md:w-6 h-6 text-xs">?</div>
                     </div>
                 </div>
-                <h1 className="text-5xl md:text-8xl text-white font-extrabold">R$ 84,07</h1>
+                <h1 className="text-5xl md:text-8xl text-white font-extrabold">R$ <SlotCounter value={custo.toFixed(2).replace(".", ",")}/></h1>
                 <div className="text-white text-md mt-1">Estimativa baseada no seu consumo atual</div>
             </div>
         </div>
