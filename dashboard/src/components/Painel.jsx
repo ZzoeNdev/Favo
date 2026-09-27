@@ -5,6 +5,7 @@ function Painel() {
 
     const [comodos, setComodos] = useState([]);
     const [selecionado, setSelecionado] = useState("Quarto");
+    const [atualizarDados, setAtualizarDados] = useState(0);
 
     useEffect(() => {
         fetch('http://localhost/api/listarComodos.php', {credentials: 'include'})
@@ -69,7 +70,11 @@ function Painel() {
                     <div className="flex items-center gap-2 text-xs"><div className="bg-orange-800 w-2 h-2 rounded-2xl"></div>Mês Anterior</div>
                 </div>
 
-                <Grafico comodo={selecionado.id} />
+                {aparelhos.length > 0 ? (
+                    <Grafico comodo={selecionado.id} atualizar={atualizarDados}/>
+                ): ("")} 
+
+                
 
                 <div className={aparelhos.length > 0 ? "flex flex-col mt-10" : "hidden"}>
                     <p className='text-start font-medium text-sm text-gray-400'>Resumo</p>
@@ -77,12 +82,12 @@ function Painel() {
                     <div className='flex items-center justify-between mt-2'>
                         <div className='w-[35%]'>
                             <p className='text-xs text-gray-400 font-medium'>Consumo de Hoje</p>
-                            <h1 className='font-bold'>{(aparelhos.reduce((total, obj) => total + obj.watts, 0)*24/1000).toFixed(1)} <span className='text-gray-400 font-medium text-sm'>kWh</span></h1> 
+                            <h1 className='font-bold'>{(aparelhos.reduce((total, obj) => total + (obj.watts * obj.usoMedio),0)/1000).toFixed(1)} <span className='text-gray-400 font-medium text-sm'>kWh</span></h1> 
                         </div>
 
                         <div className='bg-[url(../src/assets/FrameBG.png)] bg-contain bg-no-repeat w-[65%] p-2'>
                             <p className='text-xs text-white'>Custo estimado</p>
-                            <h1 className='font-bold text-white'>R$ {(aparelhos.reduce((total, obj) => total + obj.watts, 0)*24/1000).toFixed(2)}</h1>
+                            <h1 className='font-bold text-white'>R$ {((aparelhos.reduce((total, obj) => total + (obj.watts * obj.usoMedio),0)/1000)*0.739).toFixed(2)}</h1>
                         </div>
 
                         <button className='hidden md:flex whitespace-nowrap text-orange-400'>Ver Detalhes</button>

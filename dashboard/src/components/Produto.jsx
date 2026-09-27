@@ -1,12 +1,27 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { Html5Qrcode } from "html5-qrcode";
 
 function Produto({fecharForm}) {
   const [nome, setNome] = useState('');
-  const [comodo, setComodo] = useState('quarto');
+  const [comodo, setComodo] = useState('');
   const [forca, setForca] = useState('');
   const [estado, setEstado] = useState('ligado');
   const [imagemOCR, setImagemOCR] = useState(null);
+  const [horasMedia, setHorasMedia] = useState(4);
+  const [comodosExistentes, setComodosExistentes] = useState([])
+
+  useEffect(()=> {
+    fetch("http://localhost/api/listarComodos.php", {credentials: "include"})
+    .then(resposta => resposta.json())
+    .then(json=>{
+      if (json.length > 0) {
+        setComodosExistentes(json.map(c => c.nome))
+      }else{
+        setComodosExistentes(["Sala","Quarto","Cozinha","Banheiro"])
+      }
+      console.log('comodosExistentes deveria ter:', json)
+    })
+  }, [])
   
 
   function selecionarImagem(e) {
@@ -35,7 +50,7 @@ function Produto({fecharForm}) {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             credentials: "include",
-            body: JSON.stringify({nome:nome, comodo:comodo, watts:forca, estado:estado})
+            body: JSON.stringify({nome:nome, comodo:comodo, watts:forca, estado:estado, horasMedia:horasMedia})
         })
         .then(resposta => resposta.json())
         .then(json => {
@@ -66,18 +81,23 @@ function Produto({fecharForm}) {
               <input className="border border-gray-300 rounded py-2 px-3 text-gray-700" type="text" id="nome" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
               <br />
               <label className="block text-gray-700 text-sm font-bold mb-2">Cômodo *</label>
-              <select className="border border-gray-300 rounded py-2 px-3 text-gray-700" id="comodo" name="comodo" value={comodo} onChange={(e) => setComodo(e.target.value)} required>
-                <option value="">Selecione um cômodo</option>
-                <option value="Sala">Sala</option>
-                <option value="Quarto">Quarto</option>
-                <option value="Quarto 2">Quarto 2</option>
-                <option value="Quarto 3">Quarto 3</option>
-                <option value="Cozinha">Cozinha</option>
-                <option value="Banheiro">Banheiro</option>
-              </select>
+              <input list='lista-comodos'
+              value={comodo}
+              onChange={(c) => setComodo(c.target.value)}
+              placeholder='Digite ou escolha um comodo'
+              className='border border-gray-300 rounded py-2 px-2 text-gray-700' required />
+              <datalist id='lista-comodos'>
+                {comodosExistentes.map(c => (
+                  <option value={c}/>
+                ))}
+              </datalist>
               <br />
               <label className="block text-gray-700 text-sm font-bold mb-2">Força (Watts) *</label>
               <input className="border border-gray-300 rounded py-2 px-3 text-gray-700" type="text" id="forca" name="forca" value={forca} onChange={(e) => setForca(e.target.value)} required /> Watts
+              <br />
+              <label htmlFor="">Uso médio por dia:</label>
+              <p>{horasMedia}</p>
+              <input type="range" min="1" max="24" value={horasMedia} onChange={(h) => setHorasMedia(h.target.value)} className='w-full'/>
             </div>
           </div>
           <button type="button" onClick={enviarProduto} className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-4">
