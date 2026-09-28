@@ -24,7 +24,7 @@ function Header({ abrirForm }) {
                 <a href="../../index.html"><img className="w-8 md:w-11" src="./src/assets/favoWLogo.png" alt="Logo Favo" /></a>
                 <div className="flex mt-4 justify-center items-center gap-2 md:gap-5">
                     <input className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-xl shadow-md w-70 md:w-150 h-9" type="text" name="" id="" />
-                    <button className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-xl shadow-md w-10 md:w-50 h-9" onClick={abrirForm}> a <img src="" alt="" /></button>
+                    <button className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-xl shadow-md w-10 md:w-50 h-9" onClick={abrirForm}> Adicionar Produto <img src="" alt="" /></button>
                     <button className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-3xl shadow-md w-9 h-9"><img src="" alt="" />Perfil</button>
                 </div>
             </header>

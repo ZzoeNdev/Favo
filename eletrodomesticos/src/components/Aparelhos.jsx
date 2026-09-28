@@ -17,10 +17,11 @@ function Aparelhos() {
     function alternar(idEletro) {
         fetch("http://localhost/api/alternarEstado.php", {
             method: "POST",
+            credentials: 'include',
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ id: idEletro })
+            body: JSON.stringify({ id_eletro: idEletro })
         })
             .then(resposta => resposta.json())
             .then(() => setAtualizar(v => v + 1))
@@ -32,10 +33,12 @@ function Aparelhos() {
         <div>
             <div>
                 {aparelhosFiltrados.map(a => (
-                    <div>
+                    <div key={a.id}>
                         <p>{a.nomeComodo}</p>
                         <p>{a.nome}</p>
-                        <input type="checkbox" checked={a.estado === 'ligado'} onChange={() => alternar(a.id)}/>
+                        <p>{a.id}</p>
+                        <input type="checkbox" checked={a.estado === 'ligado'}
+                        onChange={() => alternar(a.id)}/>
                         <p>{a.watts}</p>
                     </div>
                 ))}

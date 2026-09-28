@@ -18,7 +18,7 @@ function Forms() {
         .then(resposta => resposta.json())
         .then(json => {
             if(json.cadastrado){
-                window.location.href = "http://localhost:5174"
+                window.location.href = "http://localhost:5175"
             }else{
                 setErroCad(json.message)
                 console.log(json.message)
@@ -37,7 +37,7 @@ function Forms() {
         .then(resposta => resposta.json())
         .then(json => {
             if(json.logado){
-                window.location.href = "http://localhost:5173"
+                window.location.href = "http://localhost:5175"
             }else{
                 setErroLog(json.message)
                 console.log(json.message)

@@ -4,6 +4,9 @@ function CardHeader() {
 
     const [consumo, setConsumo] = useState(0)
     const [maisUsado, setMaisUsado] = useState("")
+    const [valorSalvo, setValorSalvo] = useState({economiaReais: 0, economizou: null})
+
+    console.log(maisUsado)
     
     useEffect(() => {
             function buscarValores() {
@@ -13,7 +16,12 @@ function CardHeader() {
 
                 fetch('http://localhost/api/eletroMaisUso.php', { credentials: 'include' })
                     .then(resposta => resposta.json())
-                    .then(json => setMaisUsado(json.nome))
+                    .then(json => setMaisUsado(json.nome)
+                        )
+
+                fetch('http://localhost/api/valorSalvo.php', { credentials: 'include' })
+                    .then(resposta => resposta.json())
+                    .then(json => setValorSalvo(json))
             }
             buscarValores()
             const intervalo = setInterval(buscarValores, 4000)
@@ -23,7 +31,7 @@ function CardHeader() {
 
     const Cards = [
         { icone: "../src/assets/icons/relampagoIcon.png", secao: "Visão Geral", titulo: "CONSUMO ATUAL", valor: consumo.toFixed(1).replace('.',','), tipo: "kWh", economia: "" },
-        { icone: "../src/assets/icons/retornoIcon.png", secao: "Visão Geral", titulo: "VALOR SALVO", valor: "R$ 5,31", tipo: "", economia: "R$ 1,32 Economizados" },
+        { icone: "../src/assets/icons/retornoIcon.png", secao: "Visão Geral", titulo: "VALOR SALVO", valor: `R$ ${valorSalvo.economiaReais.toFixed(2).replace('.',',')}`, tipo: "", economia: valorSalvo.economizou ? `R$ ${valorSalvo.economiaReais.toFixed(2).replace('.',',')}` : "" },
         { icone: "../src/assets/icons/maisUsoEletrodomesticoIcon.png", secao: "Visão Geral", titulo: "ELETRODOMÉSTICO COM MAIS USO", valor: maisUsado, tipo: "", economia: "" }
     ];
 

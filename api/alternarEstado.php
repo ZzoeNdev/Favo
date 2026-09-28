@@ -30,7 +30,7 @@ if ($aparelho['estado'] === 'ligado') {
     $inicioDia = $hoje . ' 00:00:00';
     $novoEstado = 'desligado';
     $agora = date('Y-m-d H:i:s');
-    $inicioContagem = max($aparelho['ligado_desde'], $inicioDia);
+    $inicioContagem = $aparelho['ligado_desde'];
     $horas = (strtotime($agora) - strtotime($inicioContagem)) / 3600;
     $kwh = ($aparelho['watts'] * $horas) / 1000;
 
@@ -49,9 +49,11 @@ if ($aparelho['estado'] === 'ligado') {
         $stmtInserirConsumo->execute([':id_eletro' => $ideletro, ':data' => $hoje, ':inicio' => $inicioContagem, ':fim' => $agora, ':consumo_kwh' => $kwh]);
     }
     
-$sqlAtualizarEstado = "UPDATE eletro SET estado = 'desligado', ligado_desde = NULL WHERE id = :id";
-$stmtAtualizarEstado = $pdo->prepare($sqlAtualizarEstado);
-$stmtAtualizarEstado->execute([':id' => $ideletro]);
+    $sqlAtualizarEstado = "UPDATE eletro SET estado = 'desligado', ligado_desde = NULL WHERE id = :id";
+    $stmtAtualizarEstado = $pdo->prepare($sqlAtualizarEstado);
+    $stmtAtualizarEstado->execute([':id' => $ideletro]);
+    echo json_encode(['message' => 'Aparelho desligado com sucesso']);
+
 } else {
     $sqlAtualizarEstado = "UPDATE eletro SET estado = 'ligado', ligado_desde = :agora WHERE id = :id";
     $stmtAtualizarEstado = $pdo->prepare($sqlAtualizarEstado);
