@@ -1,0 +1,62 @@
+-- ============================================
+-- FAVO - banco corrigido
+-- Mudanças em relação ao original:
+-- 1. eletro.nome_casa -> nome (bate com o que addProdutos.php já insere;
+-- o nome da casa já é acessível via eletro -> comodo -> casa)
+-- 2. usuario.foto varchar(0) -> varchar(255) (varchar(0) não guarda nada)
+-- 3. usuario.senha -> varchar(255) (folga para hashes maiores no futuro)
+-- 4. eletro ganhou "ligado_desde" (datetime), para o fluxo de ligar/desligar
+-- 5. consumo reorganizada: cada linha = uma sessão de uso fechada
+-- (início, fim, quanto consumiu naquela sessão)
+-- ============================================
+CREATE DATABASE IF NOT EXISTS favoteste;
+USE favoteste;
+-- Quem faz login
+CREATE TABLE usuario (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ nome VARCHAR(100) NOT NULL,
+ email VARCHAR(100) NOT NULL UNIQUE,
+ senha VARCHAR(255) NOT NULL,
+ foto VARCHAR(255)
+);
+-- Casa de um usuário
+CREATE TABLE casa (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ nome_casa VARCHAR(100) NOT NULL,
+ id_usuario INT NOT NULL,
+ FOREIGN KEY (id_usuario) REFERENCES usuario(id)
+);
+-- Cômodos de uma casa (Quarto, Sala...)
+CREATE TABLE comodo (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ nome VARCHAR(100) NOT NULL,
+ id_casa INT NOT NULL,
+ FOREIGN KEY (id_casa) REFERENCES casa(id)
+);
+-- Catálogo de referência (dados do INMETRO) - não pertence a usuário nenhum
+CREATE TABLE inmetro (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ nome VARCHAR(100) NOT NULL,
+ tipo VARCHAR(70) NOT NULL,
+ kwh DECIMAL(10,2) NOT NULL,
+ marca VARCHAR(50)
+);
+-- Aparelho real que o usuário cadastrou em um cômodo
+CREATE TABLE eletro (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ nome VARCHAR(100) NOT NULL, -- nome dado ao aparelho (ex: "Geladeira da cozinha")
+ tipo VARCHAR(70), -- tipo do aparelho (ex: "Geladeira", "TV") - combina c codigo VARCHAR(50), -- reservado para código/barcode lido via OCR futuramen watts INT, -- potência, se digitada manualmente (sem bater com o c estado VARCHAR(20) DEFAULT 'desligado',
+ ligado_desde DATETIME NULL, -- preenchido quando o estado vira 'ligado'; limpo quan id_comodo INT NOT NULL,
+ id_inmetro INT NULL, -- aponta pro catálogo, se o usuário escolheu um modelo FOREIGN KEY (id_comodo) REFERENCES comodo(id),
+ FOREIGN KEY (id_inmetro) REFERENCES inmetro(id)
+);
+-- Histórico de uso: uma linha por sessão de "ligado -> desligado" fechada
+CREATE TABLE consumo (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ id_eletro INT NOT NULL,
+ data DATE NOT NULL, -- dia em que a sessão ocorreu (usado para agrupar no g inicio DATETIME NOT NULL,
+ fim DATETIME NOT NULL,
+ consumo_kwh DECIMAL(10,3) NOT NULL,
+ FOREIGN KEY (id_eletro) REFERENCES eletro(id)
+);
+

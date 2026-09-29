@@ -18,8 +18,9 @@ function App() {
       <Nav/>
       <section className="ml-10 mr-10 md:ml-30 md:mr-30 pt-[80px] shadow-inner" id="Home">
       <Textos
-        h1={<>Se reorganize bem com <span className="inline-block font-['Zolo'] font-normal bg-gradient-to-r from-[#EBA864] to-[#F68412] bg-clip-text text-transparent">Favo</span></>}
+        h1={<>Se reorganize bem com <span className="inline-block font-['Zolo'] font-normal bg-gradient-to-r from-[#EBA864] to-[#F68412] bg-clip-text text-transparent text-[3rem] md:text-[5rem]">Favo</span></>}
         p="Não deixe a oportunidade de economizar na conta de energia"
+        tamanho="max-w-[15rem] md:max-w-[35rem]"
       />
       <div className="flex flex-col  items-center gap-[1rem] mb-20 md:flex-row md:justify-center md:items-center">
         <Botao 
@@ -29,16 +30,17 @@ function App() {
         <Botao 
           texto="Como funciona?"
           tipo="transparente"
+          link="#Como_Acessar"
         />
       </div>
       <HeroImagem/>
       </section>
       <section className="md:mt-[5rem]" id="Funcionalidades">
         <Textos
-          h1={<><h1>Nunca é <span>tarde</span> demais para <span>começar</span>.</h1></>}
+          h1={<><h1>Nunca é <span className="font-normal">tarde</span> demais para <span className="font-normal">começar</span>.</h1></>}
           p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
         />
-        <div className="flex flex-col px-[4.2rem] gap-[15px] md:flex-row md:gap-[100px] mt-[3rem]">
+        <div className="flex flex-col justify-center px-[4.2rem] gap-[15px] md:flex-row md:gap-[100px] mt-[3rem]">
           <div className="flex flex-col w-[50%] md:w-[30%] gap-2 md:gap-5 align-center justify-center">
             <BlocoGrafico
             titulo="Tenha acesso a Gráficos para sua comodidade"
@@ -78,13 +80,13 @@ function App() {
       </section>
       <section className="md:mt-[5rem]" id="Produtividade">
         <Textos
-        h1={<><h1>De <span>poucos</span> para <span>muitos</span></h1></>}
+        h1={<><h1>De <span className="font-normal">poucos</span> para <span className="font-normal">muitos</span></h1></>}
         p="Tenha o melhor organizador de energia para facilidade da sua vida."
         />
         <div className="flex flex-col justify-center items-center md:pt-[12rem] md:flex-row">
         <BlocoProdutividade
         tag="A todos"
-        txt1={<>Acesso ao sistema <span>Favo</span> a</>}
+        txt1={<>Acesso ao sistema <span className="font-['Zolo']">Favo</span> a</>}
         grande="Todas"
         txt2="as pessoas, sem limitações"/>
         <div className="hidden bg-gradient-to-b from-[#F9AE63] to-[#F68412] rounded-br-[200px] md:flex md:justify-center md:items-end h-[450px]">
@@ -99,8 +101,9 @@ function App() {
       </section>
       <section className="md:mt-[5rem]"id="Como_Acessar">
         <Textos
-        h1={<><h1>Passos <span>simples</span> para não se <span>perder</span></h1></>}
+        h1={<><h1>Passos <span className="font-normal">simples</span> para não se <span className="font-normal">perder</span></h1></>}
         p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
+        tamanho="max-w-[27rem] md:max-w-[47rem]"
         />
         <div className="flex flex-col justify-center items-center mt-[1rem] md:mt-[3rem]">
           <div className="flex flex-col md:flex-row gap-[2rem] justify-center mr-[2rem] ml-[2rem] md:gap-[10rem]">
@@ -118,8 +121,9 @@ function App() {
       </section>
       <section className="md:mt-[5rem]"id="Sobre_Nos">
         <Textos
-        h1={<><h1>Uso <span>testado</span> e <span>aprovado</span>.</h1></>}
+        h1={<><h1>Uso <span className="font-normal">testado</span> e <span className="font-normal">aprovado</span>.</h1></>}
         p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
+        tamanho="max-w-[45rem] md:max-w-[75rem]"
         />
         <div className="flex flex-col md:flex-row justify-center align-center items-center gap-[2rem] md:gap-[5rem] mt-[3rem]">
           <img className="md:h-[15rem] md:w-auto" src="../src/assets/100testado.png"/>
@@ -127,13 +131,13 @@ function App() {
         </div>
       </section>
       <section className="relative flex items-center justify-center md:mt-[5rem] w-full overflow-hidden min-h-[600px] md:min-h-[700px]" id="Comecar">
-        <p className="absolute text-[#C8C9CD]/50 text-[6.5rem] md:text-[25rem] font-bold z-0 whitespace-nowrap select-none">ENERGIA</p>
+        <p className="absolute text-[#C8C9CD]/25 text-[6.5rem] md:text-[25rem] font-bold z-0 whitespace-nowrap select-none">ENERGIA</p>
         <div className="relative z-10 w-full flex flex-col items-center justify-center">
           <img className="absolute mx-auto justify-center items-center w-[60rem] h-auto z-10" src="../src/assets/energiaBackground.png" alt="Energia"/>
           <div className="relative z-20 flex flex-col items-center justify-center p-10 text-center">
             <p className="font-bold text-white text-[1rem] md:text-[2rem]">Pronto pra ver sua conta de luz cair?</p>
             <p className="text-white text-[0.5rem] md:text-[0.8rem] md:text-[1.2rem] md:max-w-[32rem] max-w-[12rem]">Junte-se a milhares de famílias que economizam em média R$ 50,00 por mês usando a Favo.</p>
-            <div className="flex flex-row gap-[1rem] mt-[2rem]">
+            <div className="flex flex-row items-center justify-center gap-[1rem] mt-[2rem]">
               <Botao 
                 texto="Começar agora" 
                 tipo="preto" 
