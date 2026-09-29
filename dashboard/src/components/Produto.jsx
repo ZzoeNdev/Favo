@@ -93,7 +93,7 @@ function Produto({fecharForm}) {
               </datalist>
               <br />
               <label className="block text-gray-700 text-sm font-bold mb-2">Força (Watts) *</label>
-              <input className="border border-gray-300 rounded py-2 px-3 text-gray-700" type="text" id="forca" name="forca" value={forca} onChange={(e) => setForca(e.target.value)} required /> Watts
+              <input className="border border-gray-300 rounded py-2 px-3 text-gray-700" type="text" maxLength={5} id="forca" name="forca" value={forca} onChange={(e) => setForca(e.target.value)} required /> Watts
               <br />
               <label htmlFor="">Uso médio por dia:</label>
               <p>{horasMedia}</p>
