@@ -1,4 +1,4 @@
-function Botao({ texto, tipo, largura = "w-full w-[8rem] md:w-[12rem] min-w-[125px]" }) {
+function Botao({ texto, tipo, largura = "w-full w-[8rem] md:w-[12rem] min-w-[125px]", link }) {
   const base = `transition-all duration-300 rounded-[9px] mt-[3%] cursor-pointer ${largura} h-10 md:h-[2.5vw] max-h-[48px] min-h-[18px]`
 
   const estilos = {
@@ -8,7 +8,7 @@ function Botao({ texto, tipo, largura = "w-full w-[8rem] md:w-[12rem] min-w-[125
   }
 
   return (
-    <a href="#">
+    <a href={link}>
       <button className={`${base} ${estilos[tipo]}`}>
         {texto}
       </button>
