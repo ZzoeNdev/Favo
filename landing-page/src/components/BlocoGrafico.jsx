@@ -1,4 +1,4 @@
-import Grafico from "../components/Grafico"
+import Grafico from "../components/Grafico.jsx"
 import Logo from "../assets/graficosLogo.png"
 
 function BlocoGrafico() {
