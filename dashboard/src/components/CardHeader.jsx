@@ -10,16 +10,16 @@ function CardHeader() {
     
     useEffect(() => {
             function buscarValores() {
-                fetch('https://favo.free.nf/resumo.php', { credentials: 'include' })
+                fetch('https://favo.alwaysdata.net/resumo.php', { credentials: 'include' })
                     .then(resposta => resposta.json())
                     .then(json => setConsumo(json.consumoTotal))
 
-                fetch('https://favo.free.nf/eletroMaisUso.php', { credentials: 'include' })
+                fetch('https://favo.alwaysdata.net/eletroMaisUso.php', { credentials: 'include' })
                     .then(resposta => resposta.json())
                     .then(json => setMaisUsado(json.nome)
                         )
 
-                fetch('https://favo.free.nf/valorSalvo.php', { credentials: 'include' })
+                fetch('https://favo.alwaysdata.net/valorSalvo.php', { credentials: 'include' })
                     .then(resposta => resposta.json())
                     .then(json => setValorSalvo(json))
             }

@@ -11,7 +11,7 @@ function Produto({fecharForm}) {
   const [comodosExistentes, setComodosExistentes] = useState([])
 
   useEffect(()=> {
-    fetch("https://favo.free.nf/listarComodos.php", {credentials: "include"})
+    fetch("https://favo.alwaysdata.net/listarComodos.php", {credentials: "include"})
     .then(resposta => resposta.json())
     .then(json=>{
       if (json.length > 0) {
@@ -46,7 +46,7 @@ function Produto({fecharForm}) {
   }
 
   function enviarProduto(){
-        fetch("https://favo.free.nf/addProdutos.php", {
+        fetch("https://favo.alwaysdata.net/addProdutos.php", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             credentials: "include",

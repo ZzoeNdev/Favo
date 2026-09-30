@@ -10,7 +10,7 @@ function Painel() {
 
 
     useEffect(() => {
-        fetch('https://favo.free.nf/listarComodos.php', {credentials: 'include'})
+        fetch('https://favo.alwaysdata.net/listarComodos.php', {credentials: 'include'})
             .then(resposta => resposta.json())
             .then(json => {
                 console.log('Comodos recebidos:', json);
@@ -28,7 +28,7 @@ function Painel() {
 
     useEffect(() => {
         if (selecionado) {
-            fetch(`https://favo.free.nf/aparelhosNoComodo.php?comodo=${selecionado.id}`, {credentials: 'include'})
+            fetch(`https://favo.alwaysdata.net/aparelhosNoComodo.php?comodo=${selecionado.id}`, {credentials: 'include'})
                 .then(resposta => resposta.json())
                 .then(json => setAparelhos(json))
         }

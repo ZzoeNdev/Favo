@@ -14,7 +14,7 @@ function App() {
 
   const [carregando, setCarregando] = useState(true);
   useEffect(() => {
-    fetch('http://localhost/api/verificarSessao.php', {
+    fetch('https://favo.alwaysdata.net/verificarSessao.php', {
       credentials: 'include'})
       .then(response => response.json())
       .then(json => {
