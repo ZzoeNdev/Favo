@@ -7,7 +7,7 @@ function GraficoRadial() {
 
     useEffect(() => {
         function buscarValores() {
-            fetch('http://localhost/api/resumo.php', { credentials: 'include' })
+            fetch('https://favo.free.nf/resumo.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setConsumo(json.consumoTotal))
         }

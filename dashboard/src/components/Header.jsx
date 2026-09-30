@@ -7,7 +7,7 @@ function Header({ abrirForm }) {
 
     useEffect(() => {
         function buscarValores() {
-            fetch('http://localhost/api/resumo.php', { credentials: 'include' })
+            fetch('https://favo.free.nf/resumo.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setCusto(Number(json.custoReais)))
         }

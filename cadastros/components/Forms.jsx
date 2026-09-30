@@ -10,7 +10,7 @@ function Forms() {
     const [erroCad, setErroCad] = useState()
 
     function enviarCadastro(){
-        fetch("http://localhost/api/cadastros.php", {
+        fetch("https://favo.free.nf/cadastros.php", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({nome:nome, email:email, senha:senha})
@@ -28,7 +28,7 @@ function Forms() {
     }
 
     function enviarLogin(){
-        fetch("http://localhost/api/logins.php", {
+        fetch("https://favo.free.nf/logins.php", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             credentials: "include",

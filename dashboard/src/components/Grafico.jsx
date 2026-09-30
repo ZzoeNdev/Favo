@@ -6,7 +6,7 @@ function Grafico({comodo, atualizar}) {
 const[dados, setDados] = useState([]);
 
 useEffect(() => {
-    fetch(`http://localhost/api/graficoComodo.php?comodo=${comodo}`, {credentials: 'include'})
+    fetch(`https://favo.free.nf/graficoComodo.php?comodo=${comodo}`, {credentials: 'include'})
         .then(resposta => resposta.json())
         .then(json => setDados(json));
 }, [comodo, atualizar] );

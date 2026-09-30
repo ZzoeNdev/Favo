@@ -6,7 +6,7 @@ function Aparelhos() {
     const [atualizar, setAtualizar] = useState(0)
 
     useEffect(() => {
-        fetch('http://localhost/api/listarAparelhos.php', { credentials: 'include' })
+        fetch('https://favo.free.nf/listarAparelhos.php', { credentials: 'include' })
             .then(resposta => resposta.json())
             .then(json => {
                 setAparelhos(json)
@@ -15,7 +15,7 @@ function Aparelhos() {
     }, [atualizar])
 
     function alternar(idEletro) {
-        fetch("http://localhost/api/alternarEstado.php", {
+        fetch("https://favo.free.nf/alternarEstado.php", {
             method: "POST",
             credentials: 'include',
             headers: {
