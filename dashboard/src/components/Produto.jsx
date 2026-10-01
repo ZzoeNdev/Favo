@@ -97,7 +97,7 @@ function Produto({fecharForm}) {
               <br />
               <label htmlFor="">Uso médio por dia:</label>
               <p>{horasMedia}</p>
-              <input type="range" min="1" max="24" value={horasMedia} onChange={(h) => setHorasMedia(h.target.value)} className='w-full'/>
+              <input type="range" min="0.1" max="24" step={0.1} value={horasMedia} onChange={(h) => setHorasMedia(h.target.value)} className='w-full'/>
             </div>
           </div>
           <button type="button" onClick={enviarProduto} className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-4">
