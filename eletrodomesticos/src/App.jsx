@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import ResumoAparelhos from './components/ResumoAparelhos.jsx'
-import Aparelhos from './components/Aparelhos.jsx'
 import BlocoAparelho from './components/BlocoAparelho.jsx'
 
 function App() {
@@ -9,8 +8,9 @@ function App() {
   return (
     <div>
       <ResumoAparelhos />
-      <Aparelhos />
-      <BlocoAparelho />
+      <div className="flex flex-row gap-[3rem]">
+        <BlocoAparelho />
+      </div>
     </div>
 
   )
