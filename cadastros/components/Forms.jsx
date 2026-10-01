@@ -37,7 +37,7 @@ function Forms() {
         .then(resposta => resposta.json())
         .then(json => {
             if(json.logado){
-                window.location.href = "https://favo-dashboard-p2b84v33w-zzoendev.vercel.app"
+                window.location.href = "https://favo-dashboard-ecru.vercel.app"
             }else{
                 setErroLog(json.message)
                 console.log(json.message)
