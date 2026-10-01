@@ -38,7 +38,7 @@ function Nav() {
         <a href="#Home">
           <img src={Logo} alt="Logo Favo" className="max-w-[84px] max-h-[41px] cursor-pointer" />
         </a>
-        <Botao texto="Acessar Painel" tipo="cheio"/>
+        <Botao texto="Acessar Painel" onClick={() => {window.location.href = "https://favo-cadastro.vercel.app"}} tipo="cheio"/>
       </header>
 
       {/* ── Desktop: topo completo ── */}

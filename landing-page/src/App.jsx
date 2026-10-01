@@ -116,7 +116,7 @@ function App() {
               <img className="md:w-[35rem] md:h-auto" src="../src/assets/passo4.png" alt="Aproveite"/>
             </div>
           </div>
-          <Botao texto="Começar agora" tipo="transparente" largura="w-full md:w-[40rem] min-w-[125px]"/>
+          <Botao texto="Começar agora" onClick={() => {window.location.href = "https://favo-cadastro.vercel.app"}} tipo="transparente" largura="w-full md:w-[40rem] min-w-[125px]"/>
         </div>
       </section>
       <section className="md:mt-[5rem]"id="Sobre_Nos">
@@ -141,6 +141,7 @@ function App() {
               <Botao 
                 texto="Começar agora" 
                 tipo="preto" 
+                onClick={() => {window.location.href = "https://favo-cadastro.vercel.app"}}
               />
               <p className="text-white">Uso 100% grátis e eficiente</p>
             </div>
