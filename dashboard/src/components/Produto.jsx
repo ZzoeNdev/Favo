@@ -105,12 +105,12 @@ function Produto({ fecharForm }) {
             <div>
               <h1 className="text-2xl font-bold mb-2">Registro Manual</h1>
               <label className="block text-gray-700 text-sm font-bold mb-2">Nome do seu Eletrodoméstico *</label>
-              <input className="border border-gray-300 rounded py-2 px-3 text-gray-700" type="text" id="nome" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
+              <input maxLength="32" className="border border-gray-300 rounded py-2 px-3 text-gray-700" type="text" id="nome" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
               <br />
               <label className="block text-gray-700 text-sm font-bold mb-2">Cômodo *</label>
               <input list='lista-comodos'
                 value={comodo}
-                onChange={(c) => setComodo(c.target.value)}
+                onChange={(c) => setComodo(c.target.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, ''))}
                 placeholder='Digite ou escolha um comodo'
                 className='border border-gray-300 rounded py-2 px-2 text-gray-700' required />
               <datalist id='lista-comodos'>
@@ -120,7 +120,7 @@ function Produto({ fecharForm }) {
               </datalist>
               <br />
               <label className="block text-gray-700 text-sm font-bold mb-2">Força (Watts) *</label>
-              <input className="border border-gray-300 rounded py-2 px-3 text-gray-700" type="text" maxLength={5} id="forca" name="forca" value={forca} onChange={(e) => setForca(e.target.value)} required /> Watts
+              <input className="border border-gray-300 rounded py-2 px-3 text-gray-700" type="text" maxLength={5} id="forca" name="forca" value={forca} onChange={(e) => setForca(e.target.value.replace(/[^0-9]/g, ''))} required /> Watts
               <br />
               <label htmlFor="">Uso médio por dia:</label>
               <p>{horasMedia}</p>
