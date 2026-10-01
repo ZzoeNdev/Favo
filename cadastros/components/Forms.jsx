@@ -18,7 +18,7 @@ function Forms() {
         .then(resposta => resposta.json())
         .then(json => {
             if(json.cadastrado){
-                window.location.href = "favo-cadastro.vercel.app"
+                window.location.href = "https://favo-cadastro.vercel.app"
             }else{
                 setErroCad(json.message)
                 console.log(json.message)
