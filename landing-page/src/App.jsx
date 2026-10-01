@@ -11,6 +11,21 @@ import BlocoImagem from "./components/BlocoImagem.jsx"
 import BlocoProdutividade from "./components/BlocoProdutividade.jsx"
 import Footer from "./components/Footer.jsx"
 
+import favoSmartphone from "./assets/favoSmartphone.png"
+import passo1 from "./assets/passo1.png"
+import passo2 from "./assets/passo2.png"
+import passo3 from "./assets/passo3.png"
+import passo4 from "./assets/passo4.png"
+import mulher from "./assets/mulher.png"
+import Informacoes from "./assets/informacoesLogo.png"
+import Eletrodomesticos from "./assets/eletrodomesticosLogo.png"
+import Valores from "./assets/valoresLogo.png"
+import Gratis from "./assets/gratisLogo.png"
+import CemTestado from "./assets/100testado.png"
+import TelaTestado from "./assets/telatestado.png"
+import energiaBackground from "./assets/energiaBackground.png"
+
+
 function App() {
 
   return (
@@ -48,30 +63,30 @@ function App() {
             <BlocoImagem/>
           </div>
           <div className="hidden md:flex md:justify-center">
-            <img className="h-[720px]" src="../src/assets/favoSmartphone.png"/>
+            <img className="h-[720px]" src={favoSmartphone} alt="Favo Smartphone" />
           </div>
           <div className="flex flex-col w-[50%] md:w-[30%] gap-2 md:gap-5 align-center justify-center">
           <BlocoFuncionalidade
             titulo="Eletrodomésticos"
-            logo={"./src/assets/eletrodomesticosLogo.png"}
+            logo={Eletrodomesticos}
             texto="Tenha total acesso para o cadastro de organização de seus eletrodomésticos"
             tipo="normal"
           />
           <BlocoFuncionalidade
             titulo="Informações"
-            logo={"./src/assets/informacoesLogo.png"}
+            logo={Informacoes}
             texto="Dashboard 100% organizado e facilitado para o seu uso sem confusões"
             tipo="normal"
           />
           <BlocoFuncionalidade
             titulo="Valores"
-            logo={"./src/assets/valoresLogo.png"}
+            logo={Valores}
             texto="Seus gastos juntos em um só lugar, atualizados para você dia em dia"
             tipo="normal"
           />
           <BlocoFuncionalidade
             titulo="Grátis ou Premium?"
-            logo={"./src/assets/gratisLogo.png"}
+            logo={Gratis}
             texto="Uso 100% gratuito para sua comodidade e organização de sua própria casa"
             tipo="normal"
           />
@@ -90,7 +105,7 @@ function App() {
         grande="Todas"
         txt2="as pessoas, sem limitações"/>
         <div className="hidden bg-gradient-to-b from-[#F9AE63] to-[#F68412] rounded-br-[200px] md:flex md:justify-center md:items-end h-[450px]">
-          <img className="h-[600px]" src="../src/assets/mulher.png"/>
+          <img className="h-[600px]" src={mulher} alt="Mulher sorrindo" />
         </div>
         <BlocoProdutividade
         tag="Sem limites"
@@ -108,12 +123,12 @@ function App() {
         <div className="flex flex-col justify-center items-center mt-[1rem] md:mt-[3rem]">
           <div className="flex flex-col md:flex-row gap-[2rem] justify-center mr-[2rem] ml-[2rem] md:gap-[10rem]">
             <div className="flex flex-col gap-[1rem] md:gap-[2rem]">
-              <img className="md:w-[35rem] md:h-auto" src="../src/assets/passo1.png" alt="Faça o seu Cadastro ou Login no Sistema" />
-              <img className="md:w-[35rem] md:h-auto" src="../src/assets/passo2.png" alt="Adicione seu primeiro eletrodoméstico" />
-              <img className="md:w-[35rem] md:h-auto" src="../src/assets/passo3.png" alt="Verifique os dados de seus gastos"/>
+              <img className="md:w-[35rem] md:h-auto" src={passo1} alt="Faça o seu Cadastro ou Login no Sistema" />
+              <img className="md:w-[35rem] md:h-auto" src={passo2} alt="Adicione seu primeiro eletrodoméstico" />
+              <img className="md:w-[35rem] md:h-auto" src={passo3} alt="Verifique os dados de seus gastos"/>
             </div>
             <div className="flex flex-col gap-[1rem] md:gap-[2rem]">
-              <img className="md:w-[35rem] md:h-auto" src="../src/assets/passo4.png" alt="Aproveite"/>
+              <img className="md:w-[35rem] md:h-auto" src={passo4} alt="Aproveite"/>
             </div>
           </div>
           <Botao texto="Começar agora" onClick={() => window.location.href = "https://favo-cadastro.vercel.app"} tipo="transparente" largura="w-full md:w-[40rem] min-w-[125px]"/>
@@ -126,14 +141,14 @@ function App() {
         tamanho="max-w-[45rem] md:max-w-[75rem]"
         />
         <div className="flex flex-col md:flex-row justify-center align-center items-center gap-[2rem] md:gap-[5rem] mt-[3rem]">
-          <img className="md:h-[15rem] md:w-auto" src="../src/assets/100testado.png"/>
-          <img className="md:h-[15rem] md:w-auto" src="../src/assets/telatestado.png"/>
+          <img className="md:h-[15rem] md:w-auto" src={CemTestado} alt="100% testado"/>
+          <img className="md:h-[15rem] md:w-auto" src={TelaTestado} alt="Tela testada"/>
         </div>
       </section>
       <section className="relative flex items-center justify-center md:mt-[5rem] w-full overflow-hidden min-h-[600px] md:min-h-[700px]" id="Comecar">
         <p className="absolute text-[#C8C9CD]/25 text-[6.5rem] md:text-[25rem] font-bold z-0 whitespace-nowrap select-none">ENERGIA</p>
         <div className="relative z-10 w-full flex flex-col items-center justify-center">
-          <img className="absolute mx-auto justify-center items-center w-[60rem] h-auto z-10" src="../src/assets/energiaBackground.png" alt="Energia"/>
+          <img className="absolute mx-auto justify-center items-center w-[60rem] h-auto z-10" src={energiaBackground} alt="Energia"/>
           <div className="relative z-20 flex flex-col items-center justify-center p-10 text-center">
             <p className="font-bold text-white text-[1rem] md:text-[2rem]">Pronto pra ver sua conta de luz cair?</p>
             <p className="text-white text-[0.5rem] md:text-[0.8rem] md:text-[1.2rem] md:max-w-[32rem] max-w-[12rem]">Junte-se a milhares de famílias que economizam em média R$ 50,00 por mês usando a Favo.</p>
