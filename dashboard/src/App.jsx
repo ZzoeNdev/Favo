@@ -19,7 +19,7 @@ function App() {
       .then(response => response.json())
       .then(json => {
         if (json.logado == false) {
-          window.location.href = ' http://localhost:5173';
+          window.location.href = 'https://favo-cadastro.vercel.app';
         } else {
           setCarregando(false);
         }
@@ -27,7 +27,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost/api/fecharConsumoDiario.php', {
+    fetch('https://favo.alwaysdata.net/fecharConsumoDiario.php', {
       credentials: 'include'})
   }, []);
 
