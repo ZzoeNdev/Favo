@@ -65,7 +65,7 @@ function Nav() {
             ))}
           </ul>
 
-          <Botao texto="Acessar Painel" tipo="cheio" />
+          <Botao texto="Acessar Painel" tipo="cheio" onClick={() => window.location.href = "https://favo-cadastro.vercel.app"} />
 
         </nav>
       </header>
