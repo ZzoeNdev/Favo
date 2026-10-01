@@ -6,11 +6,11 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <ResumoAparelhos />
-      <div className="flex flex-row gap-[3rem]">
-        <BlocoAparelho />
-      </div>
+    <div className="">
+    <ResumoAparelhos />
+    <div className="w-[20rem] h-[80rem] border-1 border-[#9A9A9A] rounded-[20px] md:w-[75rem] md:h-[40rem]">
+      <BlocoAparelho />
+    </div>
     </div>
 
   )
