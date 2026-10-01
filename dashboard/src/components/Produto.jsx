@@ -24,45 +24,53 @@ function Produto({ fecharForm }) {
       })
   }, [])
 
-
   function selecionarImagem(e) {
     const arquivo = e.target.files[0];
     setImagemOCR(arquivo);
     console.log('Imagem selecionada:', arquivo);
-    lerCodigoDeBarras(arquivo);
   }
 
-  function receberProdutoInmetro() {
-    fetch("https://favo.alwaysdata.net/buscarInmetro.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({ codigoBarras: codigoBarras })
-    })
-      .then(resposta => resposta.json())
-      .then(json => {
-        console.log(json.message)
-        setNome(json.nome)
-        setForca(json.kwh)
+
+  useEffect(() => {
+
+    async function lerCodigoDeBarras() {
+      if (!imagemOCR) {
+        console.error('Nenhuma imagem selecionada para OCR.');
+        return;
+      }
+      const leitor = new Html5Qrcode("reader");
+      try {
+        const result = await leitor.scanFile(imagemOCR);
+        setCodigoBarras(result);
+        console.log('Resultado do OCR:', result);
+      } catch (error) {
+        console.error('Erro ao processar a imagem:', error);
+      }
+    }
+
+    lerCodigoDeBarras();
+  }, [imagemOCR]);
+
+  useEffect(() => {
+
+    function receberProdutoInmetro() {
+      fetch("https://favo.alwaysdata.net/buscarInmetro.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ codigoBarras: codigoBarras })
       })
-  }
+        .then(resposta => resposta.json())
+        .then(json => {
+          console.log(json.message)
+          setNome(json.nome)
+          setForca(json.kwh)
+        })
+    }
 
-  async function lerCodigoDeBarras(arquivo) {
-    if (!arquivo) {
-      console.error('Nenhuma imagem selecionada para OCR.');
-      return;
-    }
-    const leitor = new Html5Qrcode("reader");
-    try {
-      const result = await leitor.scanFile(arquivo);
-      setCodigoBarras(result);
-      console.log('Resultado do OCR:', codigoBarras);
-      receberProdutoInmetro();
-      console.log(nome, forca)
-    } catch (error) {
-      console.error('Erro ao processar a imagem:', error);
-    }
-  }
+    receberProdutoInmetro();
+  }, [codigoBarras]);
+
 
   function enviarProduto() {
     fetch("https://favo.alwaysdata.net/addProdutos.php", {
