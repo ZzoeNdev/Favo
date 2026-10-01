@@ -1,7 +1,7 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import { Html5Qrcode } from "html5-qrcode";
 
-function Produto({fecharForm}) {
+function Produto({ fecharForm }) {
   const [nome, setNome] = useState('');
   const [comodo, setComodo] = useState('');
   const [forca, setForca] = useState('');
@@ -9,26 +9,42 @@ function Produto({fecharForm}) {
   const [imagemOCR, setImagemOCR] = useState(null);
   const [horasMedia, setHorasMedia] = useState(4);
   const [comodosExistentes, setComodosExistentes] = useState([])
+  const [codigoBarras, setCodigoBarras] = useState('');
 
-  useEffect(()=> {
-    fetch("https://favo.alwaysdata.net/listarComodos.php", {credentials: "include"})
-    .then(resposta => resposta.json())
-    .then(json=>{
-      if (json.length > 0) {
-        setComodosExistentes(json.map(c => c.nome))
-      }else{
-        setComodosExistentes(["Sala","Quarto","Cozinha","Banheiro"])
-      }
-      console.log('comodosExistentes deveria ter:', json)
-    })
+  useEffect(() => {
+    fetch("https://favo.alwaysdata.net/listarComodos.php", { credentials: "include" })
+      .then(resposta => resposta.json())
+      .then(json => {
+        if (json.length > 0) {
+          setComodosExistentes(json.map(c => c.nome))
+        } else {
+          setComodosExistentes(["Sala", "Quarto", "Cozinha", "Banheiro"])
+        }
+        console.log('comodosExistentes deveria ter:', json)
+      })
   }, [])
-  
+
 
   function selecionarImagem(e) {
     const arquivo = e.target.files[0];
     setImagemOCR(arquivo);
     console.log('Imagem selecionada:', arquivo);
     lerCodigoDeBarras(arquivo);
+  }
+
+  function receberProdutoInmetro() {
+    fetch("https://favo.alwaysdata.net/buscarInmetro.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ codigoBarras: codigoBarras })
+    })
+      .then(resposta => resposta.json())
+      .then(json => {
+        console.log(json.message)
+        setNome(json.nome)
+        setForca(json.kwh)
+      })
   }
 
   async function lerCodigoDeBarras(arquivo) {
@@ -39,25 +55,28 @@ function Produto({fecharForm}) {
     const leitor = new Html5Qrcode("reader");
     try {
       const result = await leitor.scanFile(arquivo);
-      console.log('Resultado do OCR:', result);
+      setCodigoBarras(result);
+      console.log('Resultado do OCR:', codigoBarras);
+      receberProdutoInmetro();
+      console.log(nome, forca)
     } catch (error) {
       console.error('Erro ao processar a imagem:', error);
     }
   }
 
-  function enviarProduto(){
-        fetch("https://favo.alwaysdata.net/addProdutos.php", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            credentials: "include",
-            body: JSON.stringify({nome:nome, comodo:comodo, watts:forca, estado:estado, horasMedia:horasMedia})
-        })
-        .then(resposta => resposta.json())
-        .then(json => {
-            console.log(json.message)
-            window.location.reload();
-        })
-    }
+  function enviarProduto() {
+    fetch("https://favo.alwaysdata.net/addProdutos.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ nome: nome, comodo: comodo, watts: forca, estado: estado, horasMedia: horasMedia })
+    })
+      .then(resposta => resposta.json())
+      .then(json => {
+        console.log(json.message)
+        window.location.reload();
+      })
+  }
 
   return (
     <div className="fixed z-10 top-0 left-0 w-screen h-screen backdrop-blur-sm flex flex-col items-center justify-center">
@@ -82,13 +101,13 @@ function Produto({fecharForm}) {
               <br />
               <label className="block text-gray-700 text-sm font-bold mb-2">Cômodo *</label>
               <input list='lista-comodos'
-              value={comodo}
-              onChange={(c) => setComodo(c.target.value)}
-              placeholder='Digite ou escolha um comodo'
-              className='border border-gray-300 rounded py-2 px-2 text-gray-700' required />
+                value={comodo}
+                onChange={(c) => setComodo(c.target.value)}
+                placeholder='Digite ou escolha um comodo'
+                className='border border-gray-300 rounded py-2 px-2 text-gray-700' required />
               <datalist id='lista-comodos'>
                 {comodosExistentes.map(c => (
-                  <option value={c}/>
+                  <option value={c} />
                 ))}
               </datalist>
               <br />
@@ -97,7 +116,7 @@ function Produto({fecharForm}) {
               <br />
               <label htmlFor="">Uso médio por dia:</label>
               <p>{horasMedia}</p>
-              <input type="range" min="0.1" max="24" step={0.1} value={horasMedia} onChange={(h) => setHorasMedia(h.target.value)} className='w-full'/>
+              <input type="range" min="0.1" max="24" step={0.1} value={horasMedia} onChange={(h) => setHorasMedia(h.target.value)} className='w-full' />
             </div>
           </div>
           <button type="button" onClick={enviarProduto} className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-4">
