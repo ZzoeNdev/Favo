@@ -14,7 +14,7 @@ function Resumo() {
                 </div>
             </div>
 
-            <button className="bg-[#F68412] w-[60%] md:w-[20%] p-2 font-semibold text-sm text-white rounded-lg mt-10">Todos os Produtos</button>
+            <button className="bg-[#F68412] w-[60%] md:w-[20%] p-2 font-semibold text-sm text-white rounded-lg mt-10" onClick={() => window.location.href = "https://favo-eletrodomesticos.vercel.app"}>Todos os Produtos</button>
         </div>
     )
 }

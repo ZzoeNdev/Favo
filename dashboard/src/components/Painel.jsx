@@ -92,7 +92,7 @@ function Painel() {
                             <h1 className='font-bold text-white'>R$ {((aparelhos.reduce((total, obj) => total + (obj.watts * obj.usoMedio),0)/1000)*0.739).toFixed(2)}</h1>
                         </div>
 
-                        <button className='hidden md:flex whitespace-nowrap text-orange-400'>Ver Detalhes</button>
+                        <button className='hidden md:flex whitespace-nowrap text-orange-400' onClick={() => window.location.href = "https://favo-eletrodomesticos.vercel.app"}>Ver Detalhes</button>
                     </div>
                 </div>
 
