@@ -44,6 +44,7 @@ function Aparelhos() {
                 ))}
             </div>
         </div>
+
     )
     
 }

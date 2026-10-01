@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ResumoAparelhos from './components/ResumoAparelhos.jsx'
 import Aparelhos from './components/Aparelhos.jsx'
+import BlocoAparelho from './components/BlocoAparelho.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -9,6 +10,7 @@ function App() {
     <div>
       <ResumoAparelhos />
       <Aparelhos />
+      <BlocoAparelho />
     </div>
 
   )
