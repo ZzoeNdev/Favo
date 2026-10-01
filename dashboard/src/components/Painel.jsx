@@ -51,7 +51,7 @@ function Painel() {
                                     </div>
                                     <div>
                                         <h1 className="font-bold">{obj.nome}</h1>
-                                        <p className="text-sm font-light">Atualizado</p>
+                                        <p className="text-sm font-light">{(obj.estado).charAt(0).toUpperCase() + (obj.estado).slice(1)}</p>
                                     </div>
                                 </div>
 
