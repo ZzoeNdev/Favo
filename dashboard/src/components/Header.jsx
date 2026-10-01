@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import SlotCounter from 'react-slot-counter';
 
+import favoWLogo from "../assets/favoWLogo.png"
+import iconPerfil from "../assets/icons/iconPerfil.png"
+import addIcon from "../assets/icons/addIcon.png"
+
 function Header({ abrirForm }) {
 
     const [custo, setCusto] = useState(0)
@@ -20,12 +24,12 @@ function Header({ abrirForm }) {
     return (
         <div className="flex flex-col item-center w-screen bg-gradient-to-br from-orange-500 to-orange-300 bg- md:bg-[url('/src/assets/dashFundo.png')] md:bg-contain bg-no-repeat rounded-b-4xl h-80 md:h-[673px]">
 
-            <header className="relative w-full flex flex-col justify-start items-center mt-7">
-                <a href="../../index.html"><img className="w-8 md:w-11" src="./src/assets/favoWLogo.png" alt="Logo Favo" /></a>
-                <div className="flex mt-4 justify-center items-center gap-2 md:gap-5">
-                    <input className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-xl shadow-md w-70 md:w-150 h-9" type="text" name="" id="" />
-                    <button className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-xl shadow-md w-10 md:w-50 h-9" onClick={abrirForm}> Adicionar Produto <img src="" alt="" /></button>
-                    <button className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-3xl shadow-md w-9 h-9"><img src="" alt="" />Perfil</button>
+            <header className="relative w-screen flex flex-col justify-center items-center mt-7">
+                <a href="https://favo-landing.vercel.app"><img className="w-8 md:w-11" src={favoWLogo} alt="Logo Favo" /></a>
+                <div className="flex mt-4 w-[87vw] justify-end items-center gap-2 md:gap-5">
+                    <button className="hidden md:flex justify-center items-center gap-3 bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-xl shadow-md w-10 md:w-55 h-10 text-white/80 whitespace-nowrap" onClick={abrirForm}> Adicionar Produto <img src={addIcon} alt="Adicionar Produto" /></button>
+                    <button className="flex justify-center items-center md:hidden bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-xl shadow-md w-10 md:w-50 h-9 text-white/80" onClick={abrirForm}><img src={addIcon} alt="Adicionar Produto"/></button>
+                    <button className="bg-gray-400/12 border border-white/20 backdrop-blur-sm rounded-3xl shadow-md w-10 h-10 p-1"><img src={iconPerfil} alt="Perfil" /></button>
                 </div>
             </header>
 

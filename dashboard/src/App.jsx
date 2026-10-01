@@ -7,6 +7,8 @@ import Painel from './components/Painel'
 import Resumo from './components/Resumo'
 import CardMeta from './components/CardMeta'
 import Produto from './components/Produto'
+import Comparacao from './components/Comparacao'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -41,7 +43,7 @@ function App() {
   }
 
   return (
-    <div className='flex flex-col items-center pb-20'>
+    <div className='flex flex-col items-center'>
 
       <Header abrirForm={() => setMudarEstado(true)} />
 
@@ -62,6 +64,16 @@ function App() {
       </div>
 
       <CardMeta/>
+
+      <div className='flex flex-col items-center md:items-start md:w-[90%] mt-10 md:mt-19'>
+        <p className='text-orange-500 font-bold text-xs md:text-lg'>COMPARAÇÃO</p>
+        <h1 className='font-extrabold text-3xl md:text-5xl'>Veja a Comparação de Seu Consumo</h1>
+
+      <Comparacao />
+
+      <Footer />
+      
+      </div>
     </div>
   )
 }
