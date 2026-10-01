@@ -21,14 +21,15 @@ A ideia para o projeto surgiu a partir da observação da necessidade real das f
 
 <img src="imgs/modelReadMe.png"/>
 
-<h1>Visualização</h1>
-<h5>(Não Disponivel)</h5>
+<h1>Acesse em:</h1>
+<h5>https://favo-landing.vercel.app</h5>
+
+<h5>ou</h5>
+
 <h5> 1. Clone o repositório: git clone https://github.com/ZzoeNdev/Favo </h5>
 <h5> 2. Abra o arquivo index.html no seu navegador. </h5>
 
 </div>
-
-<h1 align="center">Overview:</h1>
 
 <div align="center" style="display:flex;">
 
