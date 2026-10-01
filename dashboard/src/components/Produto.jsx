@@ -55,8 +55,8 @@ function Produto({fecharForm}) {
         .then(resposta => resposta.json())
         .then(json => {
             console.log(json.message)
+            window.location.reload();
         })
-        window.location.reload();
     }
 
   return (
