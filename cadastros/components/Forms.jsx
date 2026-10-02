@@ -20,7 +20,6 @@ function Forms() {
                 } else {
                     console.log(json.message)
                 }
-
             })
     }
 
