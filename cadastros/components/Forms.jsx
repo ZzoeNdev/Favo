@@ -85,7 +85,7 @@ function Forms() {
                     </div>
                 </div>
 
-                <button type="submit" onClick={modo === "cadastro" ? enviarCadastro : enviarLogin} className="bg-[#F68412] text-white text-xs p-2 md:p-4 w-full rounded-lg mt-6">{modo === "login" ? "Acessar Conta" : "Criar Conta"}</button>
+                <button type="button" onClick={modo === "cadastro" ? enviarCadastro : enviarLogin} className="bg-[#F68412] text-white text-xs p-2 md:p-4 w-full rounded-lg mt-6">{modo === "login" ? "Acessar Conta" : "Criar Conta"}</button>
 
                 {erroLog && modo === "login" && (
                     <p className="bg-red-500/10 text-red-500 text-xs text-center p-1 rounded mt-2">{erroLog}</p>
