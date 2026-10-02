@@ -26,13 +26,14 @@ if ($stmt->fetch()) {
     echo json_encode(['message' => 'Email já cadastrado']);
     exit;
 } else {
-    $sql = "INSERT INTO usuario (nome, email, senha) VALUES (:nome, :email, :senha)";
+    $sql = "INSERT INTO usuario (nome, email, senha, foto) VALUES (:nome, :email, :senha, :foto)";
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute([
         ':nome' => $dados['nome'],
         ':email' => $dados['email'],
-        ':senha' => password_hash($dados['senha'], PASSWORD_DEFAULT)
+        ':senha' => password_hash($dados['senha'], PASSWORD_DEFAULT),
+        ':foto' => "perfilDefault.png"
     ]);
 
     $idUsuario = $pdo->lastInsertId();

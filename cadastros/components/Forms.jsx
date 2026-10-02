@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import favoWLogo from "../assets/favoWLogo.png"
+
 function Forms() {
 
     const [modo, setModo] = useState("login")
@@ -92,7 +94,7 @@ function Forms() {
             </form>
 
             <div className={modo === "login" ? "order-2 p-4 md:p-8" : "order-1 p-4 md:p-8"}>
-                <img src="../assets/favoWLogo.png" alt="Favo Logo" className="h-2 md:h-4" />
+                <img src={favoWLogo} alt="Favo Logo" className="h-2 md:h-4" />
                 <h1 className="text-white text-4xl md:text-5xl w-60 md:w-70 font-semibold mt-2 md:mt-6">{modo === "login" ? "Ainda não tem conta?" : "Já tem sua conta?"}</h1>
                 <p className="text-sm md:text-lg text-white">{modo === "login" ? "Clique e crie a sua agora!" : "Acesse sua conta agora!"}</p>
                 <button className="border border-[#F8F8F8]/35 text-sm text-white p-2 md:p-4 w-full md:w-[110%] rounded-lg mt-5" onClick={() => setModo(modo === "login" ? "cadastro" : "login")}>{modo === "login" ? "Fazer Cadastro" : "Fazer Log-in"}</button>

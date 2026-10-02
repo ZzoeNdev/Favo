@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $idComodo = $_GET['comodo'] ?? null;
 
-$sql = "SELECT nome, watts, SUM(watts) as total, horas_uso_medio as usoMedio FROM eletro WHERE id_comodo = :id_comodo GROUP BY nome,watts";
+$sql = "SELECT nome, watts, estado, SUM(watts) as total, horas_uso_medio as usoMedio FROM eletro WHERE id_comodo = :id_comodo GROUP BY nome,watts";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([':id_comodo' => $idComodo]);
 

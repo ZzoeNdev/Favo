@@ -10,9 +10,9 @@ if (!isset($_SESSION['user_id'])) {
     exit(json_encode(['message' => 'Não autenticado']));
 }
 
-$sql = "SELECT nome,kwh FROM inmetro WHERE id = :id";
+$sql = "SELECT nome,kwh FROM inmetro WHERE codigoBarras = :codigoBarras";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([':id' => $dados['codigoBarras']]);
-$dados = $stmt->fetch();
+$stmt->execute([':codigoBarras' => $dados['codigoBarras']]);
+$eletro = $stmt->fetch();
 
-echo json_encode($dados)
+echo json_encode($eletro);
