@@ -34,9 +34,9 @@ function BlocoAparelho() {
 
 
     return (
-        <div className="flex flex-row gap-[1rem]">
+        <div className="flex flex-wrap gap-[1rem]">
         {aparelhosFiltrados.map(a => (
-            <div key={a.id} className="w-[7rem] h-[10rem] border-1 rounded-[20px] md:w-[15rem] md:h-[18rem] p-[2rem]">
+            <div key={a.id} className="w-[7rem] h-[10rem] border-1 rounded-[20px] mx-auto md:w-[15rem] md:h-[18rem] p-[2rem]">
                 <div className="flex flex-col">
                     <div className="justify-between">
                         <img />
