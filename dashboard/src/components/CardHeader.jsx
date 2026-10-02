@@ -52,7 +52,7 @@ function CardHeader() {
 
                         <div className="mt-10 md:mt-13">
                             <p className="text-xs text-black/40 font-medium">{card.titulo}</p>
-                            <p className={Eletro ? "text-3xl md:text-5xl font-extrabold" : "text-3xl md:text-6xl font-extrabold"}>{card.valor}<span className="text-xl">{card.tipo}</span></p>
+                            <p className={Eletro ? "truncate text-3xl md:text-5xl font-extrabold" : "text-3xl md:text-6xl font-extrabold"}>{card.valor}<span className="text-xl">{card.tipo}</span></p>
                             <p className="bg-green-200/70 text-green-900 font-bold text-sm rounded-md text-center w-fit md:mt-3">{card.economia}</p>
 
                         </div>

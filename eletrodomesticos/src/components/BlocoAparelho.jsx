@@ -56,7 +56,7 @@ function BlocoAparelho() {
                     </div>
                     <div>
                         <p>{a.nomeComodo}</p>
-                        <p>{a.nome}</p>
+                        <p className="truncate">{a.nome}</p>
                         <p>{a.id}</p>
                     </div>
                 </div>
