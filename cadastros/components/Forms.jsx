@@ -58,14 +58,14 @@ function Forms() {
 
     return (
         <div className={modo === "login" ? "flex flex-col md:flex-row bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] h-133 transition-all duration-800 md:w-[50%]" : "flex flex-col md:flex-row md:justify-between bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] h-148 transition-all duration-800"}>
-            <form className={modo === "login" ? "order-1 relative bg-white p-6 md:p-10 rounded-[12px_12px_0px_0px] md:rounded-[12px_0px_0px_12px] md:w-[50%]" : "order-2 relative bg-white p-6 md:p-10 rounded-[0px_0px_12px_12px] md:rounded-[0px_12px_12px_0px] md:w-[50%]"} action="" method="post">
+            <form className={modo === "login" ? "order-1 relative bg-white p-6 md:p-10 rounded-[12px_12px_0px_0px] md:rounded-[12px_0px_0px_12px] md:w-[50%]" : "order-2 relative bg-white p-6 md:p-10 rounded-[0px_0px_12px_12px] md:rounded-[0px_12px_12px_0px] md:w-[50%]"} onSubmit={(e) => e.preventDefault()} action="" method="post">
 
                 <h1 className="text-3xl md:text-4xl font-semibold md:mt-3">{modo === "login" ? "Acesse sua conta" : "Crie sua conta"}</h1>
                 <p className="text-xs md:text-sm mb-3">{modo === "login" ? "Não possui uma conta?" : "Já tem uma conta?"} <a href="#" className="text-[#F68412]">{modo === "login" ? "Cadastre-se" : "Entre"}</a></p>
 
                 <div className={modo === "cadastro" ? "inline" : "hidden"}>
                     <p className="text-xs font-semibold"> Nome Completo <span className="text-[#F68412]">*</span></p>
-                    <input maxLength="200" value={nome} onChange={(e) => setNome(e.target.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, ''))} className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="text" placeholder="ex, Vinícius..." id="" required />
+                    <input maxLength="200" value={nome} onChange={(e) => setNome(e.target.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, ''))} className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 w-full text-sm" type="text" placeholder="ex, Vinícius..." id="" required={modo === "cadastro" ? true : false} />
                 </div>
 
                 <div className="mt-3">
@@ -81,11 +81,11 @@ function Forms() {
 
                     <div className={modo === "cadastro" ? "inline" : "hidden"}>
                         <p className="text-xs font-semibold"> Confirmar senha <span className="text-[#F68412]">*</span></p>
-                        <input maxLength="32" className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 md:w-[100%] text-sm" type="password" placeholder="Confirme sua senha" name="" id="" required />
+                        <input maxLength="32" className="border border-[#C3C3C3]/60 bg-[#E7E7E7]/60 text-black/40 rounded-md p-1 md:p-2 md:w-[100%] text-sm" type="password" placeholder="Confirme sua senha" name="" id="" required={modo === "cadastro" ? true : false} />
                     </div>
                 </div>
 
-                <button type="button" onClick={modo === "cadastro" ? enviarCadastro : enviarLogin} className="bg-[#F68412] text-white text-xs p-2 md:p-4 w-full rounded-lg mt-6">{modo === "login" ? "Acessar Conta" : "Criar Conta"}</button>
+                <button type="submit" onClick={modo === "cadastro" ? enviarCadastro : enviarLogin} className="bg-[#F68412] text-white text-xs p-2 md:p-4 w-full rounded-lg mt-6">{modo === "login" ? "Acessar Conta" : "Criar Conta"}</button>
 
                 {erroLog && modo === "login" && (
                     <p className="bg-red-500/10 text-red-500 text-xs text-center p-1 rounded mt-2">{erroLog}</p>
