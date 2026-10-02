@@ -9,7 +9,7 @@ useEffect(() => {
     fetch(`https://favo.alwaysdata.net/graficoComodo.php?comodo=${comodo}`, {credentials: 'include'})
         .then(resposta => resposta.json())
         .then(json => setDados(json));
-}, [comodo, atualizar] );
+}, [comodo] );
 
     return (
         <ResponsiveContainer width="100%" height={300}>

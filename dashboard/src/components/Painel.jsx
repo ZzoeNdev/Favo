@@ -5,12 +5,9 @@ function Painel() {
 
     const [comodos, setComodos] = useState([]);
     const [selecionado, setSelecionado] = useState("Quarto");
-    const [atualizarDados, setAtualizarDados] = useState(0);
-
-
 
     useEffect(() => {
-        fetch('https://favo.alwaysdata.net/listarComodos.php', {credentials: 'include'})
+        fetch('https://favo.alwaysdata.net/listarComodos.php', { credentials: 'include' })
             .then(resposta => resposta.json())
             .then(json => {
                 console.log('Comodos recebidos:', json);
@@ -23,12 +20,12 @@ function Painel() {
 
     console.log('Comodos atualizados:', comodos);
     console.log('Comodo selecionado:', selecionado);
-    
+
     const [aparelhos, setAparelhos] = useState([]);
 
     useEffect(() => {
         if (selecionado) {
-            fetch(`https://favo.alwaysdata.net/aparelhosNoComodo.php?comodo=${selecionado.id}`, {credentials: 'include'})
+            fetch(`https://favo.alwaysdata.net/aparelhosNoComodo.php?comodo=${selecionado.id}`, { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setAparelhos(json))
         }
@@ -73,10 +70,10 @@ function Painel() {
                 </div>
 
                 {aparelhos.length > 0 ? (
-                    <Grafico comodo={selecionado.id} atualizar={atualizarDados}/>
-                ): ("")} 
+                    <Grafico comodo={selecionado.id} />
+                ) : ("")}
 
-                
+
 
                 <div className={aparelhos.length > 0 ? "flex flex-col mt-10" : "hidden"}>
                     <p className='text-start font-medium text-sm text-gray-400'>Resumo</p>
@@ -84,12 +81,12 @@ function Painel() {
                     <div className='flex items-center justify-between mt-2'>
                         <div className='w-[35%]'>
                             <p className='text-xs text-gray-400 font-medium'>Consumo de Hoje</p>
-                            <h1 className='font-bold'>{(aparelhos.reduce((total, obj) => total + (obj.watts * obj.usoMedio),0)/1000).toFixed(1)} <span className='text-gray-400 font-medium text-sm'>kWh</span></h1> 
+                            <h1 className='font-bold'>{(aparelhos.reduce((total, obj) => total + (obj.watts * obj.usoMedio), 0) / 1000).toFixed(1)} <span className='text-gray-400 font-medium text-sm'>kWh</span></h1>
                         </div>
 
                         <div className='bg-[url(../src/assets/FrameBG.png)] bg-contain bg-no-repeat w-[65%] p-2'>
                             <p className='text-xs text-white'>Custo estimado</p>
-                            <h1 className='font-bold text-white'>R$ {((aparelhos.reduce((total, obj) => total + (obj.watts * obj.usoMedio),0)/1000)*0.739).toFixed(2)}</h1>
+                            <h1 className='font-bold text-white'>R$ {((aparelhos.reduce((total, obj) => total + (obj.watts * obj.usoMedio), 0) / 1000) * 0.739).toFixed(2)}</h1>
                         </div>
 
                         <button className='hidden md:flex whitespace-nowrap text-orange-400' onClick={() => window.location.href = "https://favo-eletrodomesticos.vercel.app"}>Ver Detalhes</button>
@@ -99,7 +96,7 @@ function Painel() {
             </div>
             <div className="flex justify-center items-center mb-2 mt-2 md:ml-8">
                 <div className="flex md:flex-col gap-4 w-full max-w-sm overflow-auto scrollbar-none">
-                    {comodos.length>0 ? comodos.map(comodo => (
+                    {comodos.length > 0 ? comodos.map(comodo => (
                         <button className={selecionado === comodo.nome ? "flex flex-shrink-0 items-center bg-white shadow-md w-55 h-15 p-4 gap-4 rounded-xl border border-orange-500 border-2 cursor-pointer" : "flex flex-shrink-0 items-center bg-white shadow-md w-55 h-15 p-4 gap-4 rounded-xl cursor-pointer"} onClick={() => setSelecionado(comodo)}>
                             <div className="bg-orange-200/70 w-10 h-10 rounded-lg">
                                 <img src="" alt="" />

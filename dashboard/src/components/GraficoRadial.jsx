@@ -17,7 +17,7 @@ function GraficoRadial() {
     }, []);
 
     const dados = [
-        { nome: 'consumo', valor: consumo }
+        { nome: 'consumo', valor: consumo/2 }
     ]
 
 
