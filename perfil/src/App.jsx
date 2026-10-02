@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Infos from './components/Infos'
-import ConfigConta from './components/configConta'
+import ConfigConta from './components/ConfigConta'
 
 function App() {
 
