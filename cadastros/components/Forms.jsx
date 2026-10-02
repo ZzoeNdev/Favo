@@ -11,6 +11,21 @@ function Forms() {
     const [erroLog, setErroLog] = useState()
     const [erroCad, setErroCad] = useState()
 
+    function verificacao() {
+        fetch("https://favo.alwaysdata.net/verificarSessao.php", { credentials: "include" })
+            .then(resposta => resposta.json())
+            .then(json => {
+                if (json.logado) {
+                    window.location.href = "https://favo-dashboard-ecru.vercel.app"
+                } else {
+                    console.log(json.message)
+                }
+
+            })
+    }
+
+    verificacao();
+
     function enviarCadastro() {
         if (!email.includes('@')) {
             setErroCad("Email inválido")
@@ -18,19 +33,19 @@ function Forms() {
         }
         fetch("https://favo.alwaysdata.net/cadastros.php", {
             method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({nome:nome, email:email, senha:senha})
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nome: nome, email: email, senha: senha })
         })
-        .then(resposta => resposta.json())
-        .then(json => {
-            if(json.cadastrado){
-                window.location.href = "https://favo-cadastro.vercel.app"
-            }else{
-                setErroCad(json.message)
-                console.log(json.message)
-            }
-            
-        })
+            .then(resposta => resposta.json())
+            .then(json => {
+                if (json.cadastrado) {
+                    window.location.href = "https://favo-cadastro.vercel.app"
+                } else {
+                    setErroCad(json.message)
+                    console.log(json.message)
+                }
+
+            })
     }
 
     function enviarLogin() {
@@ -40,21 +55,21 @@ function Forms() {
         }
         fetch("https://favo.alwaysdata.net/logins.php", {
             method: "POST",
-            headers: {"Content-Type": "application/json"},
+            headers: { "Content-Type": "application/json" },
             credentials: "include",
-            body: JSON.stringify({email:email, senha:senha})
+            body: JSON.stringify({ email: email, senha: senha })
         })
-        .then(resposta => resposta.json())
-        .then(json => {
-            if(json.logado){
-                window.location.href = "https://favo-dashboard-ecru.vercel.app"
-            }else{
-                setErroLog(json.message)
-                console.log(json.message)
-            }
-        })
+            .then(resposta => resposta.json())
+            .then(json => {
+                if (json.logado) {
+                    window.location.href = "https://favo-dashboard-ecru.vercel.app"
+                } else {
+                    setErroLog(json.message)
+                    console.log(json.message)
+                }
+            })
     }
-    
+
 
     return (
         <div className={modo === "login" ? "flex flex-col md:flex-row bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] h-133 transition-all duration-800 md:w-[50%]" : "flex flex-col md:flex-row md:justify-between bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] h-148 transition-all duration-800"}>
