@@ -14,6 +14,12 @@ if (!isset($_FILES['foto'])) {
 }
 
 $extensao = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+
+if (strtolower($extensao) !== 'jpg' && strtolower($extensao) !== 'jpeg' && strtolower($extensao) !== 'png' && strtolower($extensao) !== 'gif') {
+    http_response_code(400);
+    exit(json_encode(['message' => 'Formato de arquivo inválido. Apenas JPG, JPEG, PNG e GIF são permitidos.']));
+}
+
 $nomeArquivo = 'usuario_' . $_SESSION['user_id'] . '_' . time() . '.' . $extensao;
 $caminhoDestino = 'fotoUsuarios/' . $nomeArquivo;
 
@@ -21,6 +27,6 @@ move_uploaded_file($_FILES['foto']['tmp_name'], $caminhoDestino);
 
 $up = "UPDATE usuario SET foto = :foto WHERE id = :id";
 $stmtUp = $pdo->prepare($up);
-$stmtUp->execute([':foto' = $nomeArquivo, ':id' = $_SESSION['user_id']]);
+$stmtUp->execute([':foto' => $nomeArquivo, ':id' => $_SESSION['user_id']]);
 
 echo json_encode(['message' => 'Foto atualizda', 'foto' => $nomeArquivo]);

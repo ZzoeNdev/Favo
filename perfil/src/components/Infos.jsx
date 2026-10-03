@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import editIcon from "../assets/editIcon.png";
+
 function Infos() {
 
     const [nome, setNome] = useState("");
@@ -28,6 +30,7 @@ function Infos() {
             .then(json => {
                 if (json.foto) {
                     setFoto(json.foto);
+                    setMensagemErroFoto(json.message);
                 } else {
                     setMensagemErroFoto(json.message);
                     console.log(json.message);
@@ -36,14 +39,13 @@ function Infos() {
     }, [arquivoFoto]);
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <h1 className="text-4xl font-bold mb-4">Informações</h1>
-            <p className="text-lg text-gray-600">Aqui você pode ver informações detalhadas sobre o seu perfil.</p>
-            <img src={`https://favo.alwaysdata.net/fotoUsuarios/${foto}`} alt="Foto do usuário" className="w-32 h-32 rounded-full mt-4" />
-            <input type="file" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4" onChange={(e) => setArquivoFoto(e.target.files[0])} />
-            {mensagemErroFoto && <p className="text-red-500 font-semibold mt-2">{mensagemErroFoto}</p>}
-            <p className="text-lg font-semibold mt-4">Nome: {nome}</p>
-            <p className="text-lg font-semibold mt-2">Email: {email}</p>
+        <div className="flex flex-col items-center justify-center w-full bg-white rounded-4xl shadow-lg p-8 pb-25 mt-[10%]">
+            <img src={`https://favo.alwaysdata.net/fotoUsuarios/${foto}`} alt="Foto do usuário" className="w-67 h-67 rounded-full -mt-40 border-6 border-white" />
+            <label htmlFor="foto" className="cursor-pointer bg-[#F68412] text-white p-3 rounded-full -mt-15 ml-50"><img src={editIcon} alt="Editar foto" /></label>
+            <input type="file" className="hidden" id="foto" onChange={(e) => setArquivoFoto(e.target.files[0])} />
+            {mensagemErroFoto == "Formato de arquivo inválido. Apenas JPG, JPEG, PNG e GIF são permitidos." ? <p className="text-red-500 font-semibold mt-2">{mensagemErroFoto}</p> : ""}
+            <p className="text-4xl font-semibold mt-8">Olá! {nome.split(" ")[0]}</p>
+            <p className="text-xl font-regular text-gray-500">Como podemos te ajudar hoje?</p>
         </div>
     );
 }
