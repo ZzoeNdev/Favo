@@ -2,9 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import Infos from './components/Infos'
 import ConfigConta from './components/ConfigConta'
-import PopSenha from './components/popSenha'
+import PopSenha from './components/PopSenha'
 import Header from './components/Header'
-import Pessoal from './components/pessoal'
+import Pessoal from './components/Pessoal'
 
 function App() {
 
