@@ -36,9 +36,8 @@ function BlocoAparelho() {
     return (
         <div className="flex flex-wrap gap-[1rem]">
         {aparelhosFiltrados.map(a => (
-            <div key={a.id} className="w-[7rem] h-[10rem] border-1 rounded-[20px] mx-auto md:w-[15rem] md:h-[18rem] p-[2rem]">
-                <div className="flex flex-col">
-                    <div className="justify-between">
+            <div key={a.id} className="flex flex-col w-[7rem] h-[10rem] border-1 rounded-[20px] md:w-[16rem] md:h-[20rem] p-[2rem]">
+                    <div className="justify-between md-auto">
                         <img />
                         <div className="relative inline-block w-11 h-5">
                             <input
@@ -46,28 +45,26 @@ function BlocoAparelho() {
                                 type="checkbox"
                                 checked={a.estado === 'ligado'}
                                 onChange={() => alternar(a.id)}
-                                className="peer appearance-none w-11 h-5 bg-slate-100 rounded-full bg-[#DBDBDB] checked:bg-[#F68412] cursor-pointer transition-colors duration-300"
+                                className="peer appearance-none w-11 h-5 bg-slate-100 rounded-full bg-[#E9E9E9] checked:bg-[#F68412] cursor-pointer transition-colors duration-300"
                             />
                             <label
                                 htmlFor={`switch-${a.id}`}
-                                className="absolute top-0 left-0 w-5 h-5 bg-[#979797] peer-checked:bg-[#B45A00] rounded-full shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer"
+                                className="absolute top-0 left-0 w-5 h-5 bg-[#C1C1C1] peer-checked:bg-[#B45A00] rounded-full shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer"
                             />
                         </div>
                     </div>
-                    <div>
-                        <p>{a.nomeComodo}</p>
-                        <p className="truncate">{a.nome}</p>
-                        <p>{a.id}</p>
+                    <div className="md-auto">
+                        <p className="text-[#969696] text-[0.75rem] font-extrabold">{a.nomeComodo}</p>
+                        <p className="line-clamp-2 break-words text-[1.5rem] font-bold ">{a.nome}</p>
                     </div>
-                </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between mt-auto">
                     <div>
-                        <p>Consumo atual</p>
-                        <p>67<span>kWh</span></p>
+                        <p className="text-[#969696] text-[0.75rem] font-semibold">Consumo atual</p>
+                        <p className="font-extrabold text-[1.5rem]">67<span className="font-semibold text-[#969696] text-[1rem]">kWh</span></p>
                     </div>
                     <div>
-                        <p>Custo estimado</p>
-                        <p><span>R$</span>7,42</p>
+                        <p className="text-[#969696] text-[0.75rem] font-semibold">Custo estimado</p>
+                        <p className="font-extrabold text-[1.5rem]">R$7,42</p>
                     </div>
                 </div>
             </div>
