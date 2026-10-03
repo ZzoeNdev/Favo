@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Infos from './components/Infos'
 import ConfigConta from './components/ConfigConta'
+import PopSenha from './components/popSenha'
 
 function App() {
 
@@ -20,8 +21,9 @@ function App() {
   verificacao();
 
   return (
-    <div className="">
+    <div className="flex flex-col items-center">
 
+      <PopSenha />
       <Infos />
       <ConfigConta />
 
