@@ -35,7 +35,7 @@ function CardHeader() {
 
     const Cards = [
         { icone: relampagoIcon, secao: "Visão Geral", titulo: "CONSUMO ATUAL", valor: consumo.toFixed(1).replace('.',','), tipo: "kWh", economia: "" },
-        { icone: retornoIcon, secao: "Visão Geral", titulo: "VALOR SALVO", valor: `R$ ${valorSalvo.economiaReais.toFixed(2).replace('.',',')}`, tipo: "", economia: valorSalvo.economizou ? `R$ ${valorSalvo.economiaReais.toFixed(2).replace('.',',')}` : "" },
+        { icone: retornoIcon, secao: "Visão Geral", titulo: "VALOR SALVO", valor: valorSalvo.economizou ? `R$ ${valorSalvo.economiaReais.toFixed(2).replace('.',',')}` : "0,00", tipo: "", economia: valorSalvo.economizou ? `R$ ${valorSalvo.economiaReais.toFixed(2).replace('.',',')}` : "" },
         { icone: maisUsoEletrodomesticoIcon, secao: "Visão Geral", titulo: "ELETRODOMÉSTICO COM MAIS USO", valor: maisUsado, tipo: "", economia: "" }
     ];
 
