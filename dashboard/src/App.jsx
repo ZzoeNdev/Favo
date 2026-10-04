@@ -13,11 +13,10 @@ import Footer from './components/Footer'
 function App() {
 
   const [mudarEstado, setMudarEstado] = useState(false);
-
   const [carregando, setCarregando] = useState(true);
+
   useEffect(() => {
-    fetch('https://favo.alwaysdata.net/verificarSessao.php', {
-      credentials: 'include'})
+    fetch('https://favo.alwaysdata.net/verificarSessao.php', {credentials: 'include'})
       .then(response => response.json())
       .then(json => {
         if (json.logado == false) {
@@ -29,8 +28,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch('https://favo.alwaysdata.net/fecharConsumoDiario.php', {
-      credentials: 'include'})
+    fetch('https://favo.alwaysdata.net/fecharConsumoDiario.php', {credentials: 'include'})
   }, []);
 
   if (carregando) {

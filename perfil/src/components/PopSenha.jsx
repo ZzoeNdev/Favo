@@ -4,6 +4,7 @@ function PopSenha({fecharPopSenha}) {
 
     const [senhaAtual, setSenhaAtual] = useState('');
     const [novaSenha, setNovaSenha] = useState('');
+    const [mensagem, setMensagem] = useState('');
 
     function trocarSenha() {
         fetch("https://favo.alwaysdata.net/trocarSenha.php", {
@@ -12,11 +13,15 @@ function PopSenha({fecharPopSenha}) {
             credentials: "include",
             body: JSON.stringify({senhaAtual: senhaAtual, novaSenha: novaSenha})
         })
+        .then(resposta => resposta.json())
+        .then(json => {
+            setMensagem(json.message);
+        });
     }
 
     return (
         <div className="fixed z-10 top-0 left-0 w-screen h-screen backdrop-blur-sm flex flex-col items-center justify-center">
-            <div className="bg-white p-8 rounded-lg shadow-lg w-[30%] h-auto">
+            <div className="flex flex-col bg-white p-8 rounded-lg shadow-lg w-[30%] h-auto">
                 <button onClick={fecharPopSenha}>Fechar</button>
                 <form action="">
                     <input
@@ -29,6 +34,7 @@ function PopSenha({fecharPopSenha}) {
                         placeholder="Nova senha"
                         onChange={(e) => setNovaSenha(e.target.value)}
                     />
+                    {mensagem && <p>{mensagem}</p>}
                     <button type="button" onClick={trocarSenha}>
                         Trocar senha
                     </button>

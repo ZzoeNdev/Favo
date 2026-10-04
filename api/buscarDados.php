@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
     exit(json_encode(['message' => 'Não autenticado']));
 }
 
-$sql = "SELECT nome,email,foto FROM usuario WHERE id = :id";
+$sql = "SELECT nome,email,foto,meta FROM usuario WHERE id = :id";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([':id' => $_SESSION['user_id']]);
 $dados = $stmt->fetch();
