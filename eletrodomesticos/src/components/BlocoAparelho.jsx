@@ -34,11 +34,27 @@ function BlocoAparelho() {
 
 
     return (
-        <div className="flex flex-wrap gap-[1rem]">
+        <div className="flex flex-wrap gap-[1.5vh] xl:gap-[1vw]">
         {aparelhosFiltrados.map(a => (
-            <div key={a.id} className="flex flex-col w-[7rem] h-[10rem] border-1 rounded-[20px] md:w-[16rem] md:h-[20rem] p-[2rem]">
-                    <div className="justify-between md-auto">
-                        <img />
+            <div key={a.id} className="flex flex-col w-[85vw] h-[15vh] border-1 rounded-[20px] xl:w-[18vw] xl:h-[45vh] p-[2rem]">
+                <div className="flex flex-row xl:flex-col justify-between h-full">
+                    <div className="flex flex-col h-full max-w-[50vw]">
+                        <div className="md-auto">
+                            <p className="text-[#969696] text-[0.75rem] font-extrabold">{a.nomeComodo}</p>
+                            <p className="line-clamp-1 xl:line-clamp-2 break-words text-[1.5rem] font-bold">{a.nome}</p>
+                        </div>
+                        <div className="flex gap-[2vw] xl:justify-between mt-auto">
+                            <div>
+                                <p className="text-[#969696] text-[0.75rem] font-semibold">Consumo atual</p>
+                                <p className="font-extrabold text-[1.5rem]">67<span className="font-semibold text-[#969696] text-[1rem]">kWh</span></p>
+                            </div>
+                            <div>
+                                <p className="text-[#969696] text-[0.75rem] font-semibold">Custo estimado</p>
+                                <p className="font-extrabold text-[1.5rem]">R$7,42</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="justify-between mt-auto">
                         <div className="relative inline-block w-11 h-5">
                             <input
                                 id={`switch-${a.id}`}
@@ -52,19 +68,6 @@ function BlocoAparelho() {
                                 className="absolute top-0 left-0 w-5 h-5 bg-[#C1C1C1] peer-checked:bg-[#B45A00] rounded-full shadow-sm transition-transform duration-300 peer-checked:translate-x-6 peer-checked:border-slate-800 cursor-pointer"
                             />
                         </div>
-                    </div>
-                    <div className="md-auto">
-                        <p className="text-[#969696] text-[0.75rem] font-extrabold">{a.nomeComodo}</p>
-                        <p className="line-clamp-2 break-words text-[1.5rem] font-bold ">{a.nome}</p>
-                    </div>
-                <div className="flex justify-between mt-auto">
-                    <div>
-                        <p className="text-[#969696] text-[0.75rem] font-semibold">Consumo atual</p>
-                        <p className="font-extrabold text-[1.5rem]">67<span className="font-semibold text-[#969696] text-[1rem]">kWh</span></p>
-                    </div>
-                    <div>
-                        <p className="text-[#969696] text-[0.75rem] font-semibold">Custo estimado</p>
-                        <p className="font-extrabold text-[1.5rem]">R$7,42</p>
                     </div>
                 </div>
             </div>
