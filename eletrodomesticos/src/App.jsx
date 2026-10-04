@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ResumoAparelhos from './components/ResumoAparelhos.jsx'
 import BlocoAparelho from './components/BlocoAparelho.jsx'
 import Filtros from './components/Filtros.jsx'
-import Logo from '../src/assets/FavoWLogo.png'
+import Logo from '../src/assets/favoWLogo.png'
 import iconPerfil from '../src/assets/icons/iconPerfil.png'
 
 function App() {
