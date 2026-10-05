@@ -23,7 +23,7 @@ function Filtros({comodosFiltro, alternarFiltro}) {
                     <span className="absolute top-0 left-0 w-5 h-5 flex items-center justify-center text-white text-xs font-bold opacity-0 peer-checked:opacity-100 pointer-events-none">
                     ✓
                     </span>
-                    <label htmlFor={comodo.id} className="text-[#969696] peer-checked:font-bold peer-checked:text-[#F68412] cursor-pointer transition-colors duration-300">{comodo.nome}</label>
+                    <label htmlFor={comodo.id} className="text-[#969696] peer-checked:text-[#F68412] cursor-pointer transition-colors duration-300">{comodo.nome}</label>
                 </div>
             </div>
             ))}
