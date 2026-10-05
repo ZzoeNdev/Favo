@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 
-function ResumoAparelhos() {
+function ResumoAparelhos({atualizando}) {
     const [card, setCard] = useState({ cadastrados: 0, ativos: 0 })
-    const [atualizar, setAtualizar] = useState(0)
 
     useEffect(() => {
         fetch('https://favo.alwaysdata.net/resumoAparelhos.php', { credentials: 'include' })
@@ -11,7 +10,7 @@ function ResumoAparelhos() {
                 setCard(json)
                 console.log(json)
             });
-    }, [atualizar])
+    }, [atualizando])
 
     return (
         <div>

@@ -27,10 +27,6 @@ function App() {
     })
   }, []);
 
-  useEffect(() => {
-    fetch('https://favo.alwaysdata.net/fecharConsumoDiario.php', {credentials: 'include'})
-  }, []);
-
   if (carregando) {
     return (
       <div className='flex flex-col items-center justify-center h-screen'>

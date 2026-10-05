@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
 
-function BlocoAparelho() {
+function BlocoAparelho({comodosFiltro, atualizando}) {
 
     const [aparelhos, setAparelhos] = useState([])
-    const [comodosFiltro, setComodosFiltro] = useState([])
     const [atualizar, setAtualizar] = useState(0)
 
     useEffect(() => {
@@ -25,11 +24,12 @@ function BlocoAparelho() {
             body: JSON.stringify({ id_eletro: idEletro })
         })
             .then(resposta => resposta.json())
-            .then(() => setAtualizar(v => v + 1))
+            .then(() => setAtualizar(v => v + 1), console.log(atualizar))
+            .then(() => atualizando())
     }
 
     const aparelhosFiltrados = comodosFiltro.length === 0 ? aparelhos : aparelhos.filter(a => comodosFiltro.includes(a.nomeComodo));
-    console.log(aparelhosFiltrados);
+    console.log("Aparelhos filt" + aparelhosFiltrados);
 
 
 
