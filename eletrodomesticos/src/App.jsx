@@ -16,7 +16,7 @@ function App() {
   
 
   function alternarFiltro(nomeComodo) {
-    setComodosFiltro(prev => prev.includes(nomeComodo) ? prev.filter(comodo => comodo !== nomeComodo) : [...prev, nomeComodo])
+    setComodosFiltro(comodoAtuais => comodoAtuais.includes(nomeComodo) ? comodoAtuais.filter(comodo => comodo !== nomeComodo) : [...prev, nomeComodo])
   }
 
   function verificacao() {
