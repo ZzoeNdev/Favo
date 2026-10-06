@@ -44,7 +44,7 @@ function CardHeader() {
             {Cards.map(card => {
                 const Eletro = card.valor == maisUsado
                 return (
-                    <div className="bg-white shadow-md w-75 md:w-109 h-50 md:h-65 p-5 rounded-xl md:scale-[120%]">
+                    <div className="bg-white shadow-md w-[80vw] lg:w-[30vw] h-50 lg:h-65 p-5 rounded-xl">
                         <div className="flex justify-between items-center">
                             <div className="flex items-center justify-center bg-gray-400/20 w-8 h-8 rounded-lg"><img className="h-fit w-4" src={card.icone} alt="" /></div>
                             <p className="text-xs text-black/20 font-bold">{card.secao}</p>
