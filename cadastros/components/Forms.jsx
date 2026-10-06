@@ -109,10 +109,6 @@ function Forms() {
                     <p className="bg-red-500/10 text-red-500 text-xs text-center p-1 rounded mt-2">{erroCad}</p>
                 )}
 
-                <div className="h-[1px] w-full bg-gray-300 mt-3"></div>
-
-                <button className="border border-[#C3C3C3] w-full text-xs p-1 font-semibold mt-3 rounded-lg">Acessar conta pelo Google</button>
-
             </form>
 
             <div className={modo === "login" ? "order-2 p-4 md:p-8" : "order-1 p-4 md:p-8"}>

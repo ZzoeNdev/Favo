@@ -41,6 +41,7 @@ function App() {
         <Botao 
           texto="Usar Favo"
           tipo="cheio"
+          onClick={() => window.location.href = "https://favo-cadastro.vercel.app"}
         />
         <Botao 
           texto="Como funciona?"
