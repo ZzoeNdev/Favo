@@ -16,7 +16,7 @@ function Produto({ fecharForm }) {
       .then(resposta => resposta.json())
       .then(json => {
         if (json.length > 0) {
-          setComodosExistentes(json.map(c => c.nome))
+          setComodosExistentes([...json.map(c => c.nome), "Sala", "Quarto", "Cozinha", "Banheiro"])
         } else {
           setComodosExistentes(["Sala", "Quarto", "Cozinha", "Banheiro"])
         }
