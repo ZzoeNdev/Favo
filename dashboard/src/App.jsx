@@ -61,7 +61,7 @@ function App() {
 
       <div className='flex flex-col items-center md:items-start md:w-[90%] mt-10 md:mt-19'>
         <p className='text-orange-500 font-bold text-xs md:text-lg'>COMPARAÇÃO</p>
-        <h1 className='font-extrabold text-3xl md:text-5xl'>Veja a Comparação de Seu Consumo</h1>
+        <h1 className='font-extrabold text-3xl md:text-5xl'>Comparação entre Meses</h1>
 
       <Comparacao />
 
