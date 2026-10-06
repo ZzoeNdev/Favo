@@ -5,6 +5,8 @@ import favoWLogo from "../assets/favoWLogo.png"
 import iconPerfil from "../assets/icons/iconPerfil.png"
 import addIcon from "../assets/icons/addIcon.png"
 
+import BandeiraExplicacao from './BandeiraExplicacao.jsx'
+
 function Header({ abrirForm }) {
 
     const [custo, setCusto] = useState(0)
@@ -41,7 +43,7 @@ function Header({ abrirForm }) {
                             <div className="bg-green-400 h-3 w-3 rounded-4xl"></div>
                             <p className="text-white text-xs whitespace-nowrap">Bandeira Verde</p>
                         </div>
-                        <div className="flex items-center justify-center bg-white/12 border border-white/20 backdrop-blur-sm rounded-4xl text-white shadow-md w-6 md:w-6 h-6 text-xs">?</div>
+                        <BandeiraExplicacao/>
                     </div>
                 </div>
                 <h1 className="text-5xl md:text-8xl text-white font-extrabold">R$ <SlotCounter value={custo.toFixed(2).replace(".", ",")}/></h1>
