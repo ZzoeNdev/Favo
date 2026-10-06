@@ -46,11 +46,11 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
                         <div className="flex gap-[2vw] xl:justify-between mt-auto">
                             <div>
                                 <p className="text-[#969696] text-[0.75rem] font-semibold">Consumo atual</p>
-                                <p className="font-extrabold text-[1.5rem]">67<span className="font-semibold text-[#969696] text-[1rem]">kWh</span></p>
+                                <p className="font-extrabold text-[1.5rem]">{a.consumo}<span className="font-semibold text-[#969696] text-[1rem]">kWh</span></p>
                             </div>
                             <div>
                                 <p className="text-[#969696] text-[0.75rem] font-semibold">Custo estimado</p>
-                                <p className="font-extrabold text-[1.5rem]">R$7,42</p>
+                                <p className="font-extrabold text-[1.5rem]">R$ {a.custo}</p>
                             </div>
                         </div>
                     </div>
