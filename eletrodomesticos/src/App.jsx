@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="font-manrope ml-[5vw] mr-[5vw]">
       <div className="flex justify-between pr-[3vw] pl-[3vw] items-center bg-gradient-to-r from-[#FF9E3C] to-[#F68412] rounded-[15px] mt-[3.5vh] mb-[5vh] w-full xl:h-[9vh]">
-        <a href="https://favo-landing.vercel.app"><img className="w-[10vw] xl:w-[4.5vw] h-auto" src={Logo} alt="Logo" /></a>
+        <a href="https://favo-dashboard-ecru.vercel.app"><img className="w-[10vw] xl:w-[4.5vw] h-auto" src={Logo} alt="Logo" /></a>
         <button className="bg-white hover:cursor-pointer border border-[999999]/20 backdrop-blur-sm rounded-3xl shadow-md w-10 h-10 p-1" onClick={() => (window.location.href = "https://favo-perfil.vercel.app")}><img src={iconPerfil} alt="Perfil" /></button>
       </div>
       <ResumoAparelhos atualizando={atualizar} />
