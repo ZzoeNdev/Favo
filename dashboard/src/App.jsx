@@ -37,6 +37,7 @@ function App() {
   }
 
   return (
+    <div>
     <div className='flex flex-col items-center'>
 
       <Header abrirForm={() => setMudarEstado(true)} />
@@ -65,9 +66,11 @@ function App() {
 
       <Comparacao />
 
-      <Footer />
+      
       
       </div>
+    </div>
+    <Footer />
     </div>
   )
 }

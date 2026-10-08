@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import ResumoAparelhos from './components/ResumoAparelhos.jsx'
 import BlocoAparelho from './components/BlocoAparelho.jsx'
-import Filtros from './components/Filtros.jsx'
+import FiltrosPC from './components/FiltrosPC.jsx'
+import FiltrosMobile from './components/FiltrosMobile.jsx'
 import Logo from '../src/assets/favoWLogo.png'
 import iconPerfil from '../src/assets/icons/iconPerfil.png'
 
@@ -42,10 +43,11 @@ function App() {
       <ResumoAparelhos atualizando={atualizar} />
       <p className="text-[1.25rem] xl:text-[3.5rem] font-extrabold mt-[2vh] xl:mt-[5vh]">Meus Aparelhos</p>
       <div className="flex flex-col xl:flex-row bg-[#F5F5F5] rounded-[20px] xl:mt-[5vh] xl:mb-[5vh]">
+        <FiltrosMobile comodosFiltro={comodosFiltro} alternarFiltro={alternarFiltro}/>
         <div className="flex flex-col xl:flex-wrap min-h-[80vh] border-1 border-[#9A9A9A] bg-white rounded-[20px] p-[2vw] w-[90vw] xl:w-[80vw]">
           <BlocoAparelho comodosFiltro={comodosFiltro} atualizando={atualizando} />
         </div>
-        <Filtros comodosFiltro={comodosFiltro} alternarFiltro={alternarFiltro}/>
+        <FiltrosPC comodosFiltro={comodosFiltro} alternarFiltro={alternarFiltro}/>
       </div>
     </div>
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function Filtros({comodosFiltro, alternarFiltro}) {
+function FiltrosMobile({comodosFiltro, alternarFiltro}) {
         const [comodos, setComodos] = useState([])
 
         useEffect(() => {
@@ -13,9 +13,9 @@ function Filtros({comodosFiltro, alternarFiltro}) {
         }, [])
 
     return(
-    <div className="flex flex-col w-[10vw] min-h-[20vh] xl:min-h-[80vh] p-[2rem] xl:w-[13rem] xl:min-h-[40rem] md:mt-[2rem]">
+    <div className="flex flex-col w-[10vw] min-h-[15vh] px-[5vw] py-[2vh] lg:hidden">
         <p className="text-[1.75rem] font-extrabold text-[#969696]">Filtros</p>
-        <div className="flex flex-row xl:flex-col gap-[5vw] xl:gap-[1vh]">
+        <div className="flex flex-row gap-[5vw]">
             {comodos.map(comodo => (
             <div key={comodo.id} className="flex items-center cursor-pointer">
                 <div className="flex items-center gap-2">
@@ -30,4 +30,4 @@ function Filtros({comodosFiltro, alternarFiltro}) {
         </div>
     </div>
     )}
-export default Filtros;
+export default FiltrosMobile;
