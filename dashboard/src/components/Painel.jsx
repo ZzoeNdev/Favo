@@ -38,7 +38,7 @@ function Painel() {
             <div className="flex flex-col justify-start p-10 bg-white w-[100%] md:w-[85%] h-auto shadow-lg rounded-lg">
                 <div><p className="text-gray-400/40 font-medium">{selecionado.nome}</p></div>
 
-                <div className="flex flex-col md:flex-row gap-2 mt-5 max-w-[80vw] overflow-x-scroll">
+                <div className="flex flex-col md:flex-row gap-2 mt-5 max-w-[80vw] overflow-x-auto">
                     {aparelhos.length > 0 ? aparelhos.map(obj => (
                         <div className="bg-gray-400/5 border border-gray-400/20 rounded-xl p-3">
                             <div className="flex justify-between items-center">
@@ -95,7 +95,7 @@ function Painel() {
 
             </div>
             <div className="flex justify-center items-center h-[80vh] mb-2 mt-2 md:ml-8">
-                <div className="flex md:flex-col gap-4 w-full max-w-sm max-h-[70vh] overflow-y-scroll">
+                <div className="flex md:flex-col gap-4 w-full max-w-sm max-h-[70vh] overflow-y-auto">
                     {comodos.length > 0 ? comodos.map(comodo => (
                         <button className={selecionado === comodo.nome ? "flex flex-shrink-0 items-center bg-white shadow-md w-55 h-15 p-4 gap-4 rounded-xl border border-orange-500 border-2 cursor-pointer" : "flex flex-shrink-0 items-center bg-white shadow-md w-55 h-15 p-4 gap-4 rounded-xl cursor-pointer"} onClick={() => setSelecionado(comodo)}>
                             <div className="bg-orange-200/70 w-10 h-10 rounded-lg">
