@@ -31,13 +31,13 @@ function App() {
   return (
     <div className="font-manrope overflow-x-hidden">
       <Nav/>
-      <section className="ml-10 mr-10 md:ml-30 md:mr-30 pt-[80px] shadow-inner" id="Home">
+      <section className="pt-[80px] shadow-inner" id="Home">
       <Textos
         h1={<>Se reorganize bem com <span className="inline-block font-['Zolo'] font-normal bg-gradient-to-r from-[#EBA864] to-[#F68412] bg-clip-text text-transparent text-[3rem] md:text-[5rem]">Favo</span></>}
         p="Não deixe a oportunidade de economizar na conta de energia"
-        tamanho="max-w-[15rem] md:max-w-[35rem]"
+        tamanho="max-w-[40vw] md:max-w-[25vw]"
       />
-      <div className="flex flex-col  items-center gap-[1rem] mb-20 md:flex-row md:justify-center md:items-center">
+      <div className="flex flex-row items-center gap-[3vw] mb-20 mt-5 justify-center">
         <Botao 
           texto="Usar Favo"
           tipo="cheio"
@@ -51,7 +51,7 @@ function App() {
       </div>
       <HeroImagem/>
       </section>
-      <section className="md:mt-[5rem]" id="Funcionalidades">
+      <section className="md:mt-[5vh]" id="Funcionalidades">
         <Textos
           h1={<><h1>Nunca é <span className="font-normal">tarde</span> demais para <span className="font-normal">começar</span>.</h1></>}
           p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
@@ -94,7 +94,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="md:mt-[5rem]" id="Produtividade">
+      <section className="md:mt-[5vh]" id="Produtividade">
         <Textos
         h1={<><h1>De <span className="font-normal">poucos</span> para <span className="font-normal">muitos</span></h1></>}
         p="Tenha o melhor organizador de energia para facilidade da sua vida."
@@ -115,7 +115,7 @@ function App() {
         txt2={<>sem limites e <span className="font-bold">24h</span> a seu favor"</>}/>
         </div>
       </section>
-      <section className="md:mt-[5rem]"id="Como_Acessar">
+      <section className="md:mt-[5vh]"id="Como_Acessar">
         <Textos
         h1={<><h1>Passos <span className="font-normal">simples</span> para não se <span className="font-normal">perder</span></h1></>}
         p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
@@ -135,7 +135,7 @@ function App() {
           <Botao texto="Começar agora" onClick={() => window.location.href = "https://favo-cadastro.vercel.app"} tipo="transparente" largura="w-full md:w-[40rem] min-w-[125px]"/>
         </div>
       </section>
-      <section className="md:mt-[5rem]"id="Sobre_Nos">
+      <section className="md:mt-[5vh]"id="Sobre_Nos">
         <Textos
         h1={<><h1>Uso <span className="font-normal">testado</span> e <span className="font-normal">aprovado</span>.</h1></>}
         p="Tenha acesso ao melhor organizador de energia para facilidade da sua vida."
@@ -143,16 +143,16 @@ function App() {
         />
         <div className="flex flex-col md:flex-row justify-center align-center items-center gap-[2rem] md:gap-[5rem] mt-[3rem]">
           <img className="md:h-[15rem] md:w-auto" src={CemTestado} alt="100% testado"/>
-          <img className="md:h-[15rem] md:w-auto" src={TelaTestado} alt="Tela testada"/>
+          <img className="hidden md:block md:h-[15rem] md:w-auto" src={TelaTestado} alt="Tela testada"/>
         </div>
       </section>
-      <section className="relative flex items-center justify-center md:mt-[5rem] w-full overflow-hidden min-h-[600px] md:min-h-[700px]" id="Comecar">
+      <section className="relative flex items-center justify-center md:mt-[5vh] w-full overflow-hidden min-h-[600px] md:min-h-[700px]" id="Comecar">
         <p className="absolute text-[#C8C9CD]/25 text-[6.5rem] md:text-[25rem] font-bold z-0 whitespace-nowrap select-none">ENERGIA</p>
         <div className="relative z-10 w-full flex flex-col items-center justify-center">
           <img className="absolute mx-auto justify-center items-center w-[60rem] h-auto z-10" src={energiaBackground} alt="Energia"/>
           <div className="relative z-20 flex flex-col items-center justify-center p-10 text-center">
             <p className="font-bold text-white text-[1rem] md:text-[2rem]">Pronto pra ver sua conta de luz cair?</p>
-            <p className="text-white text-[0.5rem] md:text-[0.8rem] md:text-[1.2rem] md:max-w-[32rem] max-w-[12rem]">Junte-se a milhares de famílias que economizam em média R$ 50,00 por mês usando a Favo.</p>
+            <p className="text-white text-[1rem] md:text-[0.8rem] md:text-[1.2rem] md:max-w-[32rem] max-w-[12rem]">Junte-se a milhares de famílias que economizam em média R$ 50,00 por mês usando a Favo.</p>
             <div className="flex flex-row items-center justify-center gap-[1rem] mt-[2rem]">
               <Botao 
                 texto="Começar agora" 
