@@ -36,25 +36,25 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
     return (
         <div className="flex flex-wrap gap-[1.5vh] xl:gap-[1vw]">
         {aparelhosFiltrados.map(a => (
-            <div key={a.id} className="flex flex-col w-[85vw] h-[15vh] border-1 rounded-[20px] xl:w-[18vw] xl:h-[45vh] px-[2.5vw] py-[1.5vh] xl:py-[2.5vh]">
+            <div key={a.id} className="flex flex-col w-[85vw] h-[12vh] border-1 rounded-[20px] xl:w-[18vw] xl:h-[45vh] px-[2.5vw] py-[1.5vh] xl:py-[2.5vh]">
                 <div className="flex flex-row xl:flex-col justify-between h-full">
                     <div className="flex flex-col h-full max-w-[50vw]">
                         <div className="md-auto">
-                            <p className="text-[#969696] text-[0.75rem] font-extrabold">{a.nomeComodo}</p>
-                            <p className="line-clamp-1 xl:line-clamp-2 break-words text-[1.5rem] font-bold">{a.nome}</p>
+                            <p className="text-[#969696] text-[0.75rem] xl:text-[1rem] font-extrabold">{a.nomeComodo}</p>
+                            <p className="line-clamp-1 xl:line-clamp-2 break-words text-[1.125rem] xl:text-[1.5rem] font-bold">{a.nome}</p>
                         </div>
                         <div className="flex gap-[2vw] xl:justify-between mt-auto">
                             <div className="w-[35vw]">
-                                <p className="text-[#969696] text-[0.75rem] font-semibold">Consumo atual</p>
-                                <p className="font-extrabold text-[1.5rem] whitespace-nowrap">{a.consumo}<span className="font-semibold text-[#969696] text-[1rem]">kWh</span></p>
+                                <p className="text-[#969696] text-[0.625rem] xl:text-[1rem] font-semibold">Consumo atual</p>
+                                <p className="font-extrabold text-[0.75rem] xl:text-[1.25rem] whitespace-nowrap">{a.consumo}<span className="font-semibold text-[#969696] text-[0.5rem] xl:text-[1rem]">kWh</span></p>
                             </div>
                             <div className="w-[35vw]">
-                                <p className="text-[#969696] text-[0.75rem] font-semibold">Custo estimado</p>
-                                <p className="font-extrabold text-[1.5rem] whitespace-nowrap">R$ {a.custo}</p>
+                                <p className="text-[#969696] text-[0.625rem] xl:text-[1rem] font-semibold">Custo estimado</p>
+                                <p className="font-extrabold text-[0.75rem] xl:text-[1.25rem] whitespace-nowrap">R$ {a.custo}</p>
                             </div>
                         </div>
                     </div>
-                    <div className="justify-between mt-auto">
+                    <div className="flex items-center justify-center xl:justify-start">
                         <div className="relative inline-block w-11 h-5">
                             <input
                                 id={`switch-${a.id}`}

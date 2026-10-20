@@ -15,7 +15,7 @@ function FiltrosMobile({comodosFiltro, alternarFiltro}) {
     return(
     <div className="flex flex-col w-[10vw] min-h-[15vh] px-[5vw] py-[2vh] lg:hidden">
         <p className="text-[1.75rem] font-extrabold text-[#969696]">Filtros</p>
-        <div className="flex flex-row gap-[5vw]">
+        <div className="flex flex-row gap-[5vw] pb-[2vh] w-[80vw] overflow-x-auto">
             {comodos.map(comodo => (
             <div key={comodo.id} className="flex items-center cursor-pointer">
                 <div className="flex items-center gap-2">
