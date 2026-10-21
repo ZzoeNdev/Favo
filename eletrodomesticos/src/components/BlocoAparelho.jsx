@@ -42,7 +42,7 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
                 <div key={a.id} className="flex flex-col w-[85vw] h-[12vh] border-1 rounded-[20px] xl:w-[17.5vw] xl:h-[45vh] px-[2.5vw] py-[1.5vh] xl:py-[2.5vh]">
                     <div className="flex flex-row xl:flex-col justify-between h-full">
                         <div className="flex flex-col h-full max-w-[50vw]">
-                            <div className="absolute left-auto top-[0.2vh] right-5 xl:right-8">
+                            <div className="absolute left-auto top-[0.2vh] xl:top-[1.2vh] right-5 xl:right-8">
                                 <MenuSuspenso
                                     onEditar={() => console.log('editar', a.id)}
                                     onApagar={() => console.log('apagar', a.id)}
@@ -68,7 +68,7 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
                                 <p className="text-[#969696] text-[0.75rem] xl:text-[1rem] font-extrabold">{a.nomeComodo}</p>
                                 <p className="line-clamp-1 xl:line-clamp-2 break-words text-[1.125rem] xl:text-[1.5rem] font-bold">{a.nome}</p>
                             </div>
-                            <div className="flex gap-[2vw] xl:justify-between mt-auto">
+                            <div className="flex gap-[2vw] xl:justify-between xl:mb-[2.5vh] mt-auto">
                                 <div className="w-[35vw]">
                                     <p className="text-[#969696] text-[0.625rem] xl:text-[0.75rem] font-semibold">Consumo atual</p>
                                     <p className="font-extrabold text-[0.75rem] xl:text-[1.25rem] whitespace-nowrap">{a.consumo}<span className="font-semibold text-[#969696] text-[0.5rem] xl:text-[1rem]">kWh</span></p>
