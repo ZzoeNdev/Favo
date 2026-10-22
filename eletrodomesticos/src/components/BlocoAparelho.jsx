@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import MenuSuspenso from "./MenuSuspenso"
-import IconArCondicionado from "../assets/icons/IconArCondicionado.svg"
+import IconArCondicionadoLigado from "../assets/icons/IconArCondicionadoLigado.svg"
+import IconArCondicionadoDesligado from "../assets/icons/IconArCondicionadoDesligado.svg"
 
 function BlocoAparelho({comodosFiltro, atualizando}) {
 
@@ -39,7 +40,7 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
         <div className="flex flex-wrap gap-[1.5vh] xl:gap-[1vw]">
         {aparelhosFiltrados.map(a => (
             <div className="relative">
-                <div key={a.id} className="flex flex-col w-[85vw] h-[12vh] border-1 border-[#A2A2A2] rounded-[20px] xl:w-[17.5vw] xl:h-[45vh] px-[2.5vw] py-[1.5vh] xl:py-[2.5vh]">
+               <div key={a.id} className={`flex flex-col w-[85vw] h-[12vh] border-1 ${a.estado === "ligado" ? "border-[#F68412] shadow-sm shadow-[#F68412]" : "border-[#A2A2A2]"} duration-300 rounded-[20px] xl:w-[17.5vw] xl:h-[45vh] px-[2.5vw] py-[1.5vh] xl:py-[2.5vh]`}>
                     <div className="flex flex-row xl:flex-col justify-between h-full">
                         <div className="flex flex-col h-full max-w-[50vw]">
                             <div className="absolute left-auto top-[0.2vh] xl:top-[1.2vh] right-5 xl:right-8">
@@ -48,9 +49,9 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
                                     onApagar={() => console.log('apagar', a.id)}
                                 />    
                             </div>
-                            <div className="xl:flex justify-between items-center mt-[3.5vh] mb-[3vh]">
-                                <img src={IconArCondicionado} alt="ícone"/>
-                                <div className="hidden xl:relative xl:inline-block w-22 h-10 ml-[8vw]">
+                            <div className="hidden xl:flex justify-between items-center mt-[3.5vh] mb-[3vh]">
+                                <img src={a.estado === "ligado" ? IconArCondicionadoLigado : IconArCondicionadoDesligado} alt={a.estado ? "Ar Condicionado Ligado" : "Ar Condicionado Desligado"}/>
+                                <div className="xl:relative xl:inline-block w-22 h-10 ml-[8vw]">
                                     <input
                                         id={`switch-${a.id}`}
                                         type="checkbox"
@@ -65,17 +66,17 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
                                 </div>
                             </div>
                             <div className="md-auto">
-                                <p className="text-[#969696] text-[0.75rem] xl:text-[1rem] font-extrabold">{a.nomeComodo}</p>
-                                <p className="line-clamp-1 xl:line-clamp-2 break-words text-[1.125rem] xl:text-[1.5rem] font-bold">{a.nome}</p>
+                                <p className={`${a.estado === "ligado" ? "text-[#969696]" : "text-[#C0C0C0]"} duration-300 text-[0.75rem] xl:text-[1rem] font-extrabold`}>{a.nomeComodo}</p>
+                                <p className={`${a.estado === "ligado" ? "text-black" : "text-[#666666]"} duration-300 line-clamp-1 xl:line-clamp-2 break-words text-[1.125rem] xl:text-[1.5rem] font-bold`}>{a.nome}</p>
                             </div>
                             <div className="flex gap-[2vw] xl:justify-between xl:mb-[2.5vh] mt-auto">
                                 <div className="w-[35vw]">
-                                    <p className="text-[#969696] text-[0.625rem] xl:text-[0.75rem] font-semibold">Consumo atual</p>
-                                    <p className="font-extrabold text-[0.75rem] xl:text-[1.25rem] whitespace-nowrap">{a.consumo}<span className="font-semibold text-[#969696] text-[0.5rem] xl:text-[1rem]">kWh</span></p>
+                                    <p className={`${a.estado === "ligado" ? "text-[#969696]" : "text-[#C0C0C0]"} duration-300 text-[0.625rem] xl:text-[0.75rem] font-semibold`}>Consumo atual</p>
+                                    <p className={`${a.estado === "ligado" ? "text-black" : "text-[#666666]"} duration-300 font-extrabold text-[0.75rem] xl:text-[1.25rem] whitespace-nowrap`}>{a.consumo}<span className={`${a.estado === "ligado" ? "text-[#969696]" : "text-[#C0C0C0]"} duration-300 font-semibold text-[0.5rem] xl:text-[1rem]`}>kWh</span></p>
                                 </div>
                                 <div className="w-[35vw]">
-                                    <p className="text-[#969696] text-[0.625rem] xl:text-[0.75rem] font-semibold">Custo estimado</p>
-                                    <p className="font-extrabold text-[0.75rem] xl:text-[1.25rem] whitespace-nowrap">R$ {a.custo}</p>
+                                    <p className={`${a.estado === "ligado" ? "text-[#969696]" : "text-[#C0C0C0]"} duration-300 text-[0.625rem] xl:text-[0.75rem] font-semibold`}>Custo estimado</p>
+                                    <p className={`${a.estado === "ligado" ? "text-black" : "text-[#666666]"} duration-300 font-extrabold text-[0.75rem] xl:text-[1.25rem] whitespace-nowrap`}>R$ {a.custo}</p>
                                 </div>
                             </div>
                         </div>
