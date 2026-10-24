@@ -20,7 +20,7 @@ function App() {
       .then(response => response.json())
       .then(json => {
         if (json.logado == false) {
-          window.location.href = 'https://favo-cadastro.vercel.app';
+          window.location.href = 'https://favo.center/cadastro';
         } else {
           setCarregando(false);
         }

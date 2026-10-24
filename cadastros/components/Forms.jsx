@@ -16,7 +16,7 @@ function Forms() {
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.logado) {
-                    window.location.href = "https://favo-dashboard-ecru.vercel.app"
+                    window.location.href = "https://favo.center/dashboard"
                 } else {
                     console.log(json.message)
                 }
@@ -38,7 +38,7 @@ function Forms() {
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.cadastrado) {
-                    window.location.href = "https://favo-cadastro.vercel.app"
+                    window.location.href = "https://favo.center/cadastro"
                 } else {
                     setErroCad(json.message)
                     console.log(json.message)
@@ -61,7 +61,7 @@ function Forms() {
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.logado) {
-                    window.location.href = "https://favo-dashboard-ecru.vercel.app"
+                    window.location.href = "favo.center/dashboard"
                 } else {
                     setErroLog(json.message)
                     console.log(json.message)
