@@ -6,4 +6,13 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(),tailwindcss()],
   base: '/cadastro/',
+  server:{
+  proxy:{
+    '/api': {
+      target: 'https://favo.alwaysdata.net',
+      changeOrigin: true,
+      rewrite: (path) => path.replace(/^\/api/,''),
+    },
+  },
+},
 })
