@@ -16,7 +16,7 @@ function Forms() {
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.logado) {
-                    window.location.href = "/dashboard/"
+                    window.location.href = "/dashboard"
                 } else {
                     console.log(json.message)
                 }
