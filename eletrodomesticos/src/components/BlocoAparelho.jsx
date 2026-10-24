@@ -60,8 +60,8 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
                         <div className="flex flex-col h-full max-w-[50vw]">
                             <div className="absolute left-auto top-[0.2vh] xl:top-[1.2vh] right-5 xl:right-8">
                                 <MenuSuspenso
-                                    onEditar={() => excluir()}
-                                    onApagar={() => console.log('apagar', a.id)}
+                                    onEditar={() => console.log('editar', a.id)}
+                                    onApagar={() => excluir(a)}
                                 />    
                             </div>
                             <div className="hidden xl:flex justify-between items-center mt-[3.5vh] mb-[3vh]">
