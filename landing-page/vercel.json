@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/api/:match*", "destination": "https://favo-alwaysdata.net/:match*" },
     { "source": "/dashboard", "destination": "https://favo-dashboard-ecru.vercel.app/" },
     { "source": "/dashboard/:match*", "destination": "https://favo-dashboard-ecru.vercel.app/:match*" },
     { "source": "/cadastro", "destination": "https://favo-cadastro.vercel.app/" },

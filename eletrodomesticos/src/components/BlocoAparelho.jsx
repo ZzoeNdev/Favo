@@ -9,7 +9,7 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
     const [atualizar, setAtualizar] = useState(0)
 
     useEffect(() => {
-        fetch('https://favo.alwaysdata.net/listarAparelhos.php', { credentials: 'include' })
+        fetch('/api/listarAparelhos.php', { credentials: 'include' })
             .then(resposta => resposta.json())
             .then(json => {
                 setAparelhos(json)
@@ -18,7 +18,7 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
     }, [atualizar])
 
     function alternar(idEletro) {
-        fetch("https://favo.alwaysdata.net/alternarEstado.php", {
+        fetch("/api/alternarEstado.php", {
             method: "POST",
             credentials: 'include',
             headers: {

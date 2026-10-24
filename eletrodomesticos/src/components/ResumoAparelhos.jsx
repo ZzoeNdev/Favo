@@ -4,7 +4,7 @@ function ResumoAparelhos({atualizando}) {
     const [card, setCard] = useState({ cadastrados: 0, ativos: 0 })
 
     useEffect(() => {
-        fetch('https://favo.alwaysdata.net/resumoAparelhos.php', { credentials: 'include' })
+        fetch('/api/resumoAparelhos.php', { credentials: 'include' })
             .then(resposta => resposta.json())
             .then(json => {
                 setCard(json)

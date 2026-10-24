@@ -11,7 +11,7 @@ function CardMeta() {
     function definirNovaMeta(e) {
         e.preventDefault();
         console.log('Nova meta a ser definida:', novaMeta);
-        fetch("https://favo.alwaysdata.net/trocarMeta.php?meta=" + novaMeta, {
+        fetch("/api/trocarMeta.php?meta=" + novaMeta, {
             headers: { "Content-Type": "application/json" },
             credentials: "include"
         })
@@ -24,7 +24,7 @@ function CardMeta() {
     }
 
     useEffect(() => {
-        fetch("https://favo.alwaysdata.net/buscarDados.php", { credentials: "include" })
+        fetch("/api/buscarDados.php", { credentials: "include" })
             .then(resposta => resposta.json())
             .then(json => {
                 setMeta(json.meta);
@@ -35,7 +35,7 @@ function CardMeta() {
 
     useEffect(() => {
         function buscarValores() {
-            fetch('https://favo.alwaysdata.net/resumo.php', { credentials: 'include' })
+            fetch('/api/resumo.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setCusto(Number(json.custoReais)))
         }
