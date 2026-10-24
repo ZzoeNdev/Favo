@@ -38,7 +38,7 @@ function Nav() {
         <a href="#Home">
           <img src={Logo} alt="Logo Favo" className="max-w-[84px] max-h-[41px] cursor-pointer" />
         </a>
-        <Botao texto="Acessar Painel"  tipo="cheio" onClick={() => window.location.href = "https://favo.center/cadastro"}/>
+        <Botao texto="Acessar Painel"  tipo="cheio" onClick={() => window.location.href = "https://www.favo.center/cadastro"}/>
       </header>
 
       {/* ── Desktop: topo completo ── */}

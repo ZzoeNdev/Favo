@@ -17,7 +17,7 @@ function App() {
         if (json.logado) {
           console.log("Usuário logado");
         } else {
-          window.location.href = "https://favo.center/cadastro"
+          window.location.href = "https://www.favo.center/cadastro"
         }
       })
   }

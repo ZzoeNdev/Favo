@@ -20,7 +20,7 @@ function App() {
       .then(response => response.json())
       .then(json => {
         if (json.logado == false) {
-          window.location.href = 'https://favo.center/cadastro';
+          window.location.href = 'https://www.favo.center/cadastro';
         } else {
           setCarregando(false);
         }

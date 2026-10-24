@@ -16,7 +16,7 @@ function Forms() {
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.logado) {
-                    window.location.href = "https://favo.center/dashboard"
+                    window.location.href = "https://www.favo.center/dashboard"
                 } else {
                     console.log(json.message)
                 }
@@ -38,7 +38,7 @@ function Forms() {
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.cadastrado) {
-                    window.location.href = "https://favo.center/cadastro"
+                    window.location.href = "https://www.favo.center/cadastro"
                 } else {
                     setErroCad(json.message)
                     console.log(json.message)
@@ -61,7 +61,7 @@ function Forms() {
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.logado) {
-                    window.location.href = "favo.center/dashboard"
+                    window.location.href = "www.favo.center/dashboard"
                 } else {
                     setErroLog(json.message)
                     console.log(json.message)
