@@ -9,7 +9,7 @@ function ConfigConta({abrirPopSenha}) {
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.logout) {
-                    window.location.href = "https://favo-cadastro.vercel.app"
+                    window.location.href = "https://www.favo.center/cadastro"
                 } else {
                     console.log("Erro ao sair da conta");
                 }
