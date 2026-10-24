@@ -5,7 +5,7 @@ import SairdaConta from "../assets/SairdaConta.svg";
 function ConfigConta({abrirPopSenha}) {
 
     function sairConta() {
-        fetch("https://favo.alwaysdata.net/sairConta.php", { credentials: "include" })
+        fetch("/api/sairConta.php", { credentials: "include" })
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.logout) {
