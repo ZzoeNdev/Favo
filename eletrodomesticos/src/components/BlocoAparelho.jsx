@@ -31,6 +31,21 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
             .then(() => atualizando())
     }
 
+    function excluir(a){
+        if(!window.confirm(`Excluir "${a.nome}"? O histórico de consumo dele também será apagado.`)) return
+
+        fetch("/api/excluirEletro.php", {
+            method: "POST",
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ id_eletro: a.id })
+        })
+        .then(resposta => resposta.json())
+        .then(() => setAtualizar(v => v+1))
+    }
+
     const aparelhosFiltrados = comodosFiltro.length === 0 ? aparelhos : aparelhos.filter(a => comodosFiltro.includes(a.nomeComodo));
     console.log("Aparelhos filt" + aparelhosFiltrados);
 
@@ -45,7 +60,7 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
                         <div className="flex flex-col h-full max-w-[50vw]">
                             <div className="absolute left-auto top-[0.2vh] xl:top-[1.2vh] right-5 xl:right-8">
                                 <MenuSuspenso
-                                    onEditar={() => console.log('editar', a.id)}
+                                    onEditar={() => excluir()}
                                     onApagar={() => console.log('apagar', a.id)}
                                 />    
                             </div>
