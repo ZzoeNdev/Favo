@@ -5,6 +5,8 @@
     { "source": "/cadastro", "destination": "https://favo-cadastro.vercel.app/" },
     { "source": "/cadastro/:match*", "destination": "https://favo-cadastro.vercel.app/:match*" },
     { "source": "/perfil", "destination": "https://favo-perfil.vercel.app/" },
-    { "source": "/perfil/:match*", "destination": "https://favo-perfil.vercel.app/:match*" }
+    { "source": "/perfil/:match*", "destination": "https://favo-perfil.vercel.app/:match*" },
+    { "source": "/eletrodomesticos", "destination": "https://favo-eletrodomesticos.vercel.app/" },
+    { "source": "/eletrodomesticos/:match*", "destination": "https://favo-eletrodomesticos.vercel.app/:match*" }
   ]
 }
