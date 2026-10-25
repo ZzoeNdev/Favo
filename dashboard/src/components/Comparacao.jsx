@@ -37,7 +37,7 @@ function Comparacao() {
     console.log('Ciclos:', ciclos);
 
     return (
-        <div className="flex flex-col md:flex-row md:justify-between gap-5 w-full m-10 md:m-0 md:mt-10">
+        <div className="flex flex-col md:flex-row md:justify-between gap-5 w-[77%] md:w-full m-10 md:m-0 md:mt-10">
             <div className="flex flex-col justify-center bg-[#1F232D] shadow-md w-full h-100 md:h-120 rounded-xl p-7">
                 <p className="text-gray-400 font-medium">Ciclo Passado</p>
                 <h1 className="text-6xl text-white font-bold mt-6">{ciclos.total_kwh}<span className="text-2xl text-gray-300/70">kWh</span></h1>

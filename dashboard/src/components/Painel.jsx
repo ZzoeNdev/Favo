@@ -34,16 +34,16 @@ function Painel() {
     console.log('Aparelhos atualizados:', aparelhos);
 
     return (
-        <div className="flex flex-col md:flex-row justify-between items-center bg-gray-400/40 w-[90%] h-auto max-h-[80vh] mt-10 rounded-lg shadow-[0_0_5px_rgba(0,0,0,0.2)] md:pr-8">
+        <div className="flex flex-col md:flex-row justify-between bg-gray-400/40 w-[57%] md:w-[90%] h-auto max-h-[85vh] mt-10 rounded-lg shadow-[0_0_5px_rgba(0,0,0,0.2)] md:pr-8">
             <div className="flex flex-col justify-start p-10 bg-white w-[100%] md:w-[85%] h-auto shadow-lg rounded-lg">
                 <div><p className="text-gray-400/40 font-medium">{selecionado.nome}</p></div>
 
                 <div className="flex flex-col md:flex-row gap-2 mt-5 max-w-[80vw] overflow-x-auto">
                     {aparelhos.length > 0 ? aparelhos.map(obj => (
-                        <div className="bg-gray-400/5 border border-gray-400/20 rounded-xl p-3">
+                        <div className="bg-gray-400/5 border border-gray-400/20 rounded-xl p-2 md:py-2 md:px-4">
                             <div className="flex justify-between items-center">
                                 <div className="flex gap-4 items-center">
-                                    <div className="bg-orange-200/70 w-10 h-10 rounded-lg">
+                                    <div className="bg-orange-200/70 w-9 h-9 rounded-lg">
                                         <img src="" alt="" />
                                     </div>
                                     <div>
@@ -53,7 +53,7 @@ function Painel() {
                                 </div>
 
                                 <div>
-                                    <h2 className="font-extrabold text-lg">{obj.watts}W</h2>
+                                    <h2 className="font-extrabold text-lg md:ml-4">{obj.watts}W</h2>
                                 </div>
                             </div>
                         </div>
@@ -75,16 +75,16 @@ function Painel() {
 
 
 
-                <div className={aparelhos.length > 0 ? "flex flex-col mt-10" : "hidden"}>
+                <div className={aparelhos.length > 0 ? "flex flex-col mt-8 md:mt-40" : "hidden"}>
                     <p className='text-start font-medium text-sm text-gray-400'>Resumo</p>
                     <div className='bg-gray-200 w-full h-[1px] mt-1'></div>
                     <div className='flex items-center justify-between mt-2'>
-                        <div className='w-[35%]'>
+                        <div className='w-30 md:w-[35%]'>
                             <p className='text-xs text-gray-400 font-medium'>Consumo de Hoje</p>
                             <h1 className='font-bold'>{(aparelhos.reduce((total, obj) => total + (obj.watts * obj.usoMedio), 0) / 1000).toFixed(1)} <span className='text-gray-400 font-medium text-sm'>kWh</span></h1>
                         </div>
 
-                        <div className='bg-[url(../src/assets/FrameBG.png)] bg-contain bg-no-repeat w-[65%] p-2'>
+                        <div className='bg-[url(../src/assets/FrameBG.png)] md:bg-contain bg-cover bg-no-repeat w-35 md:w-[65%] p-2'>
                             <p className='text-xs text-white'>Custo estimado</p>
                             <h1 className='font-bold text-white'>R$ {((aparelhos.reduce((total, obj) => total + (obj.watts * obj.usoMedio), 0) / 1000) * 0.739).toFixed(2)}</h1>
                         </div>

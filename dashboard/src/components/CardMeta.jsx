@@ -48,7 +48,7 @@ function CardMeta() {
     console.log('Largura da barra:', larguraBarra); 
 
     return (
-        <div className="flex flex-col items-center shadow-[0_0_5px_0_rgba(0,0,0,0.2)] w-[90%] h-auto rounded-2xl p-7 md:p-9 mt-10">
+        <div className="flex flex-col items-center shadow-[0_0_5px_0_rgba(0,0,0,0.2)] w-[57%] md:w-[90%] h-auto rounded-2xl p-7 md:p-9 mt-10">
             <div className="flex justify-between w-[100%]">
                 <h3 className="font-semibold md:text-2xl">Defina sua meta</h3>
                 <div className="flex items-center gap-2 cursor-pointer">

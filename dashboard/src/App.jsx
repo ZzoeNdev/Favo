@@ -47,7 +47,7 @@ function App() {
 
       <div className='flex flex-col items-center md:items-start md:w-[90%] mt-10 md:mt-70'>
         <p className='text-orange-500 font-bold text-xs md:text-lg'>CÔMODOS</p>
-        <h1 className='font-extrabold text-3xl md:text-5xl'>Verifique seus Cômodos</h1>
+        <h1 className='font-extrabold text-2xl md:text-5xl'>Verifique seus Cômodos</h1>
       </div>
 
       <Painel />
@@ -55,14 +55,14 @@ function App() {
 
       <div className='flex flex-col items-center md:items-start md:w-[90%] mt-10 md:mt-19'>
         <p className='text-orange-500 font-bold text-xs md:text-lg'>METAS</p>
-        <h1 className='font-extrabold text-3xl md:text-5xl'>Sua Meta Mensal</h1>
+        <h1 className='font-extrabold text-2xl md:text-5xl'>Sua Meta Mensal</h1>
       </div>
 
       <CardMeta/>
 
       <div className='flex flex-col items-center md:items-start md:w-[90%] mt-10 md:mt-19'>
         <p className='text-orange-500 font-bold text-xs md:text-lg'>COMPARAÇÃO</p>
-        <h1 className='font-extrabold text-3xl md:text-5xl'>Comparação entre Meses</h1>
+        <h1 className='font-extrabold text-2xl md:text-5xl'>Comparação entre Meses</h1>
 
       <Comparacao />
 

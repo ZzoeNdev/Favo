@@ -12,6 +12,7 @@ function MenuSuspenso({aparelho, onEditar, onApagar }) {
   function salvar(){
     fetch("https://favo.alwaysdata.net/editarAparelho.php", {
       method: "POST",
+      credentials: "include",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id_eletro: aparelho.id, nome: nome, watts: watts })
     })
