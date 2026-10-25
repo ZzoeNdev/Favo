@@ -65,7 +65,7 @@ function MenuSuspenso({aparelho, onEditar, onApagar }) {
             <label htmlFor="">Nome:</label>
             <input className='border-1' type="text" value={nome} onChange={(e) => setNome(e.target.value)} name="" id="" />
             <label htmlFor="">Watts:</label>
-            <input className='border-1' type="text" value={watts} onChange={(e) => setWatts(e.target.value)} name="" id="" />
+            <input className='border-1' type="number" value={watts} onChange={(e) => setWatts(e.target.value)} name="" id="" />
             <button className='bg-black/20' onClick={() => salvar()}>Salvar</button>
           </div>
         </>
