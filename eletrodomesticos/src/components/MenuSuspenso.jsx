@@ -16,14 +16,7 @@ function MenuSuspenso({aparelho, onEditar, onApagar }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id_eletro: aparelho.id, nome: nome, watts: watts })
     })
-    .then(resposta => resposta.json)
-    .then(json => {
-      if (json.sucesso){
-        window.location.reload()
-      }else{
-        console.log(json.message)
-      }
-    })
+    .then(window.location.reload())
   }
 
   return (
@@ -66,7 +59,7 @@ function MenuSuspenso({aparelho, onEditar, onApagar }) {
             <input className='border-1' type="text" value={nome} onChange={(e) => setNome(e.target.value)} name="" id="" />
             <label htmlFor="">Watts:</label>
             <input className='border-1' type="number" value={watts} onChange={(e) => setWatts(e.target.value)} name="" id="" />
-            <button className='bg-black/20' onClick={() => {salvar(); location.reload()}}>Salvar</button>
+            <button className='bg-black/20' onClick={() => salvar()}>Salvar</button>
           </div>
         </>
       )}
