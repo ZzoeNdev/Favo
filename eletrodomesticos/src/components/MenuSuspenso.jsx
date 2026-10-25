@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function MenuSuspenso({aparelho, onEditar, onApagar }) {
+function MenuSuspenso({ aparelho, onEditar, onApagar }) {
   const [aberto, setAberto] = useState(false)
   const [abertoEdit, setAbertoEdit] = useState(false)
 
@@ -9,22 +9,22 @@ function MenuSuspenso({aparelho, onEditar, onApagar }) {
 
   console.log(aparelho)
 
-  function salvar(){
+  function salvar() {
     fetch("https://favo.alwaysdata.net/editarAparelho.php", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id_eletro: aparelho.id, nome: nome, watts: watts })
     })
-    .then(resposta => resposta.json())
-    .then(json => {
-      if (json.sucesso){
-        console.log(json.message)
-        onEditar()
-      }else{
-        console.log(json.message)
-      }
-    })
+      .then(resposta => resposta.json())
+      .then(json => {
+        if (json.sucesso) {
+          console.log(json.message)
+          onEditar()
+        } else {
+          console.log(json.message)
+        }
+      })
   }
 
   return (
@@ -63,11 +63,17 @@ function MenuSuspenso({aparelho, onEditar, onApagar }) {
           <div className="absolute right-full top-full mt-1 bg-white border border-gray-200 rounded-[12px] shadow-lg z-50 w-50 h-80 overflow-hidden">
             <p className='p-5 font-semibold'>Editar</p>
             <div className="h-[1px] bg-gray-100 mb-2" />
-            <label htmlFor="">Nome:</label>
-            <input className='border-1' type="text" value={nome} onChange={(e) => setNome(e.target.value)} name="" id="" />
-            <label htmlFor="">Watts:</label>
-            <input className='border-1' type="number" value={watts} onChange={(e) => setWatts(e.target.value)} name="" id="" />
-            <button className='bg-black/20' onClick={() => {salvar(); setAbertoEdit(false);}}>Salvar</button>
+            <div className='flex flex-col justify-center items-center gap-2 mt-5'>
+              <div className='flex flex-col items-center'>
+                <label className='font-semibold text-sm'>Nome:</label>
+                <input className='border-1 border-gray-400/70 bg-gray-400/20 rounded-md p-1 w-[70%]' type="text" value={nome} onChange={(e) => setNome(e.target.value)} name="" id="" />
+              </div>
+              <div className='flex flex-col items-center'>
+                <label className='font-semibold text-sm'>Watts:</label>
+                <input className='border-1 border-gray-400/70 bg-gray-400/20 rounded-md p-1 w-[70%]' type="number" value={watts} onChange={(e) => setWatts(e.target.value)} name="" id="" />
+              </div>
+              <button className='bg-orange-500/70 px-9 py-1 text-white rounded-lg cursor-pointer' onClick={() => { salvar(); setAbertoEdit(false); }}>Salvar</button>
+            </div>
           </div>
         </>
       )}

@@ -36,9 +36,9 @@ function App() {
 
   return (
     <div className="font-manrope ml-[5vw] mr-[5vw]">
-      <div className="flex justify-between pr-[3vw] pl-[3vw] items-center bg-gradient-to-r from-[#FF9E3C] to-[#F68412] rounded-[15px] mt-[3.5vh] mb-[5vh] w-full xl:h-[9vh]">
+      <div className="flex justify-between pr-[3vw] pl-[3vw] items-center bg-gradient-to-r from-[#FF9E3C] to-[#F68412] rounded-[15px] mt-[3.5vh] mb-5 md:mb-[5vh] w-full xl:h-[9vh] py-2">
         <a href="https://www.favo.center/dashboard"><img className="w-[10vw] xl:w-[4.5vw] h-auto" src={Logo} alt="Logo" /></a>
-        <button className="bg-white hover:cursor-pointer border border-[999999]/20 backdrop-blur-sm rounded-3xl shadow-md w-10 h-10 p-1" onClick={() => (window.location.href = "https://www.favo.center/perfil")}><img src={iconPerfil} alt="Perfil" /></button>
+        <button className="flex items-center bg-white hover:cursor-pointer border border-black/50 rounded-3xl shadow-md w-8 h-8 md:w-10 md:h-10 p-1" onClick={() => (window.location.href = "https://www.favo.center/perfil")}><img src={iconPerfil} className='opacity-50' alt="Perfil" /></button>
       </div>
       <ResumoAparelhos atualizando={atualizar} />
       <p className="text-[1.25rem] xl:text-[3.5rem] font-extrabold mt-[2vh] xl:mt-[5vh]">Meus Aparelhos</p>
