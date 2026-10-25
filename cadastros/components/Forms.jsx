@@ -38,7 +38,7 @@ function Forms() {
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.cadastrado) {
-                    window.location.href = "https://www.favo.center/cadastro"
+                    window.location.href = "/cadastro"
                 } else {
                     setErroCad(json.message)
                     console.log(json.message)
@@ -61,7 +61,7 @@ function Forms() {
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.logado) {
-                    window.location.href = "www.favo.center/dashboard"
+                    window.location.href = "/dashboard"
                 } else {
                     setErroLog(json.message)
                     console.log(json.message)
