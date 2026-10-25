@@ -61,7 +61,7 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
                             <div className="absolute left-auto top-[0.2vh] xl:top-[1.2vh] right-5 xl:right-8">
                                 <MenuSuspenso
                                     aparelho={a}
-                                    onEditar={() => console.log('editar', a.id)}
+                                    onEditar={() => {setAtualizar(v => v+1);}}
                                     onApagar={() => excluir(a)}
                                 />    
                             </div>
