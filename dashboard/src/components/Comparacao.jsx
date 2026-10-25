@@ -9,15 +9,15 @@ function Comparacao() {
 
     useEffect(() => {
         function buscarValores() {
-            fetch('/api/resumo.php', { credentials: 'include' })
+            fetch('https://favo.alwaysdata.net/resumo.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setCusto(Number(json.custoReais)))
 
-            fetch('/api/eletroMaisUso.php', { credentials: 'include' })
+            fetch('https://favo.alwaysdata.net/eletroMaisUso.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setMaisUsado(json.nome))
 
-            fetch('/api/resumo.php', { credentials: 'include' })
+            fetch('https://favo.alwaysdata.net/resumo.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setConsumo(json.consumoTotal))
         }
@@ -27,7 +27,7 @@ function Comparacao() {
     }, []);
 
     useEffect(() => {
-        fetch('/api/ciclos.php', { credentials: 'include' })
+        fetch('https://favo.alwaysdata.net/ciclos.php', { credentials: 'include' })
             .then(resposta => resposta.json())
             .then(json => {
                 setCiclos(json.ciclo_anterior);

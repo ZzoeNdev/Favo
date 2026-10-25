@@ -7,7 +7,7 @@ function Painel() {
     const [selecionado, setSelecionado] = useState("Quarto");
 
     useEffect(() => {
-        fetch('/api/listarComodos.php', { credentials: 'include' })
+        fetch('https://favo.alwaysdata.net/listarComodos.php', { credentials: 'include' })
             .then(resposta => resposta.json())
             .then(json => {
                 console.log('Comodos recebidos:', json);
@@ -25,7 +25,7 @@ function Painel() {
 
     useEffect(() => {
         if (selecionado) {
-            fetch(`/api/aparelhosNoComodo.php?comodo=${selecionado.id}`, { credentials: 'include' })
+            fetch(`https://favo.alwaysdata.net/aparelhosNoComodo.php?comodo=${selecionado.id}`, { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setAparelhos(json))
         }
