@@ -19,7 +19,7 @@ function MenuSuspenso({aparelho, onEditar, onApagar }) {
     .then(resposta => resposta.json)
     .then(json => {
       if (json.sucesso){
-        setAbertoEdit(false)
+        window.location.reload()
       }else{
         console.log(json.message)
       }
@@ -66,7 +66,7 @@ function MenuSuspenso({aparelho, onEditar, onApagar }) {
             <input className='border-1' type="text" value={nome} onChange={(e) => setNome(e.target.value)} name="" id="" />
             <label htmlFor="">Watts:</label>
             <input className='border-1' type="number" value={watts} onChange={(e) => setWatts(e.target.value)} name="" id="" />
-            <button className='bg-black/20' onClick={() => salvar()}>Salvar</button>
+            <button className='bg-black/20' onClick={() => {salvar(); location.reload()}}>Salvar</button>
           </div>
         </>
       )}
