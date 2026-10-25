@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 function ResumoAparelhos({atualizando}) {
     const [card, setCard] = useState({ cadastrados: 0, ativos: 0 })
+    const [consumo, setConsumo] = useState(0)
 
     useEffect(() => {
         fetch('https://favo.alwaysdata.net/resumoAparelhos.php', { credentials: 'include' })
@@ -12,12 +13,18 @@ function ResumoAparelhos({atualizando}) {
             });
     }, [atualizando])
 
+    useEffect(() => {
+        fetch('https://favo.alwaysdata.net/resumo.php', { credentials: 'include' })
+            .then(resposta => resposta.json())
+            .then(json => setConsumo(json.consumoTotal))
+    }, [])
+
     return (
         <div>
             <div className="flex flex-col xl:flex-row justify-around gap-[3vw] items-center">
                 <div className="flex flex-col justify-center bg-gradient-to-r from-[#F68412] to-[#FB9C3C] md:bg-[url(../src/assets/backgroundWatts.png)] md:bg-cover p-5 md:p-[2vw] rounded-[20px] xl:h-[30vh] w-[84vw] xl:w-[55vw]">
                     <p className="md:text-[1.25rem] text-white font-md">Consumo <span className='font-bold'>Total</span> da sua <span className='font-bold'>Casa</span></p> 
-                    <p className="text-4xl md:text-8xl text-white font-extrabold truncate">33.5 <span className='text-xl md:text-4xl opacity-80'>kWh</span></p>
+                    <p className="text-4xl md:text-8xl text-white font-extrabold truncate">{consumo} <span className='text-xl md:text-4xl opacity-80'>kWh</span></p>
                     <p className="text-white">Atualizado Agora</p>
                 </div>
                 <div className="flex flex-row justify-between gap-[5vw] xl:gap-[3vw]">
