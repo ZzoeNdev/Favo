@@ -107,8 +107,8 @@ function Produto({ fecharForm }) {
               <div id="reader" className="hidden"></div>
               <input id="barras" className='hidden' type="file" accept="image/*" capture="camera" onChange={selecionarImagem} />
               <label htmlFor="barras">
-                <div className='flex items-center justify-center cursor-pointer rounded-[16px] border-2 border-dashed border-orange-500 [stroke-dasharray:6_14] [stroke-linecap:round] w-full h-35 md:h-45 p-[5vw]' >
-                  <img src={camera} alt="Sua imagem Aqui" className="w-full h-full object-contain"/>
+                <div className='flex items-center justify-center cursor-pointer rounded-[16px] border-2 border-dashed border-orange-500/80 [stroke-dasharray:6_14] [stroke-linecap:round] w-full h-35 md:h-45 p-[5vw]' >
+                  <img src={camera} alt="Sua imagem Aqui" className="w-30 md:w-40 object-contain"/>
                 </div>
               </label>
             </div>
@@ -147,7 +147,7 @@ function Produto({ fecharForm }) {
               <input type="range" min="0.1" max="24" step={0.1} value={horasMedia} onChange={(h) => setHorasMedia(h.target.value)} className='w-full bg-gray-200/10 accent-orange-500' />
             </div>
           </div>
-          <button type="button" onClick={enviarProduto} className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-4">
+          <button type="button" onClick={enviarProduto} className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded mt-4">
             Adicionar Eletrodoméstico
           </button>
         </form>
