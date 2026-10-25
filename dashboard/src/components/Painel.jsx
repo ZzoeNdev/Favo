@@ -94,7 +94,7 @@ function Painel() {
                 </div>
 
             </div>
-            <div className="flex justify-center items-center h-[80vh] mb-2 mt-2 md:ml-8">
+            <div className="flex justify-center items-center h-auto mb-2 mt-2 md:ml-8">
                 <div className="flex md:flex-col gap-4 w-full max-w-sm max-h-[70vh] overflow-y-auto">
                     {comodos.length > 0 ? comodos.map(comodo => (
                         <button className={selecionado === comodo.nome ? "flex flex-shrink-0 items-center bg-white shadow-md w-55 h-15 p-4 gap-4 rounded-xl border border-orange-500 border-2 cursor-pointer" : "flex flex-shrink-0 items-center bg-white shadow-md w-55 h-15 p-4 gap-4 rounded-xl cursor-pointer"} onClick={() => setSelecionado(comodo)}>
