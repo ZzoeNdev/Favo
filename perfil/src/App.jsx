@@ -32,7 +32,7 @@ function App() {
       <div className="flex flex-col items-center -mt-50 md:-mt-100 w-[93%]">
       <Header />
       <Infos />
-      <div className="flex flex-col md:flex-row w-full justify-center ">
+      <div className="flex flex-col gap-6 md:flex-row w-full justify-center ">
         <ConfigConta abrirPopSenha={() => setAbrirSenha(true)} />
         <Pessoal />
       </div>

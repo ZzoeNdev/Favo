@@ -16,12 +16,12 @@ function Pessoal() {
 
 
     return (
-        <div className="flex flex-col items-center px-4 py-6 bg-white rounded-4xl shadow-lg w-full mt-8">
+        <div className="flex flex-col items-start px-10 py-10 bg-white rounded-4xl shadow-lg w-full mt-4">
             <h1 className="text-3xl font-semibold mb-4">Informações Pessoais</h1>
-            <p>Nome Completo</p>
-            <p className="text-lg font-medium">{nome}</p>
-            <p>Email</p>
-            <p className="text-lg font-medium">{email}</p>
+            <p className="text-black/40 font-medium">Nome Completo</p>
+            <p className="text-xl font-medium">{nome}</p>
+            <p className="text-black/40 font-medium">Email</p>
+            <p className="text-xl font-medium">{email}</p>
         </div>
     )
 

@@ -17,15 +17,26 @@ function ConfigConta({abrirPopSenha}) {
     }
 
     return (
-        <div className="flex flex-col items-center px-4 py-6 bg-white rounded-4xl shadow-lg w-full mt-8">
+        <div className="flex flex-col gap-4 items-start px-10 py-10 bg-white rounded-4xl shadow-lg w-full mt-4">
             <h1 className="text-3xl font-semibold mb-4">Configurações da Conta</h1>
-            <button onClick={abrirPopSenha} className="flex justify-between bg-[#F9F9FF] p-[2vh] w-[25vw] rounded-[20px] items-center gap-[0.75vw] cursor-pointer">
-                <div className="flex flex-row">
+            <button onClick={abrirPopSenha} className="flex justify-between bg-[#F9F9FF] p-[2vh] w-full  h-20 rounded-[20px] items-center gap-[0.75vw] cursor-pointer">
+                <div className="flex flex-row gap-3">
                     <img src={AlterarSenha} alt=""/>
-                    <p className="text-[1.5rem] font-semibold">Alterar Senha</p>
+                    <div className="flex flex-col items-start">
+                        <p className="text-md md:text-xl font-semibold">Alterar Senha</p>
+                        <p className="text-xs md:text-md text-orange-500/80">A segurança vem em primeiro lugar</p>
+                    </div>
                 </div>
             </button>
-            <button onClick={sairConta}>Sair da Conta</button>
+            <button onClick={sairConta} className="flex justify-between bg-[#F9F9FF] p-[2vh] w-full  h-20 rounded-[20px] items-center gap-[0.75vw] cursor-pointer">
+            <div className="flex flex-row gap-3">
+                    <img src={SairdaConta} alt=""/>
+                    <div className="flex flex-col items-start">
+                        <p className="text-md md:text-xl font-semibold">Sair da Conta</p>
+                        <p className="text-xs md:text-md text-orange-500/80">Aproveite para gerenciar outra conta</p>
+                    </div>
+            </div>
+            </button>
         </div>
     );
 }
