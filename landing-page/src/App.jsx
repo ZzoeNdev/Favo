@@ -146,7 +146,7 @@ function App() {
           <img className="hidden md:block md:h-[15rem] md:w-auto" src={TelaTestado} alt="Tela testada"/>
         </div>
       </section>
-      <section className="relative flex items-center justify-center md:mt-[5vh] w-full overflow-hidden min-h-[600px] md:min-h-[700px]" id="Comecar">
+      <section className="hidden md:flex relative flex items-center justify-center md:mt-[5vh] w-full overflow-hidden min-h-[600px] md:min-h-[700px]" id="Comecar">
         <p className="absolute text-[#C8C9CD]/25 text-[6.5rem] md:text-[25rem] font-bold z-0 whitespace-nowrap select-none">ENERGIA</p>
         <div className="relative z-10 w-full flex flex-col items-center justify-center">
           <img className="absolute mx-auto justify-center items-center w-[60rem] h-auto z-10" src={energiaBackground} alt="Energia"/>

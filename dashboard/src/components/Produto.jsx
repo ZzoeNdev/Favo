@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Html5Qrcode } from "html5-qrcode"
 import X from "../assets/icons/XIcon.png"
+import camera from "../assets/camera.png"
 
 function Produto({ fecharForm }) {
   const [nome, setNome] = useState('');
@@ -106,7 +107,9 @@ function Produto({ fecharForm }) {
               <div id="reader" className="hidden"></div>
               <input id="barras" className='hidden' type="file" accept="image/*" capture="camera" onChange={selecionarImagem} />
               <label htmlFor="barras">
-                <div className='flex items-center justify-center cursor-pointer rounded-[16px] border-2 border-dashed border-orange-500 [stroke-dasharray:6_14] [stroke-linecap:round] w-full h-20 md:h-45 text-sm' > Sua imagem aqui...</div>
+                <div className='flex items-center justify-center cursor-pointer rounded-[16px] border-2 border-dashed border-orange-500 [stroke-dasharray:6_14] [stroke-linecap:round] w-full h-35 md:h-45 p-[5vw]' >
+                  <img src={camera} alt="Sua imagem Aqui" className="w-full h-full object-contain"/>
+                </div>
               </label>
             </div>
             <div className="h-[1px] md:h-90 w-full md:w-[1px] bg-gray-300 my-4 md:m-10"></div>

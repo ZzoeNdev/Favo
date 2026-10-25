@@ -66,11 +66,11 @@ function MenuSuspenso({ aparelho, onEditar, onApagar }) {
             <div className='flex flex-col justify-center items-center gap-2 mt-5'>
               <div className='flex flex-col items-center'>
                 <label className='font-semibold text-sm'>Nome:</label>
-                <input className='border-1 border-gray-400/70 bg-gray-400/20 rounded-md p-1 w-[70%]' type="text" value={nome} onChange={(e) => setNome(e.target.value)} name="" id="" />
+                <input maxLength="32" className='border-1 border-gray-400/70 bg-gray-400/20 rounded-md p-1 w-[70%]' type="text" value={nome} onChange={(e) => setNome(e.target.value)} name="" id="" />
               </div>
               <div className='flex flex-col items-center'>
                 <label className='font-semibold text-sm'>Watts:</label>
-                <input className='border-1 border-gray-400/70 bg-gray-400/20 rounded-md p-1 w-[70%]' type="number" value={watts} onChange={(e) => setWatts(e.target.value)} name="" id="" />
+                <input maxLength="5" className='border-1 border-gray-400/70 bg-gray-400/20 rounded-md p-1 w-[70%]' type="number" value={watts} onChange={(e) => setWatts(e.target.value)} name="" id="" />
               </div>
               <button className='bg-orange-500/70 px-9 py-1 text-white rounded-lg cursor-pointer' onClick={() => { salvar(); setAbertoEdit(false); }}>Salvar</button>
             </div>
