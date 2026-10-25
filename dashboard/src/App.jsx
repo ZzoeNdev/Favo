@@ -9,6 +9,7 @@ import CardMeta from './components/CardMeta'
 import Produto from './components/Produto'
 import Comparacao from './components/Comparacao'
 import Footer from './components/Footer'
+import Carregando from './assets/carregando.gif'
 
 function App() {
 
@@ -30,8 +31,7 @@ function App() {
   if (carregando) {
     return (
       <div className='flex flex-col items-center justify-center h-screen'>
-        <p className='text-gray-300 font-md text-xs md:text-lg'>Carregando...</p>
-        <p className='text-orange-500 font-bold text-xs md:text-lg'>Favo está arrumando tudo pra você</p>
+        <img className='w-20' src={Carregando} alt="Logo Favo" />
       </div>
     )
   }
