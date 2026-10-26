@@ -1,6 +1,6 @@
 import Grafico from './Grafico'
 import { useState, useEffect } from "react";
-import eletro from "../assets/icons/iconArCondicionado.svg"
+import eletro from "../assets/icons/IconArCondicionado.svg"
 import comodoIcon from "../assets/icons/iconComodo.png"
 
 function Painel() {
