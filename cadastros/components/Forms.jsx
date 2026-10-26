@@ -12,7 +12,7 @@ function Forms() {
     const [erroCad, setErroCad] = useState()
 
     function verificacao() {
-        fetch("/api/verificarSessao.php", { credentials: "include" })
+        fetch("https://favo.alwaysdata.net/verificarSessao.php", { credentials: "include" })
             .then(resposta => resposta.json())
             .then(json => {
                 if (json.logado) {
@@ -30,7 +30,7 @@ function Forms() {
             setErroCad("Email inválido")
             return
         }
-        fetch("/api/cadastros.php", {
+        fetch("https://favo.alwaysdata.net/cadastros.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nome: nome, email: email, senha: senha })
@@ -52,7 +52,7 @@ function Forms() {
             setErroLog("Email inválido")
             return
         }
-        fetch("/api/logins.php", {
+        fetch("https://favo.alwaysdata.net/logins.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

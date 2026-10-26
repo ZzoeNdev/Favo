@@ -10,7 +10,7 @@ function MenuSuspenso({ aparelho, onEditar, onApagar }) {
   console.log(aparelho)
 
   function salvar() {
-    fetch("/api/editarAparelho.php", {
+    fetch("https://favo.alwaysdata.net/editarAparelho.php", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },

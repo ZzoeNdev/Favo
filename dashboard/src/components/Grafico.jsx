@@ -6,7 +6,7 @@ function Grafico({ comodo, atualizar }) {
     const [dados, setDados] = useState([]);
 
     useEffect(() => {
-        fetch(`/api/graficoComodo.php?comodo=${comodo}`, { credentials: 'include' })
+        fetch(`https://favo.alwaysdata.net/graficoComodo.php?comodo=${comodo}`, { credentials: 'include' })
             .then(resposta => resposta.json())
             .then(json => setDados(json));
     }, [comodo]);

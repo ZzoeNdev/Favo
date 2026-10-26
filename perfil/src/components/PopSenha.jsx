@@ -9,7 +9,7 @@ function PopSenha({fecharPopSenha}) {
     const [mensagem, setMensagem] = useState('');
 
     function trocarSenha() {
-        fetch("/api/trocarSenha.php", {
+        fetch("https://favo.alwaysdata.net/trocarSenha.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

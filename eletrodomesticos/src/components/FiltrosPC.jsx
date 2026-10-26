@@ -4,7 +4,7 @@ function FiltrosPC({comodosFiltro, alternarFiltro}) {
         const [comodos, setComodos] = useState([])
 
         useEffect(() => {
-            fetch('/api/listarComodos.php', { credentials: 'include' })
+            fetch('https://favo.alwaysdata.net/listarComodos.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => {
                     setComodos(json)

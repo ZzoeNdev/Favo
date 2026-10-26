@@ -9,7 +9,7 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
     const [atualizar, setAtualizar] = useState(0)
 
     useEffect(() => {
-        fetch('/api/listarAparelhos.php', { credentials: 'include' })
+        fetch('https://favo.alwaysdata.net/listarAparelhos.php', { credentials: 'include' })
             .then(resposta => resposta.json())
             .then(json => {
                 setAparelhos(json)
@@ -18,7 +18,7 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
     }, [atualizar])
 
     function alternar(idEletro) {
-        fetch("/api/alternarEstado.php", {
+        fetch("https://favo.alwaysdata.net/alternarEstado.php", {
             method: "POST",
             credentials: 'include',
             headers: {
@@ -34,7 +34,7 @@ function BlocoAparelho({comodosFiltro, atualizando}) {
     function excluir(a){
         if(!window.confirm(`Excluir "${a.nome}"? O histórico de consumo dele também será apagado.`)) return
 
-        fetch("/api/excluirEletro.php", {
+        fetch("https://favo.alwaysdata.net/excluirEletro.php", {
             method: "POST",
             credentials: 'include',
             headers: {

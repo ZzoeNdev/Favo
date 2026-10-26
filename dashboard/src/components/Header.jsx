@@ -13,7 +13,7 @@ function Header({ abrirForm }) {
 
     useEffect(() => {
         function buscarValores() {
-            fetch('/api/resumo.php', { credentials: 'include' })
+            fetch('https://favo.alwaysdata.net/resumo.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setCusto(Number(json.custoReais)))
         }

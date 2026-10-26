@@ -21,7 +21,7 @@ function App() {
   }
 
   function verificacao() {
-    fetch("/api/verificarSessao.php", { credentials: "include" })
+    fetch("https://favo.alwaysdata.net/verificarSessao.php", { credentials: "include" })
       .then(resposta => resposta.json())
       .then(json => {
         if (json.logado) {
