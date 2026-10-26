@@ -61,7 +61,7 @@ function Painel() {
                         </div>
                     )) : (
                         <div className="flex justify-center items-center w-full h-full">
-                            <p className="text-gray-400 font-bold w-[75%] text-center">Nenhum eletrodomésticos criado.(adicione seu primeiro eletrodomésticogit)</p>
+                            <p className="text-gray-400 font-bold w-[75%] text-center">Nenhum eletrodoméstico criado.(adicione seu primeiro eletrodoméstico)</p>
                         </div>
                     )}
 
