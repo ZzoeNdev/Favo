@@ -1,5 +1,7 @@
 import Grafico from './Grafico'
 import { useState, useEffect } from "react";
+import eletro from "../assets/icons/iconArCondicionado.svg"
+import comodoIcon from "../assets/icons/iconComodo.png"
 
 function Painel() {
 
@@ -7,7 +9,7 @@ function Painel() {
     const [selecionado, setSelecionado] = useState("Quarto");
 
     useEffect(() => {
-        fetch('https://favo.alwaysdata.net/listarComodos.php', { credentials: 'include' })
+        fetch('/api/listarComodos.php', { credentials: 'include' })
             .then(resposta => resposta.json())
             .then(json => {
                 console.log('Comodos recebidos:', json);
@@ -25,7 +27,7 @@ function Painel() {
 
     useEffect(() => {
         if (selecionado) {
-            fetch(`https://favo.alwaysdata.net/aparelhosNoComodo.php?comodo=${selecionado.id}`, { credentials: 'include' })
+            fetch(`/api/aparelhosNoComodo.php?comodo=${selecionado.id}`, { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setAparelhos(json))
         }
@@ -44,7 +46,7 @@ function Painel() {
                             <div className="flex justify-between items-center">
                                 <div className="flex gap-4 items-center">
                                     <div className="bg-orange-200/70 w-9 h-9 rounded-lg">
-                                        <img src="" alt="" />
+                                        <img src={eletro} alt="iconEletro" />
                                     </div>
                                     <div>
                                         <h1 className="font-bold">{obj.nome}</h1>
@@ -75,7 +77,7 @@ function Painel() {
 
 
 
-                <div className={aparelhos.length > 0 ? "flex flex-col mt-8 md:mt-40" : "hidden"}>
+                <div className={aparelhos.length > 0 ? "flex flex-col mt-8 md:mt-15" : "hidden"}>
                     <p className='text-start font-medium text-sm text-gray-400'>Resumo</p>
                     <div className='bg-gray-200 w-full h-[1px] mt-1'></div>
                     <div className='flex items-center justify-between mt-2'>
@@ -98,8 +100,8 @@ function Painel() {
                 <div className="flex md:flex-col gap-4 w-full max-w-sm max-h-[70vh] overflow-y-auto">
                     {comodos.length > 0 ? comodos.map(comodo => (
                         <button className={selecionado === comodo.nome ? "flex flex-shrink-0 items-center bg-white shadow-md w-55 h-15 p-4 gap-4 rounded-xl border border-orange-500 border-2 cursor-pointer" : "flex flex-shrink-0 items-center bg-white shadow-md w-55 h-15 p-4 gap-4 rounded-xl cursor-pointer"} onClick={() => setSelecionado(comodo)}>
-                            <div className="bg-orange-200/70 w-10 h-10 rounded-lg">
-                                <img src="" alt="" />
+                            <div className="flex justify-center items-center bg-orange-200/70 w-10 h-10 rounded-lg">
+                                <img src={comodoIcon} alt="iconComodo" className='w-5' />
                             </div>
 
                             <div className="flex flex-col justify-center">
