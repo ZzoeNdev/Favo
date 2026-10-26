@@ -6,7 +6,7 @@ function Pessoal() {
     const [email, setEmail] = useState("");
 
     useEffect(() => {
-        fetch("https://favo.alwaysdata.net/buscarDados.php", { credentials: "include" })
+        fetch("/api/buscarDados.php", { credentials: "include" })
             .then(resposta => resposta.json())
             .then(json => {
                 setNome(json.nome);

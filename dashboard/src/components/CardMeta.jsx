@@ -11,7 +11,7 @@ function CardMeta() {
     function definirNovaMeta(e) {
         e.preventDefault();
         console.log('Nova meta a ser definida:', novaMeta);
-        fetch("https://favo.alwaysdata.net/trocarMeta.php?meta=" + novaMeta, {
+        fetch("/api/trocarMeta.php?meta=" + novaMeta, {
             headers: { "Content-Type": "application/json" },
             credentials: "include"
         })
@@ -24,7 +24,7 @@ function CardMeta() {
     }
 
     useEffect(() => {
-        fetch("https://favo.alwaysdata.net/buscarDados.php", { credentials: "include" })
+        fetch("/api/buscarDados.php", { credentials: "include" })
             .then(resposta => resposta.json())
             .then(json => {
                 setMeta(json.meta);
@@ -35,7 +35,7 @@ function CardMeta() {
 
     useEffect(() => {
         function buscarValores() {
-            fetch('https://favo.alwaysdata.net/resumo.php', { credentials: 'include' })
+            fetch('/api/resumo.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setCusto(Number(json.custoReais)))
         }
@@ -48,7 +48,7 @@ function CardMeta() {
     console.log('Largura da barra:', larguraBarra); 
 
     return (
-        <div className="flex flex-col items-center shadow-[0_0_5px_0_rgba(0,0,0,0.2)] w-[57%] md:w-[90%] h-auto rounded-2xl p-7 md:p-9 mt-10">
+        <div id="metas" className="flex flex-col items-center shadow-[0_0_5px_0_rgba(0,0,0,0.2)] w-[57%] md:w-[90%] h-auto rounded-2xl p-7 md:p-9 mt-10">
             <div className="flex justify-between w-[100%]">
                 <h3 className="font-semibold md:text-2xl">Defina sua meta</h3>
                 <div className="flex items-center gap-2 cursor-pointer">
@@ -63,7 +63,7 @@ function CardMeta() {
             </div>
             <div className="flex flex-col items-start w-[100%] mt-6 md:mt-11">
                 <h1 className="text-5xl md:text-8xl font-extrabold md:font-bold">R$ <SlotCounter value={Number(meta).toFixed(2).replace('.', ',')} /></h1>
-                <p className="text-gray-400 text-xs md:text-xl font-medium">Orçamento definido para Março</p>
+                <p className="text-gray-400 text-xs md:text-xl font-medium">Orçamento definido para esse mês</p>
             </div>
             <div className="relative w-[100%] h-2 bg-gray-300 rounded-full mt-6 md:mt-11">
                 <div className={"absolute h-2 bg-orange-300 rounded-full"} style={{ width: `${larguraBarra > 100 ? 100 : larguraBarra}%` }}></div>

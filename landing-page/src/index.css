@@ -14,9 +14,3 @@
 * {
   font-family: "Manrope", sans-serif;
 }
-
-.text-stroke-energia {
-  -webkit-text-stroke: 1px #C8C9CD;
-  color: transparent;
-  paint-order: stroke fill;
-}

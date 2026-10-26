@@ -14,7 +14,7 @@ function Produto({ fecharForm }) {
   const [codigoBarras, setCodigoBarras] = useState('');
 
   useEffect(() => {
-    fetch("https://favo.alwaysdata.net/listarComodos.php", { credentials: "include" })
+    fetch("/api/listarComodos.php", { credentials: "include" })
       .then(resposta => resposta.json())
       .then(json => {
         if (json.length > 0) {
@@ -56,7 +56,7 @@ function Produto({ fecharForm }) {
   useEffect(() => {
 
     function receberProdutoInmetro() {
-      fetch("https://favo.alwaysdata.net/buscarInmetro.php", {
+      fetch("/api/buscarInmetro.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -75,7 +75,7 @@ function Produto({ fecharForm }) {
 
 
   function enviarProduto() {
-    fetch("https://favo.alwaysdata.net/addProdutos.php", {
+    fetch("/api/addProdutos.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

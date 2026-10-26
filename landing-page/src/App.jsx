@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="font-manrope overflow-x-hidden">
       <Nav/>
-      <section className="pt-[80px] shadow-inner" id="Home">
+      <section className="pt-[110px] shadow-inner" id="Home">
       <Textos
         h1={<>Se reorganize bem com <span className="inline-block font-['Zolo'] font-normal bg-gradient-to-r from-[#EBA864] to-[#F68412] bg-clip-text text-transparent text-[3rem] md:text-[5rem]">Favo</span></>}
         p="Não deixe a oportunidade de economizar na conta de energia"

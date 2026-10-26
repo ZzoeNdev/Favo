@@ -9,7 +9,7 @@ function Painel() {
     const [selecionado, setSelecionado] = useState("Quarto");
 
     useEffect(() => {
-        fetch('https://favo.alwaysdata.net/listarComodos.php', { credentials: 'include' })
+        fetch('/api/listarComodos.php', { credentials: 'include' })
             .then(resposta => resposta.json())
             .then(json => {
                 console.log('Comodos recebidos:', json);
@@ -27,7 +27,7 @@ function Painel() {
 
     useEffect(() => {
         if (selecionado) {
-            fetch(`https://favo.alwaysdata.net/aparelhosNoComodo.php?comodo=${selecionado.id}`, { credentials: 'include' })
+            fetch(`/api/aparelhosNoComodo.php?comodo=${selecionado.id}`, { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setAparelhos(json))
         }
@@ -36,11 +36,11 @@ function Painel() {
     console.log('Aparelhos atualizados:', aparelhos);
 
     return (
-        <div className="flex flex-col md:flex-row justify-between bg-gray-400/40 w-[57%] md:w-[90%] h-auto mt-10 rounded-lg shadow-[0_0_5px_rgba(0,0,0,0.2)] md:pr-8">
-            <div className="flex flex-col justify-start p-10 bg-white w-[100%] md:w-[85%] h-auto shadow-lg rounded-lg">
+        <div id="painel" className="flex flex-col md:flex-row justify-between bg-gray-400/40 w-[85vw] md:w-[90%] h-auto mt-10 rounded-lg shadow-[0_0_5px_rgba(0,0,0,0.2)] md:pr-8">
+            <div className="flex flex-col justify-start p-10 bg-white w-[85vw] md:w-[75vw] h-auto shadow-lg rounded-lg">
                 <div><p className="text-gray-400/40 font-medium">{selecionado.nome}</p></div>
 
-                <div className="flex flex-row xl:flex-col md:flex-row gap-2 mt-5 max-w-[80vw] overflow-x-auto">
+                <div className="flex flex-row gap-2 mt-5 max-w-[80vw] overflow-x-auto">
                     {aparelhos.length > 0 ? aparelhos.map(obj => (
                         <div className="bg-gray-400/5 border border-gray-400/20 rounded-xl p-2 md:py-2 md:px-4">
                             <div className="flex justify-between items-center">

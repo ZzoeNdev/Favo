@@ -9,15 +9,15 @@ function Comparacao() {
 
     useEffect(() => {
         function buscarValores() {
-            fetch('https://favo.alwaysdata.net/resumo.php', { credentials: 'include' })
+            fetch('/api/resumo.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setCusto(Number(json.custoReais)))
 
-            fetch('https://favo.alwaysdata.net/eletroMaisUso.php', { credentials: 'include' })
+            fetch('/api/eletroMaisUso.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setMaisUsado(json.nome))
 
-            fetch('https://favo.alwaysdata.net/resumo.php', { credentials: 'include' })
+            fetch('/api/resumo.php', { credentials: 'include' })
                 .then(resposta => resposta.json())
                 .then(json => setConsumo(json.consumoTotal))
         }
@@ -27,7 +27,7 @@ function Comparacao() {
     }, []);
 
     useEffect(() => {
-        fetch('https://favo.alwaysdata.net/ciclos.php', { credentials: 'include' })
+        fetch('/api/ciclos.php', { credentials: 'include' })
             .then(resposta => resposta.json())
             .then(json => {
                 setCiclos(json.ciclo_anterior);
@@ -37,7 +37,7 @@ function Comparacao() {
     console.log('Ciclos:', ciclos);
 
     return (
-        <div className="flex flex-col md:flex-row md:justify-between gap-5 w-[87%] md:w-full m-10 md:m-0 md:mt-10">
+        <div id="comparacao" className="flex flex-col md:flex-row md:justify-between gap-5 w-[85vw] md:w-full m-10 md:m-0 md:mt-10">
             <div className="flex flex-col justify-center bg-[#1F232D] shadow-md w-full h-100 md:h-120 rounded-xl p-7">
                 <p className="text-gray-400 font-medium">Ciclo Passado</p>
                 <h1 className="text-5xl md:text-6xl text-white font-bold mt-6">{ciclos.total_kwh}<span className="text-xl md:text-2xl text-gray-300/70">kWh</span></h1>

@@ -9,7 +9,7 @@ function BandeiraExplicacao() {
     <div className="relative inline-block">
         <button onClick={() => setAberto(!aberto)} className="flex items-center justify-center bg-white/12 border border-white/20 backdrop-blur-sm rounded-4xl text-white shadow-md w-6 md:w-6 h-6 text-xs">?</button>
         {aberto && (
-            <div className="absolute z-10 left-[-67vw] lg:left-full lg:top-1/2 lg:-translate-y-1/2">
+            <div className="absolute z-10 left-[-60vw] lg:left-full lg:top-1/2 lg:-translate-y-1/2">
                 <div className="flex flex-col bg-white w-[85vw] lg:w-[45vw] border-1 border-[#878787] rounded-[20px] p-[2vw] gap-[1vh]">
                     <p className="font-extrabold text-[1.8rem]">Entenda as Bandeiras Tarifárias</p>
                     <p className="text-[0.8rem] text-[#878787]">As bandeiras tarifárias indicam mensalmente o custo real da produção de energia, aplicando acréscimos à fatura sempre que as condições de geração tornam-se desfavoráveis.</p>

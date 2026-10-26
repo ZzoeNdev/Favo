@@ -17,7 +17,7 @@ function App() {
   const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
-    fetch('https://favo.alwaysdata.net/verificarSessao.php', {credentials: 'include'})
+    fetch('/api/verificarSessao.php', {credentials: 'include'})
       .then(response => response.json())
       .then(json => {
         if (json.logado == false) {
@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="w-[100vw] overflow-x-hidden">
     <div className='flex flex-col items-center'>
 
       <Header abrirForm={() => setMudarEstado(true)} />
@@ -50,8 +50,8 @@ function App() {
         <h1 className='font-extrabold text-2xl md:text-5xl'>Verifique seus Cômodos</h1>
       </div>
 
-      <Painel />
-      <Resumo />
+    <Painel/>
+    <Resumo />
 
       <div className='flex flex-col items-center md:items-start md:w-[90vw] mt-10 md:mt-19'>
         <p className='text-orange-500 font-bold text-xs md:text-lg'>METAS</p>
