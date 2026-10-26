@@ -71,7 +71,7 @@ function Forms() {
 
 
     return (
-        <div className={modo === "login" ? "flex flex-col md:flex-row bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] h-133 transition-all duration-800 md:w-[50%]" : "flex flex-col md:flex-row md:justify-between bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] h-148 transition-all duration-800"}>
+        <div className={modo === "login" ? "flex flex-col md:flex-row bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] h-133 transition-all duration-800 md:w-[40%]" : "flex flex-col md:flex-row md:justify-between bg-gradient-to-r from-[#B2B2B2]/5 to-[white]/5 shadow-lg border border-[#F8F8F8]/35 rounded-[12px_12px_12px_12px] md:h-148 transition-all duration-800 w-80 md:w-[40%]"}>
             <form className={modo === "login" ? "order-1 relative bg-white p-6 md:p-10 rounded-[12px_12px_0px_0px] md:rounded-[12px_0px_0px_12px] md:w-[50%]" : "order-2 relative bg-white p-6 md:p-10 rounded-[0px_0px_12px_12px] md:rounded-[0px_12px_12px_0px] md:w-[50%]"} onSubmit={(e) => e.preventDefault()} action="" method="post">
 
                 <h1 className="text-3xl md:text-4xl font-semibold md:mt-3">{modo === "login" ? "Acesse sua conta" : "Crie sua conta"}</h1>
