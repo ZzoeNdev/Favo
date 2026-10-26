@@ -2,7 +2,7 @@ import FooterBg from "../assets/footerBackground.png"
 
 function Footer() {
 return (
-    <footer className="flex md:mt-[10rem] w-full bg-norepeat bg-center md:bg-cover bg-[length:auto_80%]" style={{ backgroundImage: `url(${FooterBg})`}}>
+    <footer className="flex md:mt-[10rem] w-full bg-norepeat bg-center md:bg-cover bg-no-repeat bg-[length:auto_80%]" style={{ backgroundImage: `url(${FooterBg})`}}>
     <div className=" flex flex-col px-16 py-10 gap-10 align-center items-center justify-center">
         <div className="flex flex-row gap-10 md:gap-32 mt-[20rem]">
             <ul className="list-none p-0 m-0 flex flex-col gap-1">
