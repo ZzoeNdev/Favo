@@ -34,7 +34,7 @@ function Painel() {
     console.log('Aparelhos atualizados:', aparelhos);
 
     return (
-        <div className="flex flex-col md:flex-row justify-between bg-gray-400/40 w-[57%] md:w-[90%] h-auto max-h-[85vh] mt-10 rounded-lg shadow-[0_0_5px_rgba(0,0,0,0.2)] md:pr-8">
+        <div className="flex flex-col md:flex-row justify-between bg-gray-400/40 w-[57%] md:w-[90%] h-auto mt-10 rounded-lg shadow-[0_0_5px_rgba(0,0,0,0.2)] md:pr-8">
             <div className="flex flex-col justify-start p-10 bg-white w-[100%] md:w-[85%] h-auto shadow-lg rounded-lg">
                 <div><p className="text-gray-400/40 font-medium">{selecionado.nome}</p></div>
 
