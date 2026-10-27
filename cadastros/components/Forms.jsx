@@ -11,14 +11,18 @@ function Forms() {
     const [erroLog, setErroLog] = useState()
     const [erroCad, setErroCad] = useState()
 
-    useEffect(() =>{
-        const jaCarregou = sessionStorage.getItem("jaCarregou")
+    function recarregar() {
+        useEffect(() => {
+            const jaCarregou = sessionStorage.getItem("jaCarregou")
 
-        if (!jaCarregou){
-            sessionStorage.setItem("jaCarregou", "true")
-            window.location.reload()
-        }
-    }, [])
+            if (!jaCarregou) {
+                sessionStorage.setItem("jaCarregou", "true")
+                window.location.reload()
+            }
+        }, [])
+    }
+    
+    recarregar()
 
     function verificacao() {
         fetch("/api/verificarSessao.php", { credentials: "include" })
