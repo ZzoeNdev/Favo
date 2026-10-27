@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import favoWLogo from "../assets/favoWLogo.png"
 
@@ -10,6 +10,15 @@ function Forms() {
     const [senha, setSenha] = useState("")
     const [erroLog, setErroLog] = useState()
     const [erroCad, setErroCad] = useState()
+
+    useEffect(() =>{
+        const jaCarregou = sessionStorage.getItem("jaCarregou")
+
+        if (!jaCarregou){
+            sessionStorage.setItem("jaCarregou", "true")
+            window.location.reload()
+        }
+    }, [])
 
     function verificacao() {
         fetch("/api/verificarSessao.php", { credentials: "include" })
