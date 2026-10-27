@@ -41,7 +41,7 @@ function App() {
         <Botao 
           texto="Usar Favo"
           tipo="cheio"
-          onClick={() => window.location.href = "https://www.favo.center/cadastro"}
+          onClick={() => window.location.href = "/cadastro"}
         />
         <Botao 
           texto="Como funciona?"
@@ -132,7 +132,7 @@ function App() {
               <img className="md:w-[35rem] md:h-auto" src={passo4} alt="Aproveite"/>
             </div>
           </div>
-          <Botao texto="Começar agora" onClick={() => window.location.href = "https://www.favo.center/cadastro"} tipo="transparente" largura="w-full md:w-[40rem] min-w-[125px]"/>
+          <Botao texto="Começar agora" onClick={() => window.location.href = "/cadastro"} tipo="transparente" largura="w-full md:w-[40rem] min-w-[125px]"/>
         </div>
       </section>
       <section className="md:mt-[5vh]"id="Sobre_Nos">
@@ -157,7 +157,7 @@ function App() {
               <Botao 
                 texto="Começar agora" 
                 tipo="preto" 
-                onClick={() => window.location.href = "https://www.favo.center/cadastro"}
+                onClick={() => window.location.href = "/cadastro"}
               />
               <p className="text-white">Uso 100% grátis e eficiente</p>
             </div>
